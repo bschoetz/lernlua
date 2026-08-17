@@ -1,6 +1,6 @@
 # Texturen fehlen absichtlich!
 
-Pixel-Art malen ist Teil des Kurses (Phase 3, Unit 8) — deshalb liegen hier keine fertigen PNGs.
+Pixel-Art malen ist Teil des Kurses (Phase 3, Unit 28) — deshalb liegen hier keine fertigen PNGs.
 
 Diese Dateien braucht die Mod (alle 16×16 Pixel, mit [Piskel](https://www.piskelapp.com) malen):
 

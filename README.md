@@ -54,38 +54,38 @@ lernlua/
 - [ ] Unit 10: 🎮 Mega-Projekt — Das Erz-Rate-Spiel
 
 ### Phase 2 — Vom Lehrling zum Abenteurer
-- [ ] Unit 1: Beschriftete Truhen (Tables mit Schlüsseln)
-- [ ] Unit 2: Schilder lesen (Strings)
-- [ ] Unit 3: Logik-Gates (`and`, `or`, `not`)
-- [ ] Unit 4: Würfel und Zufall (`math.random`)
-- [ ] Unit 5: Funktionen, die zusammenarbeiten
-- [ ] Unit 6: `table.insert` und `table.remove`
-- [ ] Unit 7: Welt aus Räumen
-- [ ] Unit 8: Bewegung in der Welt
-- [ ] Unit 9: Items aufheben und benutzen
-- [ ] Unit 10: 🐉 Mega-Projekt — Die Höhle des Enderdrachen
+- [ ] Unit 11: Beschriftete Truhen (Tables mit Schlüsseln)
+- [ ] Unit 12: Schilder lesen (Strings)
+- [ ] Unit 13: Logik-Gates (`and`, `or`, `not`)
+- [ ] Unit 14: Würfel und Zufall (`math.random`)
+- [ ] Unit 15: Funktionen, die zusammenarbeiten
+- [ ] Unit 16: `table.insert` und `table.remove`
+- [ ] Unit 17: Welt aus Räumen
+- [ ] Unit 18: Bewegung in der Welt
+- [ ] Unit 19: Items aufheben und benutzen
+- [ ] Unit 20: 🐉 Mega-Projekt — Die Höhle des Enderdrachen
 
 ### Phase 3 — Eigene Mod für Luanti / Mineclonia
-- [ ] Unit 1: Was ist eine Mod?
-- [ ] Unit 2: Hello, Luanti!
-- [ ] Unit 3: Begrüßung im Chat
-- [ ] Unit 4: `local` in Mods — jetzt wird's ernst
-- [ ] Unit 5: Eigene Chat-Befehle
-- [ ] Unit 6: Befehle mit Zufall
-- [ ] Unit 7: Eigene Blöcke (`register_node`)
-- [ ] Unit 8: Pixel-Art — Eigene Texturen
-- [ ] Unit 9: Licht, Sounds, Transparenz
-- [ ] Unit 10: Groups und Drops
-- [ ] Unit 11: Eigene Items (Craftitems)
-- [ ] Unit 12: Items mit eigener Aktion (`on_use`)
-- [ ] Unit 13: Crafting-Rezepte — geformt
-- [ ] Unit 14: Crafting-Rezepte — ungeformt
-- [ ] Unit 15: Callbacks — Spieler-Ereignisse
-- [ ] Unit 16: Callbacks — Block-Ereignisse
-- [ ] Unit 17: `globalstep` und ABMs
-- [ ] Unit 18: Bugs finden — Logs und Debugging
-- [ ] Unit 19: 🪄 Mega-Projekt Teil 1 — Die Magie-Mod
-- [ ] Unit 20: ✨ Mega-Projekt Teil 2 — Zauberstab, Funken, Chat
+- [ ] Unit 21: Was ist eine Mod?
+- [ ] Unit 22: Hello, Luanti!
+- [ ] Unit 23: Begrüßung im Chat
+- [ ] Unit 24: `local` in Mods — jetzt wird's ernst
+- [ ] Unit 25: Eigene Chat-Befehle
+- [ ] Unit 26: Befehle mit Zufall
+- [ ] Unit 27: Eigene Blöcke (`register_node`)
+- [ ] Unit 28: Pixel-Art — Eigene Texturen
+- [ ] Unit 29: Licht, Sounds, Transparenz
+- [ ] Unit 30: Groups und Drops
+- [ ] Unit 31: Eigene Items (Craftitems)
+- [ ] Unit 32: Items mit eigener Aktion (`on_use`)
+- [ ] Unit 33: Crafting-Rezepte — geformt
+- [ ] Unit 34: Crafting-Rezepte — ungeformt
+- [ ] Unit 35: Callbacks — Spieler-Ereignisse
+- [ ] Unit 36: Callbacks — Block-Ereignisse
+- [ ] Unit 37: `globalstep` und ABMs
+- [ ] Unit 38: Bugs finden — Logs und Debugging
+- [ ] Unit 39: 🪄 Mega-Projekt Teil 1 — Die Magie-Mod
+- [ ] Unit 40: ✨ Mega-Projekt Teil 2 — Zauberstab, Funken, Chat
 
 ---
 

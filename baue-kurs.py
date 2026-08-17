@@ -8,6 +8,7 @@ Braucht nur python-markdown und pygments (beide über pacman installiert:
 python-markdown, python-pygments).
 """
 
+import base64
 import re
 from pathlib import Path
 
@@ -16,6 +17,38 @@ from pygments.formatters import HtmlFormatter
 
 BASIS = Path(__file__).parent
 AUSGABE = BASIS / "kurs.html"
+
+# Eingebettete Schriften (liegen als Subsets in fonts/, erzeugt mit pyftsubset).
+# Atkinson Hyperlegible Next: vom Braille Institute für maximale Lesbarkeit
+# entworfen — I, l und 1 sind klar unterscheidbar. Hack: dito für Code.
+SCHRIFTEN = [
+    ("atkinson-regular.woff", "Atkinson Hyperlegible Next", 400, "normal"),
+    ("atkinson-bold.woff",    "Atkinson Hyperlegible Next", 700, "normal"),
+    ("atkinson-italic.woff",  "Atkinson Hyperlegible Next", 400, "italic"),
+    ("hack-regular.woff",     "Hack", 400, "normal"),
+    ("hack-bold.woff",        "Hack", 700, "normal"),
+    ("hack-italic.woff",      "Hack", 400, "italic"),
+]
+
+
+def font_css() -> str:
+    """@font-face-Regeln mit base64-eingebetteten WOFF-Dateien.
+
+    Fehlende Dateien werden still übersprungen — die Seite fällt dann auf
+    System-Schriften zurück.
+    """
+    regeln = []
+    for datei, familie, gewicht, stil in SCHRIFTEN:
+        pfad = BASIS / "fonts" / datei
+        if not pfad.exists():
+            continue
+        b64 = base64.b64encode(pfad.read_bytes()).decode("ascii")
+        regeln.append(
+            f"@font-face {{ font-family: '{familie}'; font-weight: {gewicht}; "
+            f"font-style: {stil}; "
+            f"src: url(data:font/woff;base64,{b64}) format('woff'); }}"
+        )
+    return "\n".join(regeln)
 
 # Reihenfolge der Kapitel. Unit-Dateien werden pro Phase automatisch
 # einsortiert — neue Units brauchen hier keine Änderung.
@@ -111,6 +144,7 @@ VORLAGE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>lernlua — Lua lernen für Luanti-Modding</title>
 <style>
+__FONTS__
 :root {
   --bg: #ffffff; --fg: #24292f; --muted: #57606a;
   --sidebar-bg: #f6f8fa; --border: #d0d7de; --link: #0969da;
@@ -126,7 +160,7 @@ VORLAGE = """<!DOCTYPE html>
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--bg); color: var(--fg);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 16px; line-height: 1.6;
 }
 #layout { display: flex; min-height: 100vh; }
@@ -160,7 +194,7 @@ a { color: var(--link); }
 code {
   background: var(--code-bg); border: 1px solid var(--border);
   border-radius: 5px; padding: 0.1em 0.35em; font-size: 0.9em;
-  font-family: ui-monospace, "JetBrains Mono", "Fira Code", monospace;
+  font-family: "Hack", ui-monospace, "JetBrains Mono", "Fira Code", monospace;
 }
 .codehilite {
   background: var(--code-bg); border: 1px solid var(--border);
@@ -278,6 +312,7 @@ def main():
     )
 
     seite = (VORLAGE
+             .replace("__FONTS__", font_css())
              .replace("__PYGMENTS_HELL__", HtmlFormatter(style="default").get_style_defs(".codehilite"))
              .replace("__PYGMENTS_DUNKEL__", HtmlFormatter(style="monokai").get_style_defs(".codehilite"))
              .replace("__NAVIGATION__", "\n".join(nav))

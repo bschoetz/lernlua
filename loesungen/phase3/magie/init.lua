@@ -1,5 +1,5 @@
 -- ===============================
---  MAGIE-MOD (Units 19 + 20 komplett)
+--  MAGIE-MOD (Units 39 + 40 komplett)
 -- ===============================
 -- Texturen musst Du selbst malen — siehe textures/LIESMICH.md
 
@@ -37,7 +37,7 @@ core.register_node("magie:kristall", {
 })
 
 -- -----------------------
---  4. ZAUBERSTAB (Unit-20-Version mit Funken und Statistik)
+--  4. ZAUBERSTAB (Unit-40-Version mit Funken und Statistik)
 -- -----------------------
 local zauber_zaehler = {}
 

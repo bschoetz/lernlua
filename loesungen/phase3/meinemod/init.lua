@@ -1,8 +1,8 @@
--- Lösungen für Phase 3, Units 7-18.
+-- Lösungen für Phase 3, Units 27-38.
 -- Hinweis: Die Texturen (PNG-Dateien in textures/) musst Du selbst malen!
 -- Ohne sie sind die Blöcke pink-schwarz — funktionieren aber trotzdem.
 
--- ===== Unit 7: Eigene Blöcke =====
+-- ===== Unit 27: Eigene Blöcke =====
 core.register_node("meinemod:wunderblock", {
   description = "Wunderblock",
   tiles = {"meinemod_wunderblock.png"},
@@ -10,7 +10,7 @@ core.register_node("meinemod:wunderblock", {
   sounds = mcl_sounds.node_sound_stone_defaults(),
 })
 
--- ===== Unit 9: Leuchtender Block =====
+-- ===== Unit 29: Leuchtender Block =====
 core.register_node("meinemod:leuchtstein", {
   description = "Leuchtstein",
   tiles = {"meinemod_leuchtstein.png"},
@@ -19,7 +19,7 @@ core.register_node("meinemod:leuchtstein", {
   sounds = mcl_sounds.node_sound_glass_defaults(),
 })
 
--- Unit-9-Bonus: Sprungkristall (leuchtet, nicht solide, wie Glas)
+-- Unit-29-Bonus: Sprungkristall (leuchtet, nicht solide, wie Glas)
 core.register_node("meinemod:sprungkristall", {
   description = "Sprungkristall",
   tiles = {"meinemod_sprungkristall.png"},
@@ -31,7 +31,7 @@ core.register_node("meinemod:sprungkristall", {
   sounds = mcl_sounds.node_sound_glass_defaults(),
 })
 
--- ===== Unit 10: Groups und Drops =====
+-- ===== Unit 30: Groups und Drops =====
 core.register_node("meinemod:erz", {
   description = "Magisches Erz",
   tiles = {"meinemod_erz.png"},
@@ -40,7 +40,7 @@ core.register_node("meinemod:erz", {
   sounds = mcl_sounds.node_sound_stone_defaults(),
 })
 
--- ===== Unit 11: Craftitems =====
+-- ===== Unit 31: Craftitems =====
 core.register_craftitem("meinemod:staub", {
   description = "Zauberstaub",
   inventory_image = "meinemod_staub.png",
@@ -52,14 +52,14 @@ core.register_craftitem("meinemod:trank", {
   on_use = core.item_eat(10),
 })
 
--- Unit-11-Bonus: Schwacher Trank
+-- Unit-31-Bonus: Schwacher Trank
 core.register_craftitem("meinemod:trank_schwach", {
   description = "Schwacher Trank",
   inventory_image = "meinemod_trank_schwach.png",
   on_use = core.item_eat(4),
 })
 
--- ===== Unit 12: on_use =====
+-- ===== Unit 32: on_use =====
 core.register_craftitem("meinemod:teleportstab", {
   description = "Teleportstab",
   inventory_image = "meinemod_teleportstab.png",
@@ -93,7 +93,7 @@ core.register_craftitem("meinemod:feuerwerk", {
   end,
 })
 
--- ===== Unit 13: Geformtes Rezept (Trank: 1 Apfel + 4 Diamanten) =====
+-- ===== Unit 33: Geformtes Rezept (Trank: 1 Apfel + 4 Diamanten) =====
 core.register_craft({
   output = "meinemod:trank",
   recipe = {
@@ -103,7 +103,7 @@ core.register_craft({
   },
 })
 
--- Unit-13-Bonus: 9 Diamanten -> 1 Diamantblock
+-- Unit-33-Bonus: 9 Diamanten -> 1 Diamantblock
 core.register_craft({
   output = "mcl_core:diamondblock",
   recipe = {
@@ -113,14 +113,14 @@ core.register_craft({
   },
 })
 
--- ===== Unit 14: Ungeformtes Rezept =====
+-- ===== Unit 34: Ungeformtes Rezept =====
 core.register_craft({
   type = "shapeless",
   output = "meinemod:staub 4",
   recipe = {"mcl_dye:purple", "mcl_core:sugar", "mcl_dye:blue"},
 })
 
--- ===== Unit 15: Spieler-Callbacks (Tod-Zähler) =====
+-- ===== Unit 35: Spieler-Callbacks (Tod-Zähler) =====
 local tode = {}
 
 core.register_on_dieplayer(function(player)
@@ -129,7 +129,7 @@ core.register_on_dieplayer(function(player)
   core.chat_send_all("💀 " .. name .. " ist zum " .. tode[name] .. ". Mal gestorben!")
 end)
 
--- Unit-15-Bonus: /tode
+-- Unit-35-Bonus: /tode
 core.register_chatcommand("tode", {
   description = "Zeigt die Tod-Statistik aller Spieler",
   func = function(name, param)
@@ -144,7 +144,7 @@ core.register_chatcommand("tode", {
   end,
 })
 
--- ===== Unit 16: Block-Callbacks =====
+-- ===== Unit 36: Block-Callbacks =====
 core.register_on_dignode(function(pos, oldnode, digger)
   if oldnode.name == "mcl_core:diamond_ore" and digger and digger:is_player() then
     local name = digger:get_player_name()
@@ -152,7 +152,7 @@ core.register_on_dignode(function(pos, oldnode, digger)
   end
 end)
 
--- Unit-16-Bonus: TNT-Warnung an alle anderen
+-- Unit-36-Bonus: TNT-Warnung an alle anderen
 core.register_on_placenode(function(pos, newnode, placer)
   if newnode.name == "mcl_tnt:tnt" and placer and placer:is_player() then
     local platzierer = placer:get_player_name()
@@ -165,7 +165,7 @@ core.register_on_placenode(function(pos, newnode, placer)
   end
 end)
 
--- ===== Unit 17: ABM — Wunderblock funkelt =====
+-- ===== Unit 37: ABM — Wunderblock funkelt =====
 core.register_abm({
   label = "Wunderblock funkelt",
   nodenames = {"meinemod:wunderblock"},
@@ -186,7 +186,7 @@ core.register_abm({
   end,
 })
 
--- ===== Unit 18 Bonus: /pos =====
+-- ===== Unit 38 Bonus: /pos =====
 core.register_chatcommand("pos", {
   description = "Zeigt Deine Position",
   func = function(name, param)

@@ -37,26 +37,26 @@ luanti-user-data/
 
 | Unit | Thema |
 |------|-------|
-| [1](unit01-anatomie-einer-mod.md) | Was ist eine Mod? — Die Anatomie |
-| [2](unit02-hallo-luanti.md) | Hello, Luanti! — Die allererste Mod |
-| [3](unit03-chat-begruessung.md) | Etwas Sichtbares — Begrüßung im Chat |
-| [4](unit04-local.md) | `local` in Mods — jetzt wird's ernst |
-| [5](unit05-chat-befehle.md) | Eigene Chat-Befehle |
-| [6](unit06-wuerfel-befehl.md) | Befehle mit Zufall — `/wuerfel` |
-| [7](unit07-eigene-bloecke.md) | Eigene Blöcke — `register_node` |
-| [8](unit08-texturen.md) | Pixel-Art — Eigene Texturen malen |
-| [9](unit09-licht-und-sounds.md) | Licht, Sounds, Transparenz |
-| [10](unit10-groups-und-drops.md) | Groups und Drops |
-| [11](unit11-craftitems.md) | Eigene Items — Craftitems |
-| [12](unit12-on-use.md) | Items mit eigener Aktion — `on_use` |
-| [13](unit13-rezepte-geformt.md) | Crafting-Rezepte — geformt |
-| [14](unit14-rezepte-ungeformt.md) | Crafting-Rezepte — ungeformt |
-| [15](unit15-spieler-callbacks.md) | Callbacks — Spieler-Ereignisse |
-| [16](unit16-block-callbacks.md) | Callbacks — Block-Ereignisse |
-| [17](unit17-globalstep-abm.md) | Zeit und Wiederholung — `globalstep` und ABMs |
-| [18](unit18-debugging.md) | Bugs finden — Logs lesen und debuggen |
-| [19](unit19-magie-mod-teil1.md) | 🪄 Mega-Projekt Teil 1 — Die Magie-Mod |
-| [20](unit20-magie-mod-teil2.md) | ✨ Mega-Projekt Teil 2 — Zauberstab, Funken, Chat |
+| [21](unit21-anatomie-einer-mod.md) | Was ist eine Mod? — Die Anatomie |
+| [22](unit22-hallo-luanti.md) | Hello, Luanti! — Die allererste Mod |
+| [23](unit23-chat-begruessung.md) | Etwas Sichtbares — Begrüßung im Chat |
+| [24](unit24-local.md) | `local` in Mods — jetzt wird's ernst |
+| [25](unit25-chat-befehle.md) | Eigene Chat-Befehle |
+| [26](unit26-wuerfel-befehl.md) | Befehle mit Zufall — `/wuerfel` |
+| [27](unit27-eigene-bloecke.md) | Eigene Blöcke — `register_node` |
+| [28](unit28-texturen.md) | Pixel-Art — Eigene Texturen malen |
+| [29](unit29-licht-und-sounds.md) | Licht, Sounds, Transparenz |
+| [30](unit30-groups-und-drops.md) | Groups und Drops |
+| [31](unit31-craftitems.md) | Eigene Items — Craftitems |
+| [32](unit32-on-use.md) | Items mit eigener Aktion — `on_use` |
+| [33](unit33-rezepte-geformt.md) | Crafting-Rezepte — geformt |
+| [34](unit34-rezepte-ungeformt.md) | Crafting-Rezepte — ungeformt |
+| [35](unit35-spieler-callbacks.md) | Callbacks — Spieler-Ereignisse |
+| [36](unit36-block-callbacks.md) | Callbacks — Block-Ereignisse |
+| [37](unit37-globalstep-abm.md) | Zeit und Wiederholung — `globalstep` und ABMs |
+| [38](unit38-debugging.md) | Bugs finden — Logs lesen und debuggen |
+| [39](unit39-magie-mod-teil1.md) | 🪄 Mega-Projekt Teil 1 — Die Magie-Mod |
+| [40](unit40-magie-mod-teil2.md) | ✨ Mega-Projekt Teil 2 — Zauberstab, Funken, Chat |
 
 ## 🏅 Was Du nach Phase 3 kannst
 
@@ -71,4 +71,4 @@ luanti-user-data/
 - ✅ Bug-Suche über Logdatei und `core.log`
 - ✅ **Eine eigene komplette Mod**, die Du Freunden zeigen kannst
 
-➡️ Los geht's mit [Unit 1](unit01-anatomie-einer-mod.md)
+➡️ Los geht's mit [Unit 21](unit21-anatomie-einer-mod.md)

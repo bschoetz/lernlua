@@ -11,16 +11,16 @@ Wir arbeiten weiter mit VSCodium und dem Terminal ([Setup](../setup.md)). Tipp: 
 
 | Unit | Thema | Neu gelernt |
 |------|-------|-------------|
-| [1](unit01-tables-mit-schluesseln.md) | Beschriftete Truhen | Tables mit Schlüsseln, Verschachtelung |
-| [2](unit02-strings.md) | Schilder lesen | `string.upper/sub/find/gsub`, `#` |
-| [3](unit03-logik.md) | Logik-Gates | `and`, `or`, `not` |
-| [4](unit04-zufall.md) | Würfel und Zufall | `math.random`-Profi-Tricks |
-| [5](unit05-funktionen-teamwork.md) | Funktionen im Team | Funktionen rufen Funktionen, Tables zurückgeben |
-| [6](unit06-insert-remove.md) | Items in Truhen | `table.insert`, `table.remove` |
-| [7](unit07-raeume.md) | Welt aus Räumen | Räume als Tables, `pairs` |
-| [8](unit08-bewegung.md) | Bewegung in der Welt | Eingabe-Verarbeitung, `break` |
-| [9](unit09-items.md) | Items aufheben | Inventar-System, Befehle parsen |
-| [10](unit10-enderdrache.md) | 🐉 Mega-Projekt | Das komplette Adventure |
+| [11](unit11-tables-mit-schluesseln.md) | Beschriftete Truhen | Tables mit Schlüsseln, Verschachtelung |
+| [12](unit12-strings.md) | Schilder lesen | `string.upper/sub/find/gsub`, `#` |
+| [13](unit13-logik.md) | Logik-Gates | `and`, `or`, `not` |
+| [14](unit14-zufall.md) | Würfel und Zufall | `math.random`-Profi-Tricks |
+| [15](unit15-funktionen-teamwork.md) | Funktionen im Team | Funktionen rufen Funktionen, Tables zurückgeben |
+| [16](unit16-insert-remove.md) | Items in Truhen | `table.insert`, `table.remove` |
+| [17](unit17-raeume.md) | Welt aus Räumen | Räume als Tables, `pairs` |
+| [18](unit18-bewegung.md) | Bewegung in der Welt | Eingabe-Verarbeitung, `break` |
+| [19](unit19-items.md) | Items aufheben | Inventar-System, Befehle parsen |
+| [20](unit20-enderdrache.md) | 🐉 Mega-Projekt | Das komplette Adventure |
 
 ## 🏅 Was Du nach Phase 2 kannst
 
@@ -35,4 +35,4 @@ Wir arbeiten weiter mit VSCodium und dem Terminal ([Setup](../setup.md)). Tipp: 
 - ✅ Strukturen für Welten, Räume, Spieler und Items
 - ✅ Ein eigenes Text-Adventure von Grund auf gebaut
 
-➡️ Los geht's mit [Unit 1](unit01-tables-mit-schluesseln.md)
+➡️ Los geht's mit [Unit 11](unit11-tables-mit-schluesseln.md)

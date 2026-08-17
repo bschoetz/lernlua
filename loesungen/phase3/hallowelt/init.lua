@@ -1,18 +1,18 @@
--- ===== Unit 2: Log-Meldungen =====
+-- ===== Unit 22: Log-Meldungen =====
 core.log("action", "[hallowelt] Hallo aus meiner ersten Mod!")
 core.log("action", "[hallowelt] Und noch eine zweite Meldung!")
 
--- ===== Unit 3 + 4: Begrüßung mit Zähler =====
+-- ===== Units 23 + 24: Begrüßung mit Zähler =====
 local begruessungen = 0
 
 core.register_on_joinplayer(function(player)
   begruessungen = begruessungen + 1
   local name = player:get_player_name()
-  -- Unit-3-Bonus: nur der beitretende Spieler sieht die Nachricht
+  -- Unit-23-Bonus: nur der beitretende Spieler sieht die Nachricht
   core.chat_send_player(name, "👋 Willkommen, " .. name .. "! (Beitritt Nr. " .. begruessungen .. ")")
 end)
 
--- ===== Unit 5: Chat-Befehle =====
+-- ===== Unit 25: Chat-Befehle =====
 core.register_chatcommand("gruss", {
   description = "Begrüßt Dich persönlich",
   func = function(name, param)
@@ -20,7 +20,7 @@ core.register_chatcommand("gruss", {
   end,
 })
 
--- Unit-5-Bonus: /zeit
+-- Unit-25-Bonus: /zeit
 core.register_chatcommand("zeit", {
   description = "Zeigt die Tageszeit im Spiel",
   func = function(name, param)
@@ -31,7 +31,7 @@ core.register_chatcommand("zeit", {
   end,
 })
 
--- ===== Unit 6: Zufalls-Befehle =====
+-- ===== Unit 26: Zufalls-Befehle =====
 core.register_chatcommand("wuerfel", {
   description = "Würfelt eine Zahl (Standard: 1-6)",
   func = function(name, param)
@@ -41,7 +41,7 @@ core.register_chatcommand("wuerfel", {
   end,
 })
 
--- Unit-6-Bonus: /muenze
+-- Unit-26-Bonus: /muenze
 core.register_chatcommand("muenze", {
   description = "Wirft eine Münze",
   func = function(name, param)
