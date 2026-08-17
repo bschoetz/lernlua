@@ -6,7 +6,7 @@ Log-Meldungen sind unsichtbar — langweilig. Jetzt machen wir was, das der Spie
 ```lua
 core.register_on_joinplayer(function(player)
   local name = player:get_player_name()
-  core.chat_send_all("👋 Willkommen, " .. name .. "!")
+  core.chat_send_all("Willkommen, " .. name .. "!")
 end)
 ```
 
@@ -17,7 +17,7 @@ Was passiert hier:
 - `core.chat_send_all(...)` schickt eine Nachricht an **alle** Spieler im Chat.
 
 ### 🎯 Aufgabe
-Erweitere `hallowelt`: Lass beim Beitreten "👋 Willkommen, NAME!" erscheinen. Welt verlassen, neu beitreten — die Nachricht muss kommen.
+Erweitere `hallowelt`: Lass beim Beitreten "Willkommen, NAME!" erscheinen. Welt verlassen, neu beitreten — die Nachricht muss kommen.
 
 ### 🏆 Bonus
 Nutze `core.chat_send_player(name, "...")` statt `chat_send_all`, damit nur der beitretende Spieler die Nachricht sieht.

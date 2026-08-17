@@ -38,7 +38,7 @@ Gute Frage! `local` ist der Stempel für Slots, die **Du selbst** anlegst. Den R
 Beides kannst Du selbst nachprüfen:
 
 ```lua
-for local i = 1, 5 do   -- ❌ Lua meckert sofort: Syntaxfehler!
+for local i = 1, 5 do   -- Lua meckert sofort: Syntaxfehler!
 ```
 
 Ein `local` ist dort sogar **verboten** — es wäre doppelt gemoppelt. Und:
@@ -47,7 +47,7 @@ Ein `local` ist dort sogar **verboten** — es wäre doppelt gemoppelt. Und:
 for i = 1, 5 do
   print("Runde " .. i)
 end
-print(i)   -- nil — der Zähler ist nach der Schleife spurlos weg!
+print(i)   -- nil - der Zähler ist nach der Schleife spurlos weg!
 ```
 
 `nil` ("nichts") kennst Du schon vom Schmelzofen: Nach der Schleife existiert der Zähler einfach nicht mehr.
@@ -91,7 +91,7 @@ Das ist das Zählen in 5er-Schritten: Die dritte Zahl sagt, **wie groß der Spru
 ```lua
 print("Baue eine Mauer aus 10 Blöcken:")
 for i = 1, 10 do
-  print("🟫 Block " .. i .. " platziert")
+  print("Block " .. i .. " platziert")
 end
 print("Mauer fertig!")
 ```

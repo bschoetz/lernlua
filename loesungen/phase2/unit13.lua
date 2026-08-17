@@ -17,7 +17,7 @@ print("Hast Du Tränke? (j/n)")
 local hat_traenke = io.read() == "j"
 
 if level >= 30 and (hat_schwert or hat_traenke) then
-  print("⚔️ Boss-bereit!")
+  print("Boss-bereit!")
 else
-  print("Noch nicht bereit — erst leveln oder Ausrüstung besorgen.")
+  print("Noch nicht bereit - erst leveln oder Ausrüstung besorgen.")
 end

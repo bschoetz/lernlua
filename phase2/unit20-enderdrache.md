@@ -34,7 +34,7 @@ local welt = {
   },
   portal = {
     name = "End-Portal",
-    beschreibung = "Ein verschlossenes Portal. Es führt ins End — wenn Du es nur öffnen könntest.",
+    beschreibung = "Ein verschlossenes Portal. Es führt ins End - wenn Du es nur öffnen könntest.",
     ausgaenge = { west = "wald", sued = "mine" },
     items = {}
   },
@@ -79,10 +79,10 @@ end
 
 local function boss_kampf()
   print("")
-  print("🐉 Der Enderdrache greift an!")
+  print("Der Enderdrache greift an!")
   if not enthaelt(spieler.inventar, "Schwert") then
     print("Ohne Waffe hast Du keine Chance...")
-    print("💀 GAME OVER 💀")
+    print("=== GAME OVER ===")
     spiel_vorbei = true
     return
   end
@@ -92,10 +92,10 @@ local function boss_kampf()
     local schaden = math.random(3, 7)
     drachen_leben = drachen_leben - schaden
     if drachen_leben < 0 then drachen_leben = 0 end
-    print("⚔️  Du triffst mit " .. schaden .. " Schaden. (Drache: " .. drachen_leben .. " HP)")
+    print("Du triffst mit " .. schaden .. " Schaden. (Drache: " .. drachen_leben .. " HP)")
   end
   print("")
-  print("🎉🎉🎉 DU HAST DEN ENDERDRACHEN BESIEGT! 🎉🎉🎉")
+  print("*** DU HAST DEN ENDERDRACHEN BESIEGT! ***")
   gewonnen = true
 end
 
@@ -103,11 +103,11 @@ local function gehe(richtung)
   local raum = welt[aktueller_raum]
   local ziel = raum.ausgaenge[richtung]
   if not ziel then
-    print("⛔ Da führt kein Weg hin.")
+    print("Da führt kein Weg hin.")
     return
   end
   if ziel == "end_" and not portal_offen then
-    print("🔒 Das Portal ist verschlossen.")
+    print("Das Portal ist verschlossen.")
     return
   end
   aktueller_raum = ziel
@@ -123,7 +123,7 @@ local function nimm(item)
     if raum.items[i] == item then
       table.insert(spieler.inventar, item)
       table.remove(raum.items, i)
-      print("✅ Du hebst " .. item .. " auf.")
+      print("Du hebst " .. item .. " auf.")
       return
     end
   end
@@ -149,7 +149,7 @@ local function benutze(item)
   if item == "Schluessel" and aktueller_raum == "portal" then
     portal_offen = true
     welt.portal.ausgaenge.nord = "end_"
-    print("🔓 Das Portal öffnet sich! Ein Weg nach Norden erscheint.")
+    print("Das Portal öffnet sich! Ein Weg nach Norden erscheint.")
   else
     print("Hier nicht zu gebrauchen.")
   end

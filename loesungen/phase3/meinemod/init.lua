@@ -1,6 +1,6 @@
 -- Lösungen für Phase 3, Units 27-38.
 -- Hinweis: Die Texturen (PNG-Dateien in textures/) musst Du selbst malen!
--- Ohne sie sind die Blöcke pink-schwarz — funktionieren aber trotzdem.
+-- Ohne sie sind die Blöcke pink-schwarz - funktionieren aber trotzdem.
 
 -- ===== Unit 27: Eigene Blöcke =====
 core.register_node("meinemod:wunderblock", {
@@ -126,7 +126,7 @@ local tode = {}
 core.register_on_dieplayer(function(player)
   local name = player:get_player_name()
   tode[name] = (tode[name] or 0) + 1
-  core.chat_send_all("💀 " .. name .. " ist zum " .. tode[name] .. ". Mal gestorben!")
+  core.chat_send_all("" .. name .. " ist zum " .. tode[name] .. ". Mal gestorben!")
 end)
 
 -- Unit-35-Bonus: /tode
@@ -138,7 +138,7 @@ core.register_chatcommand("tode", {
       table.insert(zeilen, spieler .. ": " .. anzahl)
     end
     if #zeilen == 1 then
-      table.insert(zeilen, "Noch niemand gestorben. 🎉")
+      table.insert(zeilen, "Noch niemand gestorben.")
     end
     return true, table.concat(zeilen, "\n")
   end,
@@ -148,7 +148,7 @@ core.register_chatcommand("tode", {
 core.register_on_dignode(function(pos, oldnode, digger)
   if oldnode.name == "mcl_core:diamond_ore" and digger and digger:is_player() then
     local name = digger:get_player_name()
-    core.chat_send_player(name, "💎 Glückwunsch, ein Diamant!")
+    core.chat_send_player(name, "Glückwunsch, ein Diamant!")
   end
 end)
 
@@ -159,13 +159,13 @@ core.register_on_placenode(function(pos, newnode, placer)
     for _, spieler in ipairs(core.get_connected_players()) do
       local name = spieler:get_player_name()
       if name ~= platzierer then
-        core.chat_send_player(name, "⚠️ " .. platzierer .. " hat TNT platziert!")
+        core.chat_send_player(name, "ACHTUNG: " .. platzierer .. " hat TNT platziert!")
       end
     end
   end
 end)
 
--- ===== Unit 37: ABM — Wunderblock funkelt =====
+-- ===== Unit 37: ABM - Wunderblock funkelt =====
 core.register_abm({
   label = "Wunderblock funkelt",
   nodenames = {"meinemod:wunderblock"},

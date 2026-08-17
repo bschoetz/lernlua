@@ -55,7 +55,7 @@ Was passiert hier:
 core.register_on_joinplayer(function(player)
   local name = player:get_player_name()
   core.chat_send_player(name,
-    "✨ Willkommen, " .. name .. "! Diese Welt enthält die Magie-Mod. " ..
+    "Willkommen, " .. name .. "! Diese Welt enthält die Magie-Mod. " ..
     "Tippe /magie für Infos.")
 end)
 ```

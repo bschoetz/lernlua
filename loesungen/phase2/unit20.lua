@@ -1,4 +1,4 @@
--- Unit 20: Höhle des Enderdrachen — mit Bonus "Spieler-Herzen":
+-- Unit 20: Höhle des Enderdrachen - mit Bonus "Spieler-Herzen":
 -- Der Drache schlägt zurück, wer zuerst bei 0 ist, verliert.
 
 local welt = {
@@ -22,7 +22,7 @@ local welt = {
   },
   portal = {
     name = "End-Portal",
-    beschreibung = "Ein verschlossenes Portal. Es führt ins End — wenn Du es nur öffnen könntest.",
+    beschreibung = "Ein verschlossenes Portal. Es führt ins End - wenn Du es nur öffnen könntest.",
     ausgaenge = { west = "wald", sued = "mine" },
     items = {}
   },
@@ -66,10 +66,10 @@ end
 
 local function boss_kampf()
   print("")
-  print("🐉 Der Enderdrache greift an!")
+  print("Der Enderdrache greift an!")
   if not enthaelt(spieler.inventar, "Schwert") then
     print("Ohne Waffe hast Du keine Chance...")
-    print("💀 GAME OVER 💀")
+    print("=== GAME OVER ===")
     spiel_vorbei = true
     return
   end
@@ -78,20 +78,20 @@ local function boss_kampf()
   while drachen_leben > 0 and spieler.herzen > 0 do
     local schaden = math.random(3, 7)
     drachen_leben = math.max(drachen_leben - schaden, 0)
-    print("⚔️  Du triffst mit " .. schaden .. " Schaden. (Drache: " .. drachen_leben .. " HP)")
+    print("Du triffst mit " .. schaden .. " Schaden. (Drache: " .. drachen_leben .. " HP)")
 
     if drachen_leben > 0 then
       local drachen_schaden = math.random(2, 5)
       spieler.herzen = math.max(spieler.herzen - drachen_schaden, 0)
-      print("🔥 Der Drache trifft Dich mit " .. drachen_schaden .. ". (Du: " .. spieler.herzen .. " HP)")
+      print("Der Drache trifft Dich mit " .. drachen_schaden .. ". (Du: " .. spieler.herzen .. " HP)")
     end
   end
   print("")
   if spieler.herzen > 0 then
-    print("🎉🎉🎉 DU HAST DEN ENDERDRACHEN BESIEGT! 🎉🎉🎉")
+    print("*** DU HAST DEN ENDERDRACHEN BESIEGT! ***")
     gewonnen = true
   else
-    print("💀 Der Drache war stärker... GAME OVER 💀")
+    print("Der Drache war stärker... GAME OVER")
     spiel_vorbei = true
   end
 end
@@ -100,11 +100,11 @@ local function gehe(richtung)
   local raum = welt[aktueller_raum]
   local ziel = raum.ausgaenge[richtung]
   if not ziel then
-    print("⛔ Da führt kein Weg hin.")
+    print("Da führt kein Weg hin.")
     return
   end
   if ziel == "end_" and not portal_offen then
-    print("🔒 Das Portal ist verschlossen.")
+    print("Das Portal ist verschlossen.")
     return
   end
   aktueller_raum = ziel
@@ -120,7 +120,7 @@ local function nimm(item)
     if raum.items[i] == item then
       table.insert(spieler.inventar, item)
       table.remove(raum.items, i)
-      print("✅ Du hebst " .. item .. " auf.")
+      print("Du hebst " .. item .. " auf.")
       return
     end
   end
@@ -146,7 +146,7 @@ local function benutze(item)
   if item == "Schluessel" and aktueller_raum == "portal" then
     portal_offen = true
     welt.portal.ausgaenge.nord = "end_"
-    print("🔓 Das Portal öffnet sich! Ein Weg nach Norden erscheint.")
+    print("Das Portal öffnet sich! Ein Weg nach Norden erscheint.")
   else
     print("Hier nicht zu gebrauchen.")
   end

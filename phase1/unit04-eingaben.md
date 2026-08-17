@@ -43,7 +43,7 @@ Wie kommen wir vom Schild zur echten Zahl? Mit `tonumber(...)` — das ist wie d
 ```lua
 local schild = "12"          -- ein Schild mit "12" drauf
 local zahl = tonumber(schild)  -- geschmolzen: die echte Zahl 12
-print(zahl + 1)              -- 13 — jetzt kann man rechnen!
+print(zahl + 1)              -- 13 - jetzt kann man rechnen!
 ```
 
 > ⚠️ **Was passiert mit Unschmelzbarem?** Wenn Du etwas in den Ofen legst, das keine Zahl ist — `tonumber("Hallo")` — kommt **nichts** raus (Lua nennt das `nil`). Damit kann man dann natürlich auch nicht rechnen.

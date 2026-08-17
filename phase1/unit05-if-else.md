@@ -56,7 +56,7 @@ end
 local herzen = 3
 
 if herzen <= 2 then
-  print("⚠️ Achtung, wenig Leben! Iss was!")
+  print("ACHTUNG: Wenig Leben! Iss was!")
 else
   print("Alles okay, weiter abenteuern!")
 end

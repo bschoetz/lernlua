@@ -11,7 +11,7 @@ local function gehe(richtung)
     aktueller_raum = raum.ausgaenge[richtung]
     zeige_raum()
   else
-    print("⛔ Da führt kein Weg hin.")
+    print("Da führt kein Weg hin.")
   end
 end
 ```

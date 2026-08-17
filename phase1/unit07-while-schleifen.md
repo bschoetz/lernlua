@@ -24,8 +24,8 @@ Nach `while` steht **genau dieselbe Sorte Frage wie beim `if`** aus Unit 5 — e
 Der Unterschied: `if` stellt die Frage **einmal**. `while` stellt sie **vor jeder Runde neu**:
 
 ```
-Frage stellen → wahr? → Runde laufen lassen → wieder Frage stellen → ...
-                falsch? → fertig, weiter im Programm
+Frage stellen -> wahr? -> Runde laufen lassen -> wieder Frage stellen -> ...
+                falsch? -> fertig, weiter im Programm
 ```
 
 ### Beispiel in Zeitlupe

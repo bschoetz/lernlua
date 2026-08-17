@@ -30,7 +30,7 @@ print("Ein wilder " .. zufalls_mob .. " erscheint!")
 local chance = math.random(1, 100)
 
 if chance <= 5 then
-  print("🎉 Seltenes Diamant-Erz!")
+  print("Seltenes Diamant-Erz!")
 elseif chance <= 25 then
   print("Eisen-Erz")
 else

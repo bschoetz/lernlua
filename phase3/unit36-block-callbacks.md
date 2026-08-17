@@ -8,7 +8,7 @@ Es gibt auch Callbacks, die feuern, wenn **Blöcke** platziert oder abgebaut wer
 core.register_on_placenode(function(pos, newnode, placer)
   if newnode.name == "meinemod:wunderblock" then
     local name = placer:get_player_name()
-    core.chat_send_player(name, "🎉 Ein Wunderblock! Selten gesehen.")
+    core.chat_send_player(name, "Ein Wunderblock! Selten gesehen.")
   end
 end)
 ```
@@ -22,7 +22,7 @@ end)
 core.register_on_dignode(function(pos, oldnode, digger)
   if oldnode.name == "mcl_core:diamond_ore" then
     local name = digger:get_player_name()
-    core.chat_send_all("💎 " .. name .. " hat einen Diamanten gefunden!")
+    core.chat_send_all("" .. name .. " hat einen Diamanten gefunden!")
   end
 end)
 ```

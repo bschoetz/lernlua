@@ -16,11 +16,11 @@ print("Auf welcher Y-Höhe findet man Diamant?")
 local versuch = tonumber(io.read())
 
 if versuch == nil then
-  print("⚠️ Das war keine Zahl! Probier's nochmal mit Ziffern.")
+  print("ACHTUNG: Das war keine Zahl! Probier's nochmal mit Ziffern.")
 elseif versuch == -50 then
-  print("🎯 Richtig! Diamanten findet man bei Y=-50.")
+  print("Richtig! Diamanten findet man bei Y=-50.")
 else
-  print("Leider falsch — richtig wäre Y=-50.")
+  print("Leider falsch - richtig wäre Y=-50.")
 end
 ```
 
@@ -45,18 +45,18 @@ print("Auf welcher Y-Höhe findet man Diamant?")
 local versuch = tonumber(io.read())
 
 if versuch == nil then
-  print("⚠️ Das war keine Zahl! Probier's nochmal mit Ziffern.")
+  print("ACHTUNG: Das war keine Zahl! Probier's nochmal mit Ziffern.")
 else
   local differenz = math.abs(versuch - tiefe)
 
   if differenz == 0 then
-    print("🎯 PERFEKT! Genau bei Y=" .. tiefe)
+    print("*** PERFEKT! Genau bei Y=" .. tiefe)
   elseif differenz <= 10 then
-    print("🟢 Sehr nah! Richtig wäre Y=" .. tiefe)
+    print("** Sehr nah! Richtig wäre Y=" .. tiefe)
   elseif differenz <= 30 then
-    print("🟡 Nicht schlecht. Richtig wäre Y=" .. tiefe)
+    print("* Nicht schlecht. Richtig wäre Y=" .. tiefe)
   else
-    print("🔴 Daneben. Richtig wäre Y=" .. tiefe)
+    print("Daneben. Richtig wäre Y=" .. tiefe)
   end
 end
 ```
@@ -145,21 +145,21 @@ for runde = 1, 3 do
   local versuch = tonumber(io.read())
 
   if versuch == nil then
-    print("⚠️ Keine Zahl — die Runde ist leider futsch! (Richtig: Y=" .. tiefe .. ")")
+    print("ACHTUNG: Keine Zahl - die Runde ist leider futsch! (Richtig: Y=" .. tiefe .. ")")
   else
     local differenz = math.abs(versuch - tiefe)
 
     if differenz == 0 then
-      print("🎯 PERFEKT! +3 Punkte")
+      print("*** PERFEKT! +3 Punkte")
       punkte = punkte + 3
     elseif differenz <= 10 then
-      print("🟢 Sehr nah! +2 Punkte (Richtig: Y=" .. tiefe .. ")")
+      print("** Sehr nah! +2 Punkte (Richtig: Y=" .. tiefe .. ")")
       punkte = punkte + 2
     elseif differenz <= 30 then
-      print("🟡 Okay. +1 Punkt (Richtig: Y=" .. tiefe .. ")")
+      print("* Okay. +1 Punkt (Richtig: Y=" .. tiefe .. ")")
       punkte = punkte + 1
     else
-      print("🔴 Daneben. (Richtig: Y=" .. tiefe .. ")")
+      print("Daneben. (Richtig: Y=" .. tiefe .. ")")
     end
   end
   print("")
@@ -169,11 +169,11 @@ print("=== ERGEBNIS ===")
 print("Du hast " .. punkte .. " von 9 möglichen Punkten erreicht.")
 
 if punkte >= 7 then
-  print("🏆 Erz-Meister!")
+  print("Erz-Meister!")
 elseif punkte >= 4 then
-  print("⛏️ Solider Bergmann.")
+  print("Solider Bergmann.")
 else
-  print("📚 Übung macht den Meister!")
+  print("Übung macht den Meister!")
 end
 ```
 

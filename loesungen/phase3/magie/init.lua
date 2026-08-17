@@ -1,7 +1,7 @@
 -- ===============================
 --  MAGIE-MOD (Units 39 + 40 komplett)
 -- ===============================
--- Texturen musst Du selbst malen — siehe textures/LIESMICH.md
+-- Texturen musst Du selbst malen - siehe textures/LIESMICH.md
 
 -- -----------------------
 --  1. MAGISCHES ERZ
@@ -110,7 +110,7 @@ core.register_craft({
 core.register_on_joinplayer(function(player)
   local name = player:get_player_name()
   core.chat_send_player(name,
-    "✨ Willkommen, " .. name .. "! Diese Welt enthält die Magie-Mod. " ..
+    "Willkommen, " .. name .. "! Diese Welt enthält die Magie-Mod. " ..
     "Tippe /magie für Infos.")
 end)
 

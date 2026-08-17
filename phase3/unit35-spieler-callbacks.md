@@ -9,7 +9,7 @@ Wir haben schon `register_on_joinplayer` benutzt. Es gibt viel mehr:
 ```lua
 core.register_on_dieplayer(function(player)
   local name = player:get_player_name()
-  core.chat_send_all("💀 " .. name .. " ist gestorben!")
+  core.chat_send_all("" .. name .. " ist gestorben!")
 end)
 ```
 
@@ -17,7 +17,7 @@ end)
 ```lua
 core.register_on_respawnplayer(function(player)
   local name = player:get_player_name()
-  core.chat_send_player(name, "🌟 Willkommen zurück!")
+  core.chat_send_player(name, "Willkommen zurück!")
   return false  -- nicht den Respawn-Vorgang abbrechen
 end)
 ```
@@ -33,7 +33,7 @@ end)
 | `register_on_punchplayer` | Spieler wird geschlagen |
 
 ### 🎯 Aufgabe
-**Tod-Zähler**: Bei jedem Tod erscheint im Chat "💀 NAME ist zum X. Mal gestorben!". Tipp: Eine `local tode = {}` Table und `tode[name] = (tode[name] or 0) + 1`.
+**Tod-Zähler**: Bei jedem Tod erscheint im Chat "NAME ist zum X. Mal gestorben!". Tipp: Eine `local tode = {}` Table und `tode[name] = (tode[name] or 0) + 1`.
 
 ### 🏆 Bonus
 Ein Befehl `/tode`, der zeigt, wie oft jeder Spieler gestorben ist (geh die `tode`-Table mit `pairs` durch).

@@ -1,5 +1,5 @@
 -- Quest 5.1: Der Mob-Bestimmer
--- (Schild-Vergleich: Text mit Text — kein tonumber nötig)
+-- (Schild-Vergleich: Text mit Text - kein tonumber nötig)
 print("Welcher Mob? (zombie/creeper/cow)")
 local mob = io.read()
 

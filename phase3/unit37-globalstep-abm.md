@@ -11,7 +11,7 @@ core.register_globalstep(function(dtime)
   timer = timer + dtime
   if timer >= 5 then
     timer = 0
-    core.chat_send_all("⏰ 5 Sekunden vergangen!")
+    core.chat_send_all("5 Sekunden vergangen!")
   end
 end)
 ```

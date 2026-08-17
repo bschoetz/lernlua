@@ -13,4 +13,4 @@ local xp_noetig = 825
 
 print("Mobs (abgerundet): " .. xp_noetig // xp_pro_mob)        -- 117, reicht noch nicht ganz
 print("Rest-XP: " .. xp_noetig % xp_pro_mob)                   -- 6 XP fehlen noch
-print("Mobs (aufgerundet): " .. math.ceil(xp_noetig / xp_pro_mob))  -- 118 — so viele braucht man wirklich
+print("Mobs (aufgerundet): " .. math.ceil(xp_noetig / xp_pro_mob))  -- 118 - so viele braucht man wirklich

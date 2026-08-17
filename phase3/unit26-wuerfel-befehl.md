@@ -9,7 +9,7 @@ core.register_chatcommand("wuerfel", {
   func = function(name, param)
     local seiten = tonumber(param) or 6
     local ergebnis = math.random(1, seiten)
-    return true, "🎲 " .. name .. " würfelt: " .. ergebnis
+    return true, "" .. name .. " würfelt: " .. ergebnis
   end,
 })
 ```

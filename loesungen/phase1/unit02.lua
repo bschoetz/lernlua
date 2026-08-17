@@ -1,5 +1,5 @@
 -- Quest 2.1: Charakter-Steckbrief
--- (local kommt erst in Unit 3 dran — hier noch ohne)
+-- (local kommt erst in Unit 3 dran - hier noch ohne)
 name = "Alex"
 level = 42
 welt = "Overworld"
@@ -15,4 +15,4 @@ print("Werkzeug: " .. werkzeug)
 herzen = 10
 print("Herzen: " .. herzen)   -- 10
 herzen = 5
-print("Herzen: " .. herzen)   -- 5 — der Slot-Inhalt wurde ausgetauscht
+print("Herzen: " .. herzen)   -- 5 - der Slot-Inhalt wurde ausgetauscht

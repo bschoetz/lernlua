@@ -1,4 +1,4 @@
--- Unit 10: Erz-Rate-Spiel — "Version 5" mit allen Ideen:
+-- Unit 10: Erz-Rate-Spiel - "Version 5" mit allen Ideen:
 -- 5 Runden, mehr Erze, Spielername, Spezial-Glückwunsch bei perfektem Treffer
 
 local erze = {"Kohle", "Eisen", "Gold", "Diamant", "Smaragd", "Lapislazuli", "Redstone", "Kupfer"}
@@ -25,21 +25,21 @@ for runde = 1, runden do
   -- Türsteher: erst prüfen, ob überhaupt eine Zahl kam (sonst wäre versuch nil,
   -- und math.abs würde beim Rechnen mit "nichts" abstürzen)
   if versuch == nil then
-    print("⚠️ Keine Zahl — die Runde ist leider futsch! (Richtig: Y=" .. tiefe .. ")")
+    print("ACHTUNG: Keine Zahl - die Runde ist leider futsch! (Richtig: Y=" .. tiefe .. ")")
   else
     local differenz = math.abs(versuch - tiefe)
 
     if differenz == 0 then
-      print("🎯 PERFEKT, " .. name .. "! Volltreffer bei Y=" .. tiefe .. "! +3 Punkte")
+      print("*** PERFEKT, " .. name .. "! Volltreffer bei Y=" .. tiefe .. "! +3 Punkte")
       punkte = punkte + 3
     elseif differenz <= 10 then
-      print("🟢 Sehr nah! +2 Punkte (Richtig: Y=" .. tiefe .. ")")
+      print("** Sehr nah! +2 Punkte (Richtig: Y=" .. tiefe .. ")")
       punkte = punkte + 2
     elseif differenz <= 30 then
-      print("🟡 Okay. +1 Punkt (Richtig: Y=" .. tiefe .. ")")
+      print("* Okay. +1 Punkt (Richtig: Y=" .. tiefe .. ")")
       punkte = punkte + 1
     else
-      print("🔴 Daneben. (Richtig: Y=" .. tiefe .. ")")
+      print("Daneben. (Richtig: Y=" .. tiefe .. ")")
     end
   end
   print("")
@@ -50,9 +50,9 @@ print("=== ERGEBNIS ===")
 print(name .. ", Du hast " .. punkte .. " von " .. maximum .. " möglichen Punkten erreicht.")
 
 if punkte >= maximum - 2 then
-  print("🏆 Erz-Meister!")
+  print("Erz-Meister!")
 elseif punkte >= maximum // 2 then
-  print("⛏️ Solider Bergmann.")
+  print("Solider Bergmann.")
 else
-  print("📚 Übung macht den Meister!")
+  print("Übung macht den Meister!")
 end

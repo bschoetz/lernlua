@@ -44,7 +44,7 @@ while alex.herzen > 0 and zombie.herzen > 0 do
 end
 
 if alex.herzen > 0 then
-  print("🏆 " .. alex.name .. " gewinnt!")
+  print("" .. alex.name .. " gewinnt!")
 else
-  print("💀 Der Zombie gewinnt...")
+  print("Der Zombie gewinnt...")
 end

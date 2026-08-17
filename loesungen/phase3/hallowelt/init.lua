@@ -9,7 +9,7 @@ core.register_on_joinplayer(function(player)
   begruessungen = begruessungen + 1
   local name = player:get_player_name()
   -- Unit-23-Bonus: nur der beitretende Spieler sieht die Nachricht
-  core.chat_send_player(name, "👋 Willkommen, " .. name .. "! (Beitritt Nr. " .. begruessungen .. ")")
+  core.chat_send_player(name, "Willkommen, " .. name .. "! (Beitritt Nr. " .. begruessungen .. ")")
 end)
 
 -- ===== Unit 25: Chat-Befehle =====
@@ -27,7 +27,7 @@ core.register_chatcommand("zeit", {
     local zeit = core.get_timeofday()  -- 0 = Mitternacht, 0.5 = Mittag
     local stunden = math.floor(zeit * 24)
     local minuten = math.floor((zeit * 24 - stunden) * 60)
-    return true, string.format("🕐 Es ist %02d:%02d Uhr im Spiel.", stunden, minuten)
+    return true, string.format("Es ist %02d:%02d Uhr im Spiel.", stunden, minuten)
   end,
 })
 
@@ -37,7 +37,7 @@ core.register_chatcommand("wuerfel", {
   func = function(name, param)
     local seiten = tonumber(param) or 6
     local ergebnis = math.random(1, seiten)
-    return true, "🎲 " .. name .. " würfelt: " .. ergebnis
+    return true, "" .. name .. " würfelt: " .. ergebnis
   end,
 })
 
@@ -46,9 +46,9 @@ core.register_chatcommand("muenze", {
   description = "Wirft eine Münze",
   func = function(name, param)
     if math.random(1, 2) == 1 then
-      return true, "🪙 Kopf"
+      return true, "Kopf"
     else
-      return true, "🪙 Zahl"
+      return true, "Zahl"
     end
   end,
 })

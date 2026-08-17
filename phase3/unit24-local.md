@@ -18,7 +18,7 @@ local begruessungen = 0
 core.register_on_joinplayer(function(player)
   begruessungen = begruessungen + 1
   local name = player:get_player_name()
-  core.chat_send_all("👋 " .. name .. " (Beitritt Nr. " .. begruessungen .. ")")
+  core.chat_send_all("" .. name .. " (Beitritt Nr. " .. begruessungen .. ")")
 end)
 ```
 

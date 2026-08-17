@@ -38,7 +38,7 @@ local function zeige_raum()
   end
   print("Ausgänge:")
   for richtung, ziel in pairs(raum.ausgaenge) do
-    print("  " .. richtung .. " → " .. welt[ziel].name)
+    print("  " .. richtung .. " -> " .. welt[ziel].name)
   end
 end
 
