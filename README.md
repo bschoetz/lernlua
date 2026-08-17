@@ -16,7 +16,7 @@ Der Kurs ist im Minecraft-Stil aufgebaut: Jede Unit ist eine kleine **Quest** mi
 
 ## 📖 Kurs als HTML-Seite (neben dem Editor anzeigen)
 
-Statt zu drucken: den ganzen Kurs als eine einzige HTML-Seite bauen und im Browser neben VSCodium öffnen —
+Der ganze Kurs liegt als eine einzige HTML-Seite im Repo: **[kurs.html](kurs.html)** — einfach im Browser öffnen und neben VSCodium andocken. Nach Änderungen an den Markdown-Dateien neu bauen mit:
 
 ```bash
 python3 baue-kurs.py
