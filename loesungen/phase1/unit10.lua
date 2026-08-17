@@ -1,4 +1,4 @@
--- Unit 10: Erz-Rate-Spiel — mit allen Bonus-Quests:
+-- Unit 10: Erz-Rate-Spiel — "Version 5" mit allen Ideen:
 -- 5 Runden, mehr Erze, Spielername, Spezial-Glückwunsch bei perfektem Treffer
 
 local erze = {"Kohle", "Eisen", "Gold", "Diamant", "Smaragd", "Lapislazuli", "Redstone", "Kupfer"}
