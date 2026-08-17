@@ -1,7 +1,9 @@
--- Quest 6.1: Crafting-Rezept-Tafel
-print("1 Smaragd = 1 Smaragd")
-for i = 2, 10 do
-  print(i .. " Smaragde = " .. i .. " Smaragde")
+-- Quest 6.1: Die Einmaleins-Maschine
+print("Welche Reihe willst Du üben?")
+local zahl = tonumber(io.read())   -- Schmelzofen: Schild -> echte Zahl
+
+for i = 1, 10 do
+  print(i .. " x " .. zahl .. " = " .. i * zahl)
 end
 
 -- Bonus-Quest: Rückwärts zählen
