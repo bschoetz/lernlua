@@ -15,14 +15,18 @@ print("=== ERZ-TIEFEN-QUIZ ===")
 print("Auf welcher Y-Höhe findet man Diamant?")
 local versuch = tonumber(io.read())
 
-if versuch == -50 then
+if versuch == nil then
+  print("⚠️ Das war keine Zahl! Probier's nochmal mit Ziffern.")
+elseif versuch == -50 then
   print("🎯 Richtig! Diamanten findet man bei Y=-50.")
 else
   print("Leider falsch — richtig wäre Y=-50.")
 end
 ```
 
-**▶️ Speichern, starten, spielen!** Zweimal: einmal richtig raten, einmal falsch.
+Schau Dir die **erste Tür** an: Was passiert, wenn der Spieler "Diamant" statt einer Zahl eintippt? Der Schmelzofen liefert `nil` ("nichts") — und die erste Tür fängt genau das ab. Wir nennen so eine Prüfung den **Türsteher**: Er steht ganz vorne und lässt nur echte Zahlen zu den anderen Türen durch. (Türen-Reihenfolge aus Unit 5!)
+
+**▶️ Speichern, starten, spielen!** Dreimal: einmal richtig raten, einmal falsch — und einmal absichtlich Buchstaben eingeben.
 
 ---
 
@@ -39,25 +43,32 @@ local tiefe = -50
 
 print("Auf welcher Y-Höhe findet man Diamant?")
 local versuch = tonumber(io.read())
-local differenz = math.abs(versuch - tiefe)
 
-if differenz == 0 then
-  print("🎯 PERFEKT! Genau bei Y=" .. tiefe)
-elseif differenz <= 10 then
-  print("🟢 Sehr nah! Richtig wäre Y=" .. tiefe)
-elseif differenz <= 30 then
-  print("🟡 Nicht schlecht. Richtig wäre Y=" .. tiefe)
+if versuch == nil then
+  print("⚠️ Das war keine Zahl! Probier's nochmal mit Ziffern.")
 else
-  print("🔴 Daneben. Richtig wäre Y=" .. tiefe)
+  local differenz = math.abs(versuch - tiefe)
+
+  if differenz == 0 then
+    print("🎯 PERFEKT! Genau bei Y=" .. tiefe)
+  elseif differenz <= 10 then
+    print("🟢 Sehr nah! Richtig wäre Y=" .. tiefe)
+  elseif differenz <= 30 then
+    print("🟡 Nicht schlecht. Richtig wäre Y=" .. tiefe)
+  else
+    print("🔴 Daneben. Richtig wäre Y=" .. tiefe)
+  end
 end
 ```
 
-Die `elseif`-Kaskade kennst Du aus Unit 5 — und hier zahlt sich die **Türen-Reihenfolge** aus: Wer die 0-Tür schafft, kommt gar nicht erst zur ≤10-Tür.
+Zwei Dinge stecken hier drin:
+- Die `elseif`-Kaskade kennst Du aus Unit 5 — und die **Türen-Reihenfolge** zahlt sich aus: Wer die 0-Tür schafft, kommt gar nicht erst zur ≤10-Tür.
+- Der **Türsteher steht jetzt außen herum**: Erst wenn er eine echte Zahl durchgelassen hat, wird im `else`-Teil der Abstand berechnet und bewertet. Ein `if` im `if` — zähl die `end`s: Jedes braucht seins!
 
-**▶️ Speichern, starten, spielen!** Teste alle vier Türen: genau richtig, knapp daneben, weiter weg, völlig daneben.
+**▶️ Speichern, starten, spielen!** Teste alle vier Türen: genau richtig, knapp daneben, weiter weg, völlig daneben — und den Türsteher mit Buchstaben.
 
 ### 🔍 Detektiv-Aufgabe
-Tippe beim Raten mal **Buchstaben** statt einer Zahl ein. Das Spiel stürzt ab! Lies die Fehlermeldung: *"attempt to perform arithmetic on a nil value"*. Kannst Du Dir erklären, was passiert ist? (Tipp: Was liefert der Schmelzofen, wenn man Unschmelzbares hineinlegt? Und kann man mit "nichts" rechnen?)
+Warum steht der Türsteher **vor** der Abstand-Rechnung und ist nicht einfach eine weitere Tür in der Kaskade? Finde es heraus: Lösche ihn testweise (nur das äußere `if versuch == nil ... else` und ein `end`) und tippe Buchstaben ein. **Absturz!** Lies die Fehlermeldung: *"attempt to perform arithmetic on a nil value"* — die Zeile `math.abs(versuch - tiefe)` kann mit "nichts" nicht rechnen. Deshalb muss der Türsteher zuschlagen, **bevor** gerechnet wird. Bau ihn wieder ein!
 
 ---
 
@@ -132,19 +143,24 @@ for runde = 1, 3 do
 
   print("Auf welcher Y-Höhe findet man " .. erz .. "?")
   local versuch = tonumber(io.read())
-  local differenz = math.abs(versuch - tiefe)
 
-  if differenz == 0 then
-    print("🎯 PERFEKT! +3 Punkte")
-    punkte = punkte + 3
-  elseif differenz <= 10 then
-    print("🟢 Sehr nah! +2 Punkte (Richtig: Y=" .. tiefe .. ")")
-    punkte = punkte + 2
-  elseif differenz <= 30 then
-    print("🟡 Okay. +1 Punkt (Richtig: Y=" .. tiefe .. ")")
-    punkte = punkte + 1
+  if versuch == nil then
+    print("⚠️ Keine Zahl — die Runde ist leider futsch! (Richtig: Y=" .. tiefe .. ")")
   else
-    print("🔴 Daneben. (Richtig: Y=" .. tiefe .. ")")
+    local differenz = math.abs(versuch - tiefe)
+
+    if differenz == 0 then
+      print("🎯 PERFEKT! +3 Punkte")
+      punkte = punkte + 3
+    elseif differenz <= 10 then
+      print("🟢 Sehr nah! +2 Punkte (Richtig: Y=" .. tiefe .. ")")
+      punkte = punkte + 2
+    elseif differenz <= 30 then
+      print("🟡 Okay. +1 Punkt (Richtig: Y=" .. tiefe .. ")")
+      punkte = punkte + 1
+    else
+      print("🔴 Daneben. (Richtig: Y=" .. tiefe .. ")")
+    end
   end
   print("")
 end
@@ -161,9 +177,10 @@ else
 end
 ```
 
-Zwei kleine Handwerks-Tricks darin:
+Drei kleine Handwerks-Dinge darin:
+- Der **Türsteher** aus Version 2 ist mit drin: Keine Zahl = Runde verschenkt, aber das Spiel läuft weiter statt abzustürzen.
 - `print("")` druckt eine **Leerzeile** — nur für die Übersicht, wie eine Absatz-Taste.
-- Zähl die `end`s! Das `if` braucht eins, die `for`-Schleife auch. Fehlt eins, meckert Lua mit *"'end' expected"* — dann von oben nach unten prüfen: Ist jede Truhe wieder zu?
+- Zähl die `end`s! Türsteher-`if`, Bewertungs-`if` und die `for`-Schleife brauchen je eins. Fehlt eins, meckert Lua mit *"'end' expected"* — dann von oben nach unten prüfen: Ist jede Truhe wieder zu?
 
 **▶️ Speichern, starten, durchspielen!**
 

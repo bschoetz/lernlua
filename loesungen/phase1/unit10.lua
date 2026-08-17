@@ -21,19 +21,26 @@ for runde = 1, runden do
 
   print("Auf welcher Y-Koordinate findet man " .. erz .. "?")
   local versuch = tonumber(io.read())
-  local differenz = math.abs(versuch - tiefe)
 
-  if differenz == 0 then
-    print("🎯 PERFEKT, " .. name .. "! Volltreffer bei Y=" .. tiefe .. "! +3 Punkte")
-    punkte = punkte + 3
-  elseif differenz <= 10 then
-    print("🟢 Sehr nah! +2 Punkte (Richtig: Y=" .. tiefe .. ")")
-    punkte = punkte + 2
-  elseif differenz <= 30 then
-    print("🟡 Okay. +1 Punkt (Richtig: Y=" .. tiefe .. ")")
-    punkte = punkte + 1
+  -- Türsteher: erst prüfen, ob überhaupt eine Zahl kam (sonst wäre versuch nil,
+  -- und math.abs würde beim Rechnen mit "nichts" abstürzen)
+  if versuch == nil then
+    print("⚠️ Keine Zahl — die Runde ist leider futsch! (Richtig: Y=" .. tiefe .. ")")
   else
-    print("🔴 Daneben. (Richtig: Y=" .. tiefe .. ")")
+    local differenz = math.abs(versuch - tiefe)
+
+    if differenz == 0 then
+      print("🎯 PERFEKT, " .. name .. "! Volltreffer bei Y=" .. tiefe .. "! +3 Punkte")
+      punkte = punkte + 3
+    elseif differenz <= 10 then
+      print("🟢 Sehr nah! +2 Punkte (Richtig: Y=" .. tiefe .. ")")
+      punkte = punkte + 2
+    elseif differenz <= 30 then
+      print("🟡 Okay. +1 Punkt (Richtig: Y=" .. tiefe .. ")")
+      punkte = punkte + 1
+    else
+      print("🔴 Daneben. (Richtig: Y=" .. tiefe .. ")")
+    end
   end
   print("")
 end
