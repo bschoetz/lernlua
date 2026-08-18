@@ -881,6 +881,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h3>Warum heißt das Ding <code>io.read</code>?</h3>
 <p>Das sind zwei englische Abkürzungen: <code>io</code> steht für <strong>In und Out</strong> — alles, was ins Programm <strong>rein</strong>geht und <strong>raus</strong>kommt. Und <code>read</code> heißt <strong>lesen</strong>. <code>io.read()</code> sagt also wörtlich: "Lies ein, was da getippt wird."</p>
 <p>Und der Punkt dazwischen? <code>io</code> ist eine <strong>Werkzeugkiste</strong>, und der Punkt greift hinein: <code>io.read</code> liest Du als "aus der Kiste <code>io</code> das Werkzeug <code>read</code>". Lua sortiert seine Werkzeuge in solche Kisten, damit man sie wiederfindet — nur die allerwichtigsten wie <code>print</code> liegen ohne Kiste direkt griffbereit. Das Punkt-Muster wirst Du noch oft sehen, zum Beispiel bei der Mathe-Kiste: <code>math.random</code> würfelt Zufallszahlen (kommt in Unit 10½).</p>
+<p>Was sonst noch in der <code>io</code>-Kiste liegt? Alles, womit ein Programm mit der Außenwelt redet — Tastatur, Bildschirm und sogar Dateien. Wir benutzen erstmal nur das Lese-Werkzeug.</p>
 <h3>🧪 Experiment: Das Programm wartet wirklich</h3>
 <p>Starte das Beispiel und tippe erstmal … nichts. Das Programm läuft nicht weiter — es wartet geduldig auf Dich, bis Du Enter drückst. Und was passiert wohl, wenn Du als Namen etwas völlig Verrücktes eingibst, mit Leerzeichen und allem? Probier's aus — <code>io.read()</code> nimmt alles, was Du ihm gibst.</p>
 <h3>🎯 Quest 4.1: Der Begrüßungs-Bot</h3>

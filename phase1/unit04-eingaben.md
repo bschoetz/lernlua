@@ -19,6 +19,8 @@ Das sind zwei englische Abkürzungen: `io` steht für **In und Out** — alles, 
 
 Und der Punkt dazwischen? `io` ist eine **Werkzeugkiste**, und der Punkt greift hinein: `io.read` liest Du als "aus der Kiste `io` das Werkzeug `read`". Lua sortiert seine Werkzeuge in solche Kisten, damit man sie wiederfindet — nur die allerwichtigsten wie `print` liegen ohne Kiste direkt griffbereit. Das Punkt-Muster wirst Du noch oft sehen, zum Beispiel bei der Mathe-Kiste: `math.random` würfelt Zufallszahlen (kommt in Unit 10½).
 
+Was sonst noch in der `io`-Kiste liegt? Alles, womit ein Programm mit der Außenwelt redet — Tastatur, Bildschirm und sogar Dateien. Wir benutzen erstmal nur das Lese-Werkzeug.
+
 ### 🧪 Experiment: Das Programm wartet wirklich
 Starte das Beispiel und tippe erstmal … nichts. Das Programm läuft nicht weiter — es wartet geduldig auf Dich, bis Du Enter drückst. Und was passiert wohl, wenn Du als Namen etwas völlig Verrücktes eingibst, mit Leerzeichen und allem? Probier's aus — `io.read()` nimmt alles, was Du ihm gibst.
 
