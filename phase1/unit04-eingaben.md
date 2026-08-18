@@ -67,4 +67,4 @@ Nimm den kaputten Zahlen-Addierer aus dem Experiment und **repariere ihn mit `to
 Frage nach dem aktuellen Level und dem Ziel-Level des Spielers. Gib aus, wie viele Level noch fehlen. Vergiss den Schmelzofen nicht!
 
 ---
-⬅️ [Unit 3](unit03-rechnen.md) · [Übersicht](README.md) · ➡️ [Unit 5: if und else](unit05-if-else.md)
+⬅️ [Unit 3½: Variablen-Namen](unit03b-variablennamen.md) · [Übersicht](README.md) · ➡️ [Unit 5: if und else](unit05-if-else.md)

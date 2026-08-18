@@ -60,6 +60,8 @@ Der **feste Text** (`"Spieler: "`) steht in Anführungszeichen, der **Slot-Name*
 - Groß- und Kleinschreibung zählt: `Spieler` ist nicht das Gleiche wie `spieler`
 - Und: Slot-Namen stehen **nie** in Anführungszeichen
 
+Warum diese Regeln so sind und wie man richtig **gute** Namen findet, klären wir im [Exkurs nach Unit 3](unit03b-variablennamen.md).
+
 ### 🎯 Quest 2.1: Charakter-Steckbrief
 Erstelle Variablen für `name`, `level`, `welt` und `werkzeug`. Gib damit einen Steckbrief aus:
 ```

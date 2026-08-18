@@ -202,6 +202,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li><a href="#phase1-unit01-hallo-overworld">Unit 1: "Hallo Overworld!"</a></li>
 <li><a href="#phase1-unit02-variablen">Unit 2: Inventar-Slots</a></li>
 <li><a href="#phase1-unit03-rechnen">Unit 3: Rechnen wie ein Redstone-Ingenieur</a></li>
+<li><a href="#phase1-unit03b-variablennamen">Unit 3½: Wie heißt mein Slot?</a></li>
 <li><a href="#phase1-unit04-eingaben">Unit 4: Chat mit dem Spieler</a></li>
 <li><a href="#phase1-unit05-if-else">Unit 5: Türen mit Redstone</a></li>
 <li><a href="#phase1-unit06-for-schleifen">Unit 6: Eine Mauer bauen</a></li>
@@ -450,6 +451,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <td><code>+ - * / // ^ %</code>, <code>local</code></td>
 </tr>
 <tr>
+<td><a href="#phase1-unit03b-variablennamen">3½</a></td>
+<td>Exkurs: Variablen-Namen</td>
+<td>gute Namen, ein Slot = eine Bedeutung</td>
+</tr>
+<tr>
 <td><a href="#phase1-unit04-eingaben">4</a></td>
 <td>Chat mit dem Spieler</td>
 <td><code>io.read</code>, <code>tonumber</code></td>
@@ -600,6 +606,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li>Groß- und Kleinschreibung zählt: <code>Spieler</code> ist nicht das Gleiche wie <code>spieler</code></li>
 <li>Und: Slot-Namen stehen <strong>nie</strong> in Anführungszeichen</li>
 </ul>
+<p>Warum diese Regeln so sind und wie man richtig <strong>gute</strong> Namen findet, klären wir im <a href="#phase1-unit03b-variablennamen">Exkurs nach Unit 3</a>.</p>
 <h3>🎯 Quest 2.1: Charakter-Steckbrief</h3>
 <p>Erstelle Variablen für <code>name</code>, <code>level</code>, <code>welt</code> und <code>werkzeug</code>. Gib damit einen Steckbrief aus:</p>
 <div class="codehilite"><pre><code><span class="zeile">=== SPIELER-STECKBRIEF ===
@@ -708,6 +715,103 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h3>🏆 Bonus-Quest: Wie lange bis Level 30?</h3>
 <p>Ein Spieler bekommt 7 XP pro Mob. Er braucht 825 XP für Level 30. Wie viele Mobs muss er besiegen?</p>
 <p>Tipp: <code>825 // 7</code> Mobs reichen noch nicht ganz (prüf den Rest mit <code>%</code>!). Es gibt auch <code>math.ceil(825 / 7)</code> — das rundet <strong>auf</strong>, also zur nächsten ganzen Zahl nach oben. Probier beides.</p>
+</section>
+<section id="phase1-unit03b-variablennamen">
+<h1>🔤 Unit 3½: Wie heißt mein Slot? — Exkurs über Variablen-Namen</h1>
+<h3>Was lernen wir?</h3>
+<p>Kein neues Lua — dafür Antworten auf Fragen, die beim Schreiben von Quest 3.1 fast von allein auftauchen: Darf derselbe Name nochmal vorkommen? Groß oder klein? Und woran erkennt man überhaupt einen guten Namen?</p>
+<h3>Darf derselbe Name nochmal vorkommen?</h3>
+<p>In Quest 3.1 hast Du einen Slot <code>bloecke</code> angelegt. Was passiert, wenn Du im selben Programm weiterschreibst und wieder <code>bloecke</code> benutzt?</p>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">bloecke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">73</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">9</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nv">bloecke</span><span class="p">)</span>
+</span><span class="zeile">
+</span><span class="zeile"><span class="nv">bloecke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">9</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nv">bloecke</span><span class="p">)</span>
+</span></code></pre></div>
+
+<p>Kein Problem: erst 8, dann 3. Der Slot wird einfach <strong>neu befüllt</strong> — das alte Item fliegt raus, das neue kommt rein. Genau das hast Du in der Bonus-Quest von Unit 2 schon ausprobiert.</p>
+<p>Und wenn Du aus Versehen nochmal <code>local bloecke = ...</code> schreibst? Auch kein Drama. Lua stellt dann heimlich einen <strong>zweiten Slot mit demselben Etikett</strong> daneben und benutzt ab da nur noch den neuen. Dein Programm läuft trotzdem richtig. Den feinen Unterschied zwischen "Slot neu befüllen" und "zweiten Slot danebenstellen" kannst Du erst ab Unit 8 wirklich sehen — bis dahin gilt die Merkregel aus Unit 3: <code>local</code> nur beim <strong>ersten</strong> Mal.</p>
+<h3>🧪 Experiment: Wenn der alte Wert weg ist</h3>
+<p>"Es läuft" heißt aber nicht immer "es stimmt". Tippe das ab:</p>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">eisen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">73</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">bloecke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">eisen</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">9</span>
+</span><span class="zeile">
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">gold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span>
+</span><span class="zeile"><span class="nv">bloecke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">gold</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">9</span>
+</span><span class="zeile">
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bloecke aus Eisen: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">bloecke</span><span class="p">)</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bloecke aus Gold: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">bloecke</span><span class="p">)</span>
+</span></code></pre></div>
+
+<p>Beide Zeilen zeigen 3! Die 8 Eisen-Blöcke sind <strong>weg</strong> — überschrieben, bevor sie ausgegeben wurden. Das Fiese daran: Es gibt keine Fehlermeldung. Das Programm tut genau, was Du gesagt hast — nur nicht, was Du wolltest. Solche Fehler sind schwerer zu finden als ein Absturz.</p>
+<p>Deshalb die Regel: <strong>Ein Slot, eine Bedeutung.</strong> Willst Du Dir zwei Dinge merken, nimm zwei Slots — zum Beispiel <code>eisen_bloecke</code> und <code>gold_bloecke</code>. Der Unterstrich <code>_</code> ist dabei das Leerzeichen der Programmierer: Echte Leerzeichen sind in Namen verboten, also hängt man die Wörter mit <code>_</code> zusammen. So heißen bei uns ja auch schon <code>erz_pro_stunde</code> und <code>xp_pro_mob</code>.</p>
+<h3>🧪 Experiment: Groß oder klein?</h3>
+<p>Aus Unit 2 weißt Du: Groß- und Kleinschreibung zählt. Was gibt das hier aus?</p>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">Eisenbloecke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nv">eisenbloecke</span><span class="p">)</span>
+</span></code></pre></div>
+
+<p><code>nil</code> — Luas Wort für "nichts"! Für Lua sind <code>Eisenbloecke</code> und <code>eisenbloecke</code> zwei <strong>völlig verschiedene Namen</strong>. Der kleingeschriebene Slot existiert nicht, also kommt <code>nil</code> heraus.</p>
+<p>Lua wäre mit beiden Schreibweisen zufrieden. Aber stell Dir vor, Du müsstest bei jedem Slot raten: War es nun groß oder klein? Deshalb gibt es eine <strong>Abmachung unter Programmierern</strong> (keine Lua-Regel — Lua ist das egal): <strong>Variablen-Namen schreibt man immer komplett klein.</strong> Dann gibt es nichts zu raten.</p>
+<h3>Warum eigentlich <code>bloecke</code> und nicht <code>blöcke</code>?</h3>
+<p>Auch das stand schon in Unit 2: keine Umlaute in Namen. Der Grund ist simpel — Lua kennt als Namens-Buchstaben nur a bis z (plus Zahlen und <code>_</code>). Bei <code>local blöcke = 5</code> steigt es sofort mit einer Fehlermeldung aus, denn mit dem ö kann es nichts anfangen. Also: ö wird zu oe, ä zu ae, ü zu ue, ß zu ss. In <strong>Texten</strong> (also zwischen Anführungszeichen) sind Umlaute natürlich erlaubt — <code>print("Blöcke")</code> funktioniert wunderbar.</p>
+<h3>🧪 Experiment: Namen, die schon vergeben sind</h3>
+<p>Zwei Sorten von Namen kannst Du nicht (oder besser nicht) benutzen. Probier beide aus!</p>
+<p><strong>Sorte 1: Luas eigene Wörter.</strong></p>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+</span></code></pre></div>
+
+<p>Das startet gar nicht erst: <code>&lt;name&gt; expected near 'end'</code>. Wörter wie <code>end</code>, <code>if</code>, <code>while</code>, <code>for</code> und auch <code>local</code> selbst sind Luas <strong>eigenes Vokabular</strong> — die sind fest vergeben, Punkt.</p>
+<p><strong>Sorte 2: Namen von Befehlen.</strong></p>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nb">print</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+
+<p>Zeile 1 geht durch — <code>print</code> ist nämlich gar nicht verboten, nur <strong>belegt</strong>! Aber Zeile 2 stürzt ab: <code>attempt to call a number value (local 'print')</code>. Du hast ein Schild mit einer 5 über den print-Befehl genagelt, und jetzt versucht Lua, die Zahl 5 "aufzurufen". Schau Dir die Fehlermeldung genau an: Sie verrät sogar den Schuldigen — <code>local 'print'</code>. Fehlermeldungen lesen lohnt sich fast immer!</p>
+<p>Die Reparatur ist einfach: Nenn Deinen Slot anders, dann bleibt der Befehl heil.</p>
+<h3>Woran erkennt man einen guten Namen?</h3>
+<p>Alle diese Namen erlaubt Lua — aber sie sind nicht gleich gut:</p>
+<table>
+<thead>
+<tr>
+<th>Erlaubt, aber rätselhaft</th>
+<th>Besser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a</code></td>
+<td><code>eisenbarren</code></td>
+</tr>
+<tr>
+<td><code>zahl1</code>, <code>zahl2</code></td>
+<td><code>eisen</code>, <code>gold</code></td>
+</tr>
+<tr>
+<td><code>EisenBloecke</code></td>
+<td><code>eisen_bloecke</code></td>
+</tr>
+</tbody>
+</table>
+<p>Der Test ist immer derselbe: <strong>Wenn Du das Programm nächste Woche wieder öffnest — weißt Du dann noch, was in dem Slot liegt?</strong> Bei <code>a</code> musst Du das halbe Programm lesen, bei <code>eisenbarren</code> steht die Antwort im Namen.</p>
+<p>Eine Ausnahme wirst Du in Unit 6 kennenlernen: Der Runden-Zähler in Schleifen heißt bei allen Profis der Welt einfach nur <code>i</code>. Warum das okay ist, siehst Du dann dort.</p>
+<h3>🎯 Quest 3½.1: Der zweite Rohstoff</h3>
+<p>Erweitere Deinen Crafting-Rechner aus Quest 3.1:
+- Du hast 73 Eisenbarren <strong>und</strong> 30 Goldbarren
+- Rechne für beide aus: Wie viele Blöcke, wie viel Rest? (je 9 Barren = 1 Block)
+- Gib <strong>am Ende</strong> alle vier Ergebnisse aus — erst dann kommt die Ausgabe!</p>
+<p>Tipp: Vier Dinge merken heißt vier Slots mit vier Namen. Wer Eisen und Gold in denselben Slot legt, landet im Experiment von oben.</p>
+<h3>🏆 Bonus-Quest: Namens-Detektiv</h3>
+<p>Dieses Programm funktioniert — aber was tut es? Finde es heraus, indem Du es liest und laufen lässt:</p>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nv">b</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nv">b</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nv">c</span><span class="p">)</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nv">d</span><span class="p">)</span>
+</span></code></pre></div>
+
+<p>Tipp: Es geht ums Verteilen. Wenn Du es herausgefunden hast: Benenne alle vier Slots so um, dass man die Antwort <strong>ohne Nachdenken</strong> im Programm lesen kann — und spendiere den zwei <code>print</code>-Zeilen noch erklärenden Text dazu.</p>
 </section>
 <section id="phase1-unit04-eingaben">
 <h1>⌨️ Unit 4: Chat mit dem Spieler — <code>io.read</code></h1>

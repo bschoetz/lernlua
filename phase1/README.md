@@ -11,6 +11,7 @@ Ein Lua-Crashkurs im Minecraft-Stil. Jede Unit ist eine kleine "Quest" mit Erkl�
 | [1](unit01-hallo-overworld.md) | Hallo Overworld! | `print`, Strings |
 | [2](unit02-variablen.md) | Inventar-Slots | Variablen, `..` |
 | [3](unit03-rechnen.md) | Rechnen | `+ - * / // ^ %`, `local` |
+| [3½](unit03b-variablennamen.md) | Exkurs: Variablen-Namen | gute Namen, ein Slot = eine Bedeutung |
 | [4](unit04-eingaben.md) | Chat mit dem Spieler | `io.read`, `tonumber` |
 | [5](unit05-if-else.md) | Türen mit Redstone | `if` / `elseif` / `else` |
 | [6](unit06-for-schleifen.md) | Eine Mauer bauen | `for`-Schleifen |

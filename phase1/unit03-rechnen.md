@@ -72,4 +72,4 @@ Ein Spieler bekommt 7 XP pro Mob. Er braucht 825 XP für Level 30. Wie viele Mob
 Tipp: `825 // 7` Mobs reichen noch nicht ganz (prüf den Rest mit `%`!). Es gibt auch `math.ceil(825 / 7)` — das rundet **auf**, also zur nächsten ganzen Zahl nach oben. Probier beides.
 
 ---
-⬅️ [Unit 2](unit02-variablen.md) · [Übersicht](README.md) · ➡️ [Unit 4: Eingaben](unit04-eingaben.md)
+⬅️ [Unit 2](unit02-variablen.md) · [Übersicht](README.md) · ➡️ [Unit 3½: Variablen-Namen](unit03b-variablennamen.md)
