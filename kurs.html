@@ -895,7 +895,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <section id="phase1-unit04b-schmelzofen">
 <h1>🔥 Unit 4½: Der Schmelzofen — <code>tonumber</code></h1>
 <h3>Was lernen wir?</h3>
-<p>In Unit 4 hat Dein Programm Antworten entgegengenommen. Heute klären wir, <strong>was</strong> da eigentlich ankommt — und warum man damit noch nicht rechnen kann.</p>
+<p>In Unit 4 hat Dein Programm Antworten entgegengenommen. Heute klären wir, <strong>was</strong> da eigentlich ankommt — und warum Profis es erst durch den Ofen schicken, bevor sie damit rechnen.</p>
 <h3>Zwei Sorten von Dingen: Schilder und Zahlen</h3>
 <p>In Lua gibt es (unter anderem) zwei Sorten von Dingen:</p>
 <ul>
@@ -904,31 +904,36 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </ul>
 <p>Die Anführungszeichen kennst Du seit Unit 1 — sie sind sozusagen das Schild drumherum. Und jetzt kommt's: <code>"5"</code> ist <strong>nicht</strong> die Zahl 5. Es ist ein Schild, auf das jemand eine 5 gemalt hat!</p>
 <p><strong>Alles, was Du mit <code>io.read()</code> eintippst, kommt als Schild an.</strong> Auch wenn Du <code>12</code> tippst — das Programm bekommt ein Schild mit "12" drauf, keine echte Zahl.</p>
-<h3>🧪 Experiment: Der kaputte Zahlen-Addierer</h3>
-<p>Glaubst Du nicht? Tippe das ab und probier es aus:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erste Zahl?&quot;</span><span class="p">)</span>
-</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">io.read</span><span class="p">()</span>
-</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zweite Zahl?&quot;</span><span class="p">)</span>
-</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">io.read</span><span class="p">()</span>
-</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ergebnis: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
+<h3>🧪 Experiment: Der Detektiv-Test</h3>
+<p>Glaubst Du nicht? Dann fragen wir Lua einfach selbst! Es gibt ein Detektiv-Werkzeug: <code>type(...)</code> verrät Dir von allem die <strong>Sorte</strong>. (Es liegt ohne Kiste direkt griffbereit, wie <code>print</code> — Detektivarbeit braucht man eben ständig.)</p>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hallo&quot;</span><span class="p">))</span><span class="w">   </span><span class="c1">-- string  (Schild)</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="w">         </span><span class="c1">-- number  (echte Zahl)</span>
+</span><span class="zeile">
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tippe eine Zahl!&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">eingabe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">io.read</span><span class="p">()</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">))</span>
 </span></code></pre></div>
 
-<p>Gib <code>3</code> und <code>4</code> ein. Was kommt raus? <strong>34</strong> statt 7! 😄</p>
-<p>Das Programm hat nicht gerechnet — es hat die beiden Schilder einfach <strong>aneinandergenagelt</strong> (das machen die zwei Punkte <code>..</code> ja: zusammenkleben). Aus dem Schild "3" und dem Schild "4" wird das Schild "34".</p>
+<p>Starte das Programm und tippe <code>12</code> ein. Lua sagt: <strong><code>string</code></strong> — ein Schild! Du hast eine Zahl <em>getippt</em>, aber angekommen ist ein Schild, auf dem "12" steht. Da hilft kein Leugnen: Der Detektiv hat es schwarz auf weiß.</p>
 <h3>Der Schmelzofen: <code>tonumber</code></h3>
 <p>Wie kommen wir vom Schild zur echten Zahl? Mit <code>tonumber(...)</code> — das ist wie der <strong>Ofen</strong> in Minecraft: Eisenerz rein, Eisenbarren raus. Hier: Schild rein, echte Zahl raus.</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">schild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="w">          </span><span class="c1">-- ein Schild mit &quot;12&quot; drauf</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">schild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="w">            </span><span class="c1">-- ein Schild mit &quot;12&quot; drauf</span>
 </span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">zahl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">tonumber</span><span class="p">(</span><span class="nv">schild</span><span class="p">)</span><span class="w">  </span><span class="c1">-- geschmolzen: die echte Zahl 12</span>
-</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nv">zahl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">              </span><span class="c1">-- 13 - jetzt kann man rechnen!</span>
+</span><span class="zeile">
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nv">zahl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">      </span><span class="c1">-- 13 - jetzt kann man rechnen!</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nv">zahl</span><span class="p">))</span><span class="w">    </span><span class="c1">-- number - der Detektiv bestätigt es</span>
 </span></code></pre></div>
 
 <blockquote>
 <p>⚠️ <strong>Was passiert mit Unschmelzbarem?</strong> Wenn Du etwas in den Ofen legst, das keine Zahl ist — <code>tonumber("Hallo")</code> — kommt <strong>nichts</strong> raus (Lua nennt das <code>nil</code>). Damit kann man dann natürlich auch nicht rechnen.</p>
-<p>💡 <strong>Ehrlich gesagt:</strong> Lua ist manchmal schlau und rät richtig — <code>"12" + 1</code> funktioniert sogar, Lua schmilzt das Schild heimlich selbst. Aber verlass Dich <strong>nicht</strong> darauf! Beim Zusammenkleben hast Du gerade gesehen, dass es schiefgeht — und beim Vergleichen (kommt in Unit 5) geht es garantiert schief: Für Lua ist das Schild <code>"12"</code> niemals gleich der Zahl <code>12</code>. Profi-Regel: <strong>Schilder mit Zahlen drauf immer erst schmelzen.</strong></p>
-<p>🔍 <strong>Detektiv-Trick:</strong> Mit <code>print(type(irgendwas))</code> verrät Dir Lua die Sorte — <code>string</code> heißt Schild (Text), <code>number</code> heißt echte Zahl. Probier mal <code>print(type("5"))</code> und <code>print(type(5))</code>.</p>
+<p>💡 <strong>Ehrlich gesagt:</strong> Lua ist manchmal schlau und schmilzt heimlich selbst — <code>"12" + 1</code> funktioniert tatsächlich! Warum dann überhaupt <code>tonumber</code>? Zwei Gründe. Erstens: Das heimliche Schmelzen klappt nur, solange wirklich eine Zahl auf dem Schild steht — tippt jemand <code>drei</code>, kracht Dein Programm mitten in der Rechnung zusammen. Zweitens: Beim <strong>Vergleichen</strong> (kommt in Unit 5½) schmilzt Lua <strong>nie</strong> heimlich — da ist das Schild <code>"12"</code> niemals gleich der Zahl <code>12</code>, und Du suchst ewig den Fehler. Profi-Regel: <strong>Schilder mit Zahlen drauf immer selbst schmelzen.</strong></p>
 </blockquote>
-<h3>🎯 Quest 4½.1: Repariere den Addierer</h3>
-<p>Nimm den kaputten Zahlen-Addierer aus dem Experiment und <strong>repariere ihn mit <code>tonumber</code></strong>, sodass bei <code>3</code> und <code>4</code> wirklich <code>7</code> rauskommt. Teste auch andere Zahlen!</p>
+<h3>🎯 Quest 4½.1: Der Zahlen-Addierer</h3>
+<p>Bau ein Programm:
+1. Es fragt nach der ersten Zahl
+2. Es fragt nach der zweiten Zahl
+3. Es schmilzt beide und gibt die <strong>Summe</strong> aus — bei <code>3</code> und <code>4</code> muss <code>7</code> rauskommen</p>
+<p>Und wenn es läuft, ein Spaß zum Schluss: Ersetze das <code>+</code> mal durch <code>..</code> — kleben statt rechnen. Aus 3 und 4 wird <strong>34</strong>! Jetzt weißt Du auch, was schiefgelaufen ist, wenn Dir sowas mal in einem echten Programm passiert.</p>
 <h3>🏆 Bonus-Quest: XP-Rechner</h3>
 <p>Frage nach dem aktuellen Level und dem Ziel-Level des Spielers. Gib aus, wie viele Level noch fehlen. Vergiss den Schmelzofen nicht!</p>
 </section>
