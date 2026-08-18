@@ -113,13 +113,35 @@ def titel_aus(text: str, pfad: Path) -> str:
     return titel
 
 
+class ZeilenFormatter(HtmlFormatter):
+    """Pygments-Formatter, der jede Codezeile in ein eigenes <span> packt.
+
+    Damit kann die Zeilennummer per CSS-Zähler davorgesetzt werden — das
+    funktioniert (anders als Pygments' eigene Tabellen-Nummerierung) auch
+    dann noch, wenn lange Zeilen umbrechen.
+    """
+
+    def __init__(self, lang_str="", **kwargs):
+        kwargs["linespans"] = "zeile"
+        kwargs["wrapcode"] = True
+        super().__init__(**kwargs)
+
+
+def zeilen_aufbereiten(html: str) -> str:
+    """id="zeile-3" -> class="zeile" (IDs wären über alle Blöcke doppelt)."""
+    html = re.sub(r'<span id="zeile-\d+">', '<span class="zeile">', html)
+    # Pygments' leeres Platzhalter-Span vor dem Code entfernen
+    return html.replace("<pre><span></span><code>", "<pre><code>")
+
+
 def html_konvertieren(md_text: str) -> str:
     return markdown.markdown(md_text, extensions=[
         "extra",          # Tabellen, Code-Blöcke mit ```
         "codehilite",     # Syntax-Highlighting über pygments
         "sane_lists",
     ], extension_configs={
-        "codehilite": {"guess_lang": False, "css_class": "codehilite"},
+        "codehilite": {"guess_lang": False, "css_class": "codehilite",
+                       "pygments_formatter": ZeilenFormatter},
     })
 
 
@@ -198,10 +220,26 @@ code {
 }
 .codehilite {
   background: var(--code-bg); border: 1px solid var(--border);
-  border-radius: 8px; padding: 0.75rem 1rem; overflow-x: auto; margin: 1rem 0;
+  border-radius: 8px; padding: 0.75rem 1rem; margin: 1rem 0; max-width: 100%;
 }
-.codehilite pre { margin: 0; }
-.codehilite code { background: none; border: none; padding: 0; font-size: 0.88rem; }
+/* Lange Zeilen umbrechen statt seitlich rausragen — sonst muss man scrollen. */
+.codehilite pre { margin: 0; white-space: pre-wrap; }
+.codehilite code {
+  background: none; border: none; padding: 0; font-size: 0.88rem;
+  display: block; counter-reset: zeile;
+}
+/* Zeilennummern per CSS-Zähler; umgebrochene Teile rücken bündig darunter ein. */
+.codehilite .zeile {
+  display: block; counter-increment: zeile;
+  padding-left: 3.2em; text-indent: -3.2em;
+  overflow-wrap: break-word; word-break: break-word;
+}
+.codehilite .zeile::before {
+  content: counter(zeile);
+  display: inline-block; width: 2.2em; margin-right: 1em;
+  text-align: right; color: var(--muted); opacity: 0.6;
+  -webkit-user-select: none; user-select: none;
+}
 table { border-collapse: collapse; margin: 1rem 0; display: block; overflow-x: auto; max-width: 100%; }
 th, td { border: 1px solid var(--border); padding: 0.35rem 0.7rem; text-align: left; }
 th { background: var(--sidebar-bg); }
@@ -283,7 +321,7 @@ def main():
         else:
             titel = titel_aus(roh, pfad)
         md = vorverarbeiten(roh, pfad, bekannte_ids)
-        html = checkboxen_aktivieren(html_konvertieren(md))
+        html = zeilen_aufbereiten(checkboxen_aktivieren(html_konvertieren(md)))
         gruppe = pfad.parts[0] if len(pfad.parts) > 1 else ""
         abschnitte.append((abschnitt_id(pfad), gruppe, titel, html))
 
