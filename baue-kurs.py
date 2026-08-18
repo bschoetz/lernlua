@@ -233,6 +233,24 @@ def html_konvertieren(md_text: str) -> str:
     })
 
 
+BILD_TYPEN = {".jpg": "image/jpeg", ".jpeg": "image/jpeg",
+              ".png": "image/png", ".webp": "image/webp", ".gif": "image/gif"}
+
+
+def bilder_einbetten(html: str, quelle: Path) -> str:
+    """<img src="datei.jpg"> relativ zur Quelldatei auflösen und als
+    base64-data-URI einbetten — kurs.html bleibt eine einzelne Datei
+    (gleiches Prinzip wie bei den Fonts)."""
+    def ersetze(m):
+        pfad = BASIS / quelle.parent / m.group(2)
+        typ = BILD_TYPEN.get(pfad.suffix.lower())
+        if typ is None or not pfad.exists():
+            return m.group(0)   # externe/unbekannte Bilder unverändert lassen
+        b64 = base64.b64encode(pfad.read_bytes()).decode("ascii")
+        return f'{m.group(1)}data:{typ};base64,{b64}{m.group(3)}'
+    return re.sub(r'(<img [^>]*src=")([^"]+)(")', ersetze, html)
+
+
 def checkboxen_aktivieren(html: str) -> str:
     """- [ ] Listenpunkte in echte, anklickbare Checkboxen verwandeln.
 
@@ -328,6 +346,10 @@ code {
   text-align: right; color: #90908a;
   -webkit-user-select: none; user-select: none;
 }
+main img {
+  max-width: 100%; height: auto; border-radius: 10px;
+  border: 1px solid var(--border); margin: 0.5rem 0;
+}
 table { border-collapse: collapse; margin: 1rem 0; display: block; overflow-x: auto; max-width: 100%; }
 th, td { border: 1px solid var(--border); padding: 0.35rem 0.7rem; text-align: left; }
 th { background: var(--sidebar-bg); }
@@ -409,6 +431,7 @@ def main():
             titel = titel_aus(roh, pfad)
         md = vorverarbeiten(roh, pfad, bekannte_ids)
         html = zeilen_aufbereiten(checkboxen_aktivieren(html_konvertieren(md)))
+        html = bilder_einbetten(html, pfad)
         gruppe = pfad.parts[0] if len(pfad.parts) > 1 else ""
         abschnitte.append((abschnitt_id(pfad), gruppe, titel, html))
 

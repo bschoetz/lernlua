@@ -26,6 +26,11 @@ Minecraft/Luanti.
 - `loesungen/` — Musterlösungen: `.lua`-Dateien je Unit (Phase 1+2),
   lauffähige Mod-Ordner `hallowelt`/`meinemod`/`magie` (Phase 3).
   Texturen (PNGs) fehlen absichtlich — Pixel-Art malen ist Teil des Kurses.
+- `pics/` — Bild-Originale (groß, unbearbeitet). Fürs Einbinden mit
+  `python3 bild-aufbereiten.py pics/NAME.jpeg phaseN/` verkleinern
+  (1600 px, komprimiert, ohne Metadaten) und die erzeugte `.jpg` aus dem
+  Phasen-Ordner im Markdown referenzieren — der Build bettet sie als
+  data-URI in die kurs.html ein.
 - `kurs.html` — der ganze Kurs als eine HTML-Seite, **wird versioniert**.
   Nach jeder Markdown-Änderung neu bauen: `python3 baue-kurs.py`
   (braucht python-markdown, pygments; bettet die Fonts aus `fonts/` ein).

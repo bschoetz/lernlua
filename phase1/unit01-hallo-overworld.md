@@ -1,5 +1,7 @@
 # ⛏️ Unit 1: "Hallo Overworld!" — Der erste Befehl
 
+![Comic: Das Lua-Maskottchen ruft "Hallo Overworld!" durch ein Megafon](unit01_header.jpg)
+
 ### Was lernen wir?
 Wie sagt man dem Computer, dass er etwas auf den Bildschirm schreiben soll? Mit dem Befehl `print`. Klammern hinter dem Wort, und in den Klammern das, was geschrieben werden soll. Text muss in Anführungszeichen `"..."`.
 
