@@ -38,7 +38,7 @@ Wenn Du in einer Bedingung aus Versehen nur ein `=` schreibst, meckert Lua. Das 
 
 > 💡 **Tastatur-Tipp:** Die Schlange `~` für "ungleich" tippst Du mit **AltGr + `+`** (die Taste rechts neben dem Ü).
 
-## 🏾 Die Druckplatte: `if` ... `then` ... `else` ... `end`
+## 🔘 Die Druckplatte: `if` ... `then` ... `else` ... `end`
 ```lua
 if BEDINGUNG then
   -- Tür geht auf: mach das hier
@@ -74,6 +74,8 @@ Schreibe ein Programm mit einer Variable `hunger` (Wert 0 bis 10, der Nutzer mus
 - Sonst antwortet es: "Alles gut, weiter geht's!"
 
 Teste **beide** Türen, indem Du es mehrfach startest und verschiedene Werte eingibst.
+
+> Tipp: Die Eingabe kommt als **Schild** an (Unit 4½!) — vor dem Vergleichen erst durch den Schmelzofen, sonst beschwert sich Lua: *attempt to compare string with number*.
 
 ### 🏆 Bonus-Quest: Creeper-Alarm
 Ein Creeper-Warn-Programm misst, wie viele Blöcke der Creeper entfernt ist. Du musst hier kein Programm schreiben, nur zwei Fragen beantworten:
