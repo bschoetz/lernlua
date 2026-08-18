@@ -233,21 +233,19 @@ def html_konvertieren(md_text: str) -> str:
     })
 
 
-BILD_TYPEN = {".jpg": "image/jpeg", ".jpeg": "image/jpeg",
-              ".png": "image/png", ".webp": "image/webp", ".gif": "image/gif"}
-
-
-def bilder_einbetten(html: str, quelle: Path) -> str:
-    """<img src="datei.jpg"> relativ zur Quelldatei auflösen und als
-    base64-data-URI einbetten — kurs.html bleibt eine einzelne Datei
-    (gleiches Prinzip wie bei den Fonts)."""
+def bildpfade_umschreiben(html: str, quelle: Path) -> str:
+    """<img src="datei.jpg"> ist im Markdown relativ zur Quelldatei —
+    kurs.html liegt aber eine Ebene höher, also den Ordner davorsetzen
+    (aus "unit01_header.jpg" in phase1/ wird "phase1/unit01_header.jpg")."""
     def ersetze(m):
-        pfad = BASIS / quelle.parent / m.group(2)
-        typ = BILD_TYPEN.get(pfad.suffix.lower())
-        if typ is None or not pfad.exists():
-            return m.group(0)   # externe/unbekannte Bilder unverändert lassen
-        b64 = base64.b64encode(pfad.read_bytes()).decode("ascii")
-        return f'{m.group(1)}data:{typ};base64,{b64}{m.group(3)}'
+        src = m.group(2)
+        if "://" in src or src.startswith("data:"):
+            return m.group(0)   # externe Bilder unverändert lassen
+        pfad = quelle.parent / src
+        if not (BASIS / pfad).exists():
+            print(f"⚠️  Bild fehlt: {pfad} (referenziert in {quelle})")
+            return m.group(0)
+        return f'{m.group(1)}{pfad.as_posix()}{m.group(3)}'
     return re.sub(r'(<img [^>]*src=")([^"]+)(")', ersetze, html)
 
 
@@ -431,7 +429,7 @@ def main():
             titel = titel_aus(roh, pfad)
         md = vorverarbeiten(roh, pfad, bekannte_ids)
         html = zeilen_aufbereiten(checkboxen_aktivieren(html_konvertieren(md)))
-        html = bilder_einbetten(html, pfad)
+        html = bildpfade_umschreiben(html, pfad)
         gruppe = pfad.parts[0] if len(pfad.parts) > 1 else ""
         abschnitte.append((abschnitt_id(pfad), gruppe, titel, html))
 

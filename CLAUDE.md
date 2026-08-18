@@ -29,8 +29,9 @@ Minecraft/Luanti.
 - `pics/` — Bild-Originale (groß, unbearbeitet). Fürs Einbinden mit
   `python3 bild-aufbereiten.py pics/NAME.jpeg phaseN/` verkleinern
   (1600 px, komprimiert, ohne Metadaten) und die erzeugte `.jpg` aus dem
-  Phasen-Ordner im Markdown referenzieren — der Build bettet sie als
-  data-URI in die kurs.html ein.
+  Phasen-Ordner im Markdown referenzieren — der Build schreibt den Pfad
+  für die kurs.html passend um (relativ, kein Einbetten; die kurs.html
+  braucht die Bild-Dateien also neben sich im Repo).
 - `kurs.html` — der ganze Kurs als eine HTML-Seite, **wird versioniert**.
   Nach jeder Markdown-Änderung neu bauen: `python3 baue-kurs.py`
   (braucht python-markdown, pygments; bettet die Fonts aus `fonts/` ein).
