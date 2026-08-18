@@ -204,12 +204,19 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li><a href="#phase1-unit03-rechnen">Unit 3: Rechnen wie ein Redstone-Ingenieur</a></li>
 <li><a href="#phase1-unit03b-variablennamen">Unit 3½: Wie heißt mein Slot?</a></li>
 <li><a href="#phase1-unit04-eingaben">Unit 4: Chat mit dem Spieler</a></li>
+<li><a href="#phase1-unit04b-schmelzofen">Unit 4½: Der Schmelzofen</a></li>
 <li><a href="#phase1-unit05-if-else">Unit 5: Türen mit Redstone</a></li>
+<li><a href="#phase1-unit05b-tueren-gang">Unit 5½: Der Türen-Gang</a></li>
 <li><a href="#phase1-unit06-for-schleifen">Unit 6: Eine Mauer bauen</a></li>
+<li><a href="#phase1-unit06b-rechnen-im-takt">Unit 6½: Rechnen im Takt</a></li>
 <li><a href="#phase1-unit07-while-schleifen">Unit 7: Warten auf den Tag</a></li>
+<li><a href="#phase1-unit07b-trainingslager">Unit 7½: Trainingslager</a></li>
 <li><a href="#phase1-unit08-funktionen">Unit 8: Eigene Crafting-Rezepte</a></li>
+<li><a href="#phase1-unit08b-ausgabe-slot">Unit 8½: Der Ausgabe-Slot</a></li>
 <li><a href="#phase1-unit09-tables">Unit 9: Truhen mit vielen Slots</a></li>
-<li><a href="#phase1-unit10-erz-rate-spiel">Unit 10: Mega-Projekt</a></li>
+<li><a href="#phase1-unit09b-for-trifft-truhe">Unit 9½: for trifft Truhe</a></li>
+<li><a href="#phase1-unit10-erz-rate-spiel">Unit 10: Mega-Projekt Teil 1</a></li>
+<li><a href="#phase1-unit10b-erz-rate-spiel-2">Unit 10½: Mega-Projekt Teil 2</a></li>
 </ul></details>
 <details><summary>Phase 2 — Abenteuer</summary><ul>
 <li><a href="#phase2-README">Übersicht</a></li>
@@ -229,7 +236,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li><a href="#phase3-unit21-anatomie-einer-mod">Unit 21: Was ist eine Mod?</a></li>
 <li><a href="#phase3-unit22-hallo-luanti">Unit 22: Hello, Luanti!</a></li>
 <li><a href="#phase3-unit23-chat-begruessung">Unit 23: Etwas Sichtbares</a></li>
-<li><a href="#phase3-unit24-local">Unit 24: `local` in Mods</a></li>
+<li><a href="#phase3-unit24-local">Unit 24: local in Mods</a></li>
 <li><a href="#phase3-unit25-chat-befehle">Unit 25: Chat-Befehle</a></li>
 <li><a href="#phase3-unit26-wuerfel-befehl">Unit 26: Befehle mit Zufall</a></li>
 <li><a href="#phase3-unit27-eigene-bloecke">Unit 27: Eigene Blöcke</a></li>
@@ -309,49 +316,57 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li class="task"><input type="checkbox" data-task="1"> Unit 1: Hallo Overworld! (<code>print</code>)</li>
 <li class="task"><input type="checkbox" data-task="2"> Unit 2: Inventar-Slots (Variablen)</li>
 <li class="task"><input type="checkbox" data-task="3"> Unit 3: Rechnen wie ein Redstone-Ingenieur (Operatoren, <code>local</code>)</li>
-<li class="task"><input type="checkbox" data-task="4"> Unit 4: Chat mit dem Spieler (<code>io.read</code>)</li>
-<li class="task"><input type="checkbox" data-task="5"> Unit 5: Türen mit Redstone (<code>if</code> / <code>else</code>)</li>
-<li class="task"><input type="checkbox" data-task="6"> Unit 6: Eine Mauer bauen (<code>for</code>)</li>
-<li class="task"><input type="checkbox" data-task="7"> Unit 7: Warten auf den Tag (<code>while</code>)</li>
-<li class="task"><input type="checkbox" data-task="8"> Unit 8: Eigene Crafting-Rezepte (Funktionen)</li>
-<li class="task"><input type="checkbox" data-task="9"> Unit 9: Truhen mit vielen Slots (Tables)</li>
-<li class="task"><input type="checkbox" data-task="10"> Unit 10: 🎮 Mega-Projekt — Das Erz-Rate-Spiel</li>
+<li class="task"><input type="checkbox" data-task="4"> Unit 3½: Exkurs — Variablen-Namen</li>
+<li class="task"><input type="checkbox" data-task="5"> Unit 4: Chat mit dem Spieler (<code>io.read</code>)</li>
+<li class="task"><input type="checkbox" data-task="6"> Unit 4½: Der Schmelzofen (<code>tonumber</code>)</li>
+<li class="task"><input type="checkbox" data-task="7"> Unit 5: Türen mit Redstone (<code>if</code> / <code>else</code>)</li>
+<li class="task"><input type="checkbox" data-task="8"> Unit 5½: Der Türen-Gang (<code>elseif</code>)</li>
+<li class="task"><input type="checkbox" data-task="9"> Unit 6: Eine Mauer bauen (<code>for</code>)</li>
+<li class="task"><input type="checkbox" data-task="10"> Unit 6½: Rechnen im Takt (Schrittweite)</li>
+<li class="task"><input type="checkbox" data-task="11"> Unit 7: Warten auf den Tag (<code>while</code>)</li>
+<li class="task"><input type="checkbox" data-task="12"> Unit 7½: Trainingslager (Übung)</li>
+<li class="task"><input type="checkbox" data-task="13"> Unit 8: Eigene Crafting-Rezepte (Funktionen)</li>
+<li class="task"><input type="checkbox" data-task="14"> Unit 8½: Der Ausgabe-Slot (<code>return</code>)</li>
+<li class="task"><input type="checkbox" data-task="15"> Unit 9: Truhen mit vielen Slots (Tables)</li>
+<li class="task"><input type="checkbox" data-task="16"> Unit 9½: <code>for</code> trifft Truhe</li>
+<li class="task"><input type="checkbox" data-task="17"> Unit 10: 🎮 Mega-Projekt, Teil 1 — Das Erz-Rate-Spiel</li>
+<li class="task"><input type="checkbox" data-task="18"> Unit 10½: 🎮 Mega-Projekt, Teil 2 — Würfel, Runden, Punkte</li>
 </ul>
 <h3>Phase 2 — Vom Lehrling zum Abenteurer</h3>
 <ul>
-<li class="task"><input type="checkbox" data-task="11"> Unit 11: Beschriftete Truhen (Tables mit Schlüsseln)</li>
-<li class="task"><input type="checkbox" data-task="12"> Unit 12: Schilder lesen (Strings)</li>
-<li class="task"><input type="checkbox" data-task="13"> Unit 13: Logik-Gates (<code>and</code>, <code>or</code>, <code>not</code>)</li>
-<li class="task"><input type="checkbox" data-task="14"> Unit 14: Würfel und Zufall (<code>math.random</code>)</li>
-<li class="task"><input type="checkbox" data-task="15"> Unit 15: Funktionen, die zusammenarbeiten</li>
-<li class="task"><input type="checkbox" data-task="16"> Unit 16: <code>table.insert</code> und <code>table.remove</code></li>
-<li class="task"><input type="checkbox" data-task="17"> Unit 17: Welt aus Räumen</li>
-<li class="task"><input type="checkbox" data-task="18"> Unit 18: Bewegung in der Welt</li>
-<li class="task"><input type="checkbox" data-task="19"> Unit 19: Items aufheben und benutzen</li>
-<li class="task"><input type="checkbox" data-task="20"> Unit 20: 🐉 Mega-Projekt — Die Höhle des Enderdrachen</li>
+<li class="task"><input type="checkbox" data-task="19"> Unit 11: Beschriftete Truhen (Tables mit Schlüsseln)</li>
+<li class="task"><input type="checkbox" data-task="20"> Unit 12: Schilder lesen (Strings)</li>
+<li class="task"><input type="checkbox" data-task="21"> Unit 13: Logik-Gates (<code>and</code>, <code>or</code>, <code>not</code>)</li>
+<li class="task"><input type="checkbox" data-task="22"> Unit 14: Würfel und Zufall (<code>math.random</code>)</li>
+<li class="task"><input type="checkbox" data-task="23"> Unit 15: Funktionen, die zusammenarbeiten</li>
+<li class="task"><input type="checkbox" data-task="24"> Unit 16: <code>table.insert</code> und <code>table.remove</code></li>
+<li class="task"><input type="checkbox" data-task="25"> Unit 17: Welt aus Räumen</li>
+<li class="task"><input type="checkbox" data-task="26"> Unit 18: Bewegung in der Welt</li>
+<li class="task"><input type="checkbox" data-task="27"> Unit 19: Items aufheben und benutzen</li>
+<li class="task"><input type="checkbox" data-task="28"> Unit 20: 🐉 Mega-Projekt — Die Höhle des Enderdrachen</li>
 </ul>
 <h3>Phase 3 — Eigene Mod für Luanti / Mineclonia</h3>
 <ul>
-<li class="task"><input type="checkbox" data-task="21"> Unit 21: Was ist eine Mod?</li>
-<li class="task"><input type="checkbox" data-task="22"> Unit 22: Hello, Luanti!</li>
-<li class="task"><input type="checkbox" data-task="23"> Unit 23: Begrüßung im Chat</li>
-<li class="task"><input type="checkbox" data-task="24"> Unit 24: <code>local</code> in Mods — jetzt wird's ernst</li>
-<li class="task"><input type="checkbox" data-task="25"> Unit 25: Eigene Chat-Befehle</li>
-<li class="task"><input type="checkbox" data-task="26"> Unit 26: Befehle mit Zufall</li>
-<li class="task"><input type="checkbox" data-task="27"> Unit 27: Eigene Blöcke (<code>register_node</code>)</li>
-<li class="task"><input type="checkbox" data-task="28"> Unit 28: Pixel-Art — Eigene Texturen</li>
-<li class="task"><input type="checkbox" data-task="29"> Unit 29: Licht, Sounds, Transparenz</li>
-<li class="task"><input type="checkbox" data-task="30"> Unit 30: Groups und Drops</li>
-<li class="task"><input type="checkbox" data-task="31"> Unit 31: Eigene Items (Craftitems)</li>
-<li class="task"><input type="checkbox" data-task="32"> Unit 32: Items mit eigener Aktion (<code>on_use</code>)</li>
-<li class="task"><input type="checkbox" data-task="33"> Unit 33: Crafting-Rezepte — geformt</li>
-<li class="task"><input type="checkbox" data-task="34"> Unit 34: Crafting-Rezepte — ungeformt</li>
-<li class="task"><input type="checkbox" data-task="35"> Unit 35: Callbacks — Spieler-Ereignisse</li>
-<li class="task"><input type="checkbox" data-task="36"> Unit 36: Callbacks — Block-Ereignisse</li>
-<li class="task"><input type="checkbox" data-task="37"> Unit 37: <code>globalstep</code> und ABMs</li>
-<li class="task"><input type="checkbox" data-task="38"> Unit 38: Bugs finden — Logs und Debugging</li>
-<li class="task"><input type="checkbox" data-task="39"> Unit 39: 🪄 Mega-Projekt Teil 1 — Die Magie-Mod</li>
-<li class="task"><input type="checkbox" data-task="40"> Unit 40: ✨ Mega-Projekt Teil 2 — Zauberstab, Funken, Chat</li>
+<li class="task"><input type="checkbox" data-task="29"> Unit 21: Was ist eine Mod?</li>
+<li class="task"><input type="checkbox" data-task="30"> Unit 22: Hello, Luanti!</li>
+<li class="task"><input type="checkbox" data-task="31"> Unit 23: Begrüßung im Chat</li>
+<li class="task"><input type="checkbox" data-task="32"> Unit 24: <code>local</code> in Mods — jetzt wird's ernst</li>
+<li class="task"><input type="checkbox" data-task="33"> Unit 25: Eigene Chat-Befehle</li>
+<li class="task"><input type="checkbox" data-task="34"> Unit 26: Befehle mit Zufall</li>
+<li class="task"><input type="checkbox" data-task="35"> Unit 27: Eigene Blöcke (<code>register_node</code>)</li>
+<li class="task"><input type="checkbox" data-task="36"> Unit 28: Pixel-Art — Eigene Texturen</li>
+<li class="task"><input type="checkbox" data-task="37"> Unit 29: Licht, Sounds, Transparenz</li>
+<li class="task"><input type="checkbox" data-task="38"> Unit 30: Groups und Drops</li>
+<li class="task"><input type="checkbox" data-task="39"> Unit 31: Eigene Items (Craftitems)</li>
+<li class="task"><input type="checkbox" data-task="40"> Unit 32: Items mit eigener Aktion (<code>on_use</code>)</li>
+<li class="task"><input type="checkbox" data-task="41"> Unit 33: Crafting-Rezepte — geformt</li>
+<li class="task"><input type="checkbox" data-task="42"> Unit 34: Crafting-Rezepte — ungeformt</li>
+<li class="task"><input type="checkbox" data-task="43"> Unit 35: Callbacks — Spieler-Ereignisse</li>
+<li class="task"><input type="checkbox" data-task="44"> Unit 36: Callbacks — Block-Ereignisse</li>
+<li class="task"><input type="checkbox" data-task="45"> Unit 37: <code>globalstep</code> und ABMs</li>
+<li class="task"><input type="checkbox" data-task="46"> Unit 38: Bugs finden — Logs und Debugging</li>
+<li class="task"><input type="checkbox" data-task="47"> Unit 39: 🪄 Mega-Projekt Teil 1 — Die Magie-Mod</li>
+<li class="task"><input type="checkbox" data-task="48"> Unit 40: ✨ Mega-Projekt Teil 2 — Zauberstab, Funken, Chat</li>
 </ul>
 <hr />
 <p><em>Viel Erfolg beim Coden! 🟩⛏️</em></p>
@@ -421,7 +436,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </section>
 <section id="phase1-README">
 <h1>🎮 Phase 1 — Crafting mit Code</h1>
-<p>Ein Lua-Crashkurs im Minecraft-Stil. Jede Unit ist eine kleine "Quest" mit Erklärung, Beispiel und einer <strong>Aufgabe zum Ausprobieren</strong>. Am Ende von Phase 1 kannst Du kleine Programme und ein eigenes Mini-Spiel bauen.</p>
+<p>Ein Lua-Crashkurs im Minecraft-Stil. Jede Unit ist eine kleine "Quest" mit Erklärung, Beispiel und einer <strong>Aufgabe zum Ausprobieren</strong> — bewusst kurz gehalten: Eine Unit ist eine Sitzung, danach ist Feierabend verdient. Die ½-Units gehören zur Unit davor, sind aber eine eigene Sitzung. Am Ende von Phase 1 kannst Du kleine Programme und ein eigenes Mini-Spiel bauen.</p>
 <blockquote>
 <p><strong>Vorbereitung:</strong> <a href="#setup">Setup</a> durcharbeiten — VSCodium und Lua müssen laufen.</p>
 </blockquote>
@@ -458,12 +473,22 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <tr>
 <td><a href="#phase1-unit04-eingaben">4</a></td>
 <td>Chat mit dem Spieler</td>
-<td><code>io.read</code>, <code>tonumber</code></td>
+<td><code>io.read</code></td>
+</tr>
+<tr>
+<td><a href="#phase1-unit04b-schmelzofen">4½</a></td>
+<td>Der Schmelzofen</td>
+<td>Schilder vs. Zahlen, <code>tonumber</code></td>
 </tr>
 <tr>
 <td><a href="#phase1-unit05-if-else">5</a></td>
 <td>Türen mit Redstone</td>
-<td><code>if</code> / <code>elseif</code> / <code>else</code></td>
+<td>Vergleiche, <code>if</code> / <code>else</code></td>
+</tr>
+<tr>
+<td><a href="#phase1-unit05b-tueren-gang">5½</a></td>
+<td>Der Türen-Gang</td>
+<td><code>elseif</code>, Schild-Falle</td>
 </tr>
 <tr>
 <td><a href="#phase1-unit06-for-schleifen">6</a></td>
@@ -471,23 +496,48 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <td><code>for</code>-Schleifen</td>
 </tr>
 <tr>
+<td><a href="#phase1-unit06b-rechnen-im-takt">6½</a></td>
+<td>Rechnen im Takt</td>
+<td>mit <code>i</code> rechnen, Schrittweite</td>
+</tr>
+<tr>
 <td><a href="#phase1-unit07-while-schleifen">7</a></td>
 <td>Warten auf den Tag</td>
-<td><code>while</code>-Schleifen</td>
+<td><code>while</code>, Endlos-Schleifen</td>
+</tr>
+<tr>
+<td><a href="#phase1-unit07b-trainingslager">7½</a></td>
+<td>Trainingslager</td>
+<td>Übung: sammeln mit <code>while</code></td>
 </tr>
 <tr>
 <td><a href="#phase1-unit08-funktionen">8</a></td>
 <td>Eigene Crafting-Rezepte</td>
-<td>Funktionen, <code>return</code></td>
+<td>Funktionen, Parameter</td>
+</tr>
+<tr>
+<td><a href="#phase1-unit08b-ausgabe-slot">8½</a></td>
+<td>Der Ausgabe-Slot</td>
+<td><code>return</code></td>
 </tr>
 <tr>
 <td><a href="#phase1-unit09-tables">9</a></td>
 <td>Truhen mit vielen Slots</td>
-<td>Tables (Listen)</td>
+<td>Tables (Listen), <code>#</code></td>
+</tr>
+<tr>
+<td><a href="#phase1-unit09b-for-trifft-truhe">9½</a></td>
+<td><code>for</code> trifft Truhe</td>
+<td>Schleifen über Tables, <code>table.insert</code></td>
 </tr>
 <tr>
 <td><a href="#phase1-unit10-erz-rate-spiel">10</a></td>
-<td>🎮 Mega-Projekt</td>
+<td>🎮 Mega-Projekt, Teil 1</td>
+<td>Türsteher + Bewertung</td>
+</tr>
+<tr>
+<td><a href="#phase1-unit10b-erz-rate-spiel-2">10½</a></td>
+<td>🎮 Mega-Projekt, Teil 2</td>
 <td><code>math.random</code> + alles zusammen</td>
 </tr>
 </tbody>
@@ -816,7 +866,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <section id="phase1-unit04-eingaben">
 <h1>⌨️ Unit 4: Chat mit dem Spieler — <code>io.read</code></h1>
 <h3>Was lernen wir?</h3>
-<p>Bisher hat das Programm nur geredet. Jetzt soll es <strong>zuhören</strong>. Mit <code>io.read()</code> wartet das Programm, bis Du etwas ins Terminal eintippst und Enter drückst.</p>
+<p>Bisher hat das Programm nur geredet. Jetzt soll es <strong>zuhören</strong>. Mit <code>io.read()</code> wartet das Programm, bis Du etwas ins Terminal eintippst und Enter drückst — genau eine Sache, und die kannst Du heute komplett.</p>
 <h3>Beispiel</h3>
 <div class="codehilite"><pre><code><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wie heißt Du?&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">io.read</span><span class="p">()</span>
@@ -824,6 +874,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span></code></pre></div>
 
 <p>Wenn Du das mit <code>lua datei.lua</code> startest, bleibt das Programm stehen und wartet — der Cursor blinkt im Terminal. Tippe Deine Antwort und drücke Enter.</p>
+<p>Was da passiert, kennst Du fast alles schon: <code>io.read()</code> holt Deine Antwort ab, und <code>local name = ...</code> legt sie in einen Slot (Unit 2). Ab da ist es eine ganz normale Variable — zusammenkleben mit <code>..</code>, ausgeben mit <code>print</code>.</p>
+<h3>🧪 Experiment: Das Programm wartet wirklich</h3>
+<p>Starte das Beispiel und tippe erstmal … nichts. Das Programm läuft nicht weiter — es wartet geduldig auf Dich, bis Du Enter drückst. Und was passiert wohl, wenn Du als Namen etwas völlig Verrücktes eingibst, mit Leerzeichen und allem? Probier's aus — <code>io.read()</code> nimmt alles, was Du ihm gibst.</p>
+<h3>🎯 Quest 4.1: Der Begrüßungs-Bot</h3>
+<p>Schreibe ein Programm:
+1. Fragt nach dem Spielernamen
+2. Fragt nach dem Lieblings-Mob
+3. Antwortet: "Hallo NAME, MOB sind auch meine Favoriten!"</p>
+<h3>🏆 Bonus-Quest: Der Interview-Bot</h3>
+<p>Erinnerst Du Dich an den Steckbrief aus Quest 2.1? Damals standen die Werte fest im Programm. Baue ihn jetzt als Interview: Frag nach Name, Welt und Werkzeug — und gib dann den Steckbrief mit den <strong>echten Antworten</strong> aus.</p>
+</section>
+<section id="phase1-unit04b-schmelzofen">
+<h1>🔥 Unit 4½: Der Schmelzofen — <code>tonumber</code></h1>
+<h3>Was lernen wir?</h3>
+<p>In Unit 4 hat Dein Programm Antworten entgegengenommen. Heute klären wir, <strong>was</strong> da eigentlich ankommt — und warum man damit noch nicht rechnen kann.</p>
 <h3>Zwei Sorten von Dingen: Schilder und Zahlen</h3>
 <p>In Lua gibt es (unter anderem) zwei Sorten von Dingen:</p>
 <ul>
@@ -855,13 +920,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <p>💡 <strong>Ehrlich gesagt:</strong> Lua ist manchmal schlau und rät richtig — <code>"12" + 1</code> funktioniert sogar, Lua schmilzt das Schild heimlich selbst. Aber verlass Dich <strong>nicht</strong> darauf! Beim Zusammenkleben hast Du gerade gesehen, dass es schiefgeht — und beim Vergleichen (kommt in Unit 5) geht es garantiert schief: Für Lua ist das Schild <code>"12"</code> niemals gleich der Zahl <code>12</code>. Profi-Regel: <strong>Schilder mit Zahlen drauf immer erst schmelzen.</strong></p>
 <p>🔍 <strong>Detektiv-Trick:</strong> Mit <code>print(type(irgendwas))</code> verrät Dir Lua die Sorte — <code>string</code> heißt Schild (Text), <code>number</code> heißt echte Zahl. Probier mal <code>print(type("5"))</code> und <code>print(type(5))</code>.</p>
 </blockquote>
-<h3>🎯 Quest 4.1: Der Begrüßungs-Bot</h3>
-<p>Schreibe ein Programm:
-1. Fragt nach dem Spielernamen
-2. Fragt nach dem Lieblings-Mob
-3. Antwortet: "Hallo NAME, MOB sind auch meine Favoriten!"</p>
-<p>(Hier ist alles Text — kein Schmelzen nötig.)</p>
-<h3>🎯 Quest 4.2: Repariere den Addierer</h3>
+<h3>🎯 Quest 4½.1: Repariere den Addierer</h3>
 <p>Nimm den kaputten Zahlen-Addierer aus dem Experiment und <strong>repariere ihn mit <code>tonumber</code></strong>, sodass bei <code>3</code> und <code>4</code> wirklich <code>7</code> rauskommt. Teste auch andere Zahlen!</p>
 <h3>🏆 Bonus-Quest: XP-Rechner</h3>
 <p>Frage nach dem aktuellen Level und dem Ziel-Level des Spielers. Gib aus, wie viele Level noch fehlen. Vergiss den Schmelzofen nicht!</p>
@@ -953,8 +1012,20 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="kr">end</span>
 </span></code></pre></div>
 
+<p>Ändere die 3 mal in eine 1 und starte neu — jetzt geht die andere Tür auf. Genau so testet man beide Wege!</p>
+<h3>🎯 Quest 5.1: Der Hunger-Warner</h3>
+<p>Schreibe ein Programm mit einem Slot <code>hunger</code> (Wert 0 bis 10, fest im Code):
+- Bei 3 oder weniger: "Schnell, iss ein Steak!"
+- Sonst: "Alles gut, weiter geht's!"</p>
+<p>Teste <strong>beide</strong> Türen, indem Du den Wert im Code änderst und neu startest.</p>
+<h3>🏆 Bonus-Quest: Creeper-Alarm</h3>
+<p>Ein Slot <code>abstand</code> sagt, wie viele Blöcke der Creeper entfernt ist. Unter 5 Blöcken: "RENN WEG!" — sonst: "Noch sicher." Welches Vergleichszeichen brauchst Du hier?</p>
+</section>
+<section id="phase1-unit05b-tueren-gang">
+<h1>🗝️ Unit 5½: Der Türen-Gang — <code>elseif</code></h1>
+<h3>Was lernen wir?</h3>
+<p>Mit <code>if</code> und <code>else</code> hast Du zwei Türen. Aber was, wenn es mehr als zwei Möglichkeiten gibt? Heute bauen wir einen ganzen <strong>Gang voller Türen</strong>.</p>
 <h3>Mehrere Türen: <code>elseif</code></h3>
-<p>Mit <code>elseif</code> baust Du einen ganzen Gang voller Türen:</p>
 <div class="codehilite"><pre><code><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welche Welt? (overworld / nether / end)&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">welt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">io.read</span><span class="p">()</span>
 </span><span class="zeile">
@@ -970,8 +1041,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span></code></pre></div>
 
 <p><strong>Wichtig: Lua prüft von oben nach unten</strong> — und nimmt die <strong>erste Tür, die aufgeht</strong>. Alle Türen danach werden gar nicht mehr angeschaut. Das letzte <code>else</code> ist die Notausgangs-Tür: Sie geht auf, wenn alle anderen zu blieben.</p>
+<p>Und noch etwas fällt auf: Der ganze Gang braucht nur <strong>ein</strong> <code>end</code> — egal wie viele <code>elseif</code>-Türen drinstecken.</p>
 <h3>⚠️ Die Schild-Falle beim Vergleichen</h3>
-<p>Erinnerst Du Dich an Unit 4? Jetzt kommt die angekündigte Falle. Probier aus:</p>
+<p>Erinnerst Du Dich an Unit 4½? Jetzt kommt die angekündigte Falle. Probier aus:</p>
 <div class="codehilite"><pre><code><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -979,7 +1051,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <p>Was heißt das für Deine Programme?
 - Vergleichst Du <strong>Text mit Text</strong> (wie oben <code>welt == "nether"</code>) — alles gut, Schild gegen Schild. ✅
 - Willst Du eine <strong>Zahl</strong> aus <code>io.read()</code> vergleichen — erst durch den Schmelzofen: <code>local herzen = tonumber(io.read())</code>. Sonst ist Deine Bedingung immer falsch, und Du suchst ewig den Fehler. 🔥</p>
-<h3>🎯 Quest 5.1: Der Mob-Bestimmer</h3>
+<h3>🎯 Quest 5½.1: Der Mob-Bestimmer</h3>
 <p>Frage nach einem Mob-Namen. Gib aus:
 - "zombie" → "Untot, fürchtet Sonne"
 - "creeper" → "VORSICHT, GEHT WEG!"
@@ -1041,25 +1113,28 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </table>
 <p>Und das <code>end</code> am Schluss kennst Du schon: Truhe zu, Schleife fertig.</p>
 <p>Stell Dir <code>i</code> wie einen Freund vor, der beim Spielen die <strong>Runden mitzählt</strong> und in jeder Runde die aktuelle Zahl ruft: In Runde 1 ist <code>i</code> gleich 1, in Runde 2 gleich 2 … und nach Runde 5 hört er auf.</p>
-<h3>🤔 Warum steht da kein <code>local</code> vor dem <code>i</code>?</h3>
-<p>Gute Frage! <code>local</code> ist der Stempel für Slots, die <strong>Du selbst</strong> anlegst. Den Rundenzähler legst aber nicht Du an — <strong>die Schleife bringt ihren eigenen Zähler mit</strong>. Im <code>for</code>-Rezept ist schon eingebaut: "Ich erschaffe mir einen Zähler, der gehört nur mir, und wenn ich fertig bin, nehme ich ihn wieder mit." Wie der rundenzählende Freund, der seinen eigenen Strichlisten-Zettel mitbringt und nach dem Spiel wieder einsteckt.</p>
-<p>Beides kannst Du selbst nachprüfen:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="kr">for</span><span class="w"> </span><span class="kd">local</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="kr">do</span><span class="w">   </span><span class="c1">-- Lua meckert sofort: Syntaxfehler!</span>
+<blockquote>
+<p>💡 <strong>Zwei Dinge zum Rundenzähler:</strong> Erstens braucht er <strong>kein <code>local</code></strong> — die Schleife bringt ihren eigenen Zähler mit und nimmt ihn am Ende wieder mit (probier nach der Schleife mal <code>print(i)</code> — es kommt <code>nil</code>, der Zähler ist spurlos weg!). Zweitens heißt er bei <strong>Profis auf der ganzen Welt einfach <code>i</code></strong> — eine Absprache, wie beim Kleinschreiben der Namen: Wer <code>for i = ...</code> liest, weiß sofort "aha, der Rundenzähler".</p>
+</blockquote>
+<h3>🎯 Quest 6.1: Die Mauer</h3>
+<p>Baue eine Mauer aus 10 Blöcken:</p>
+<div class="codehilite"><pre><code><span class="zeile">Baue eine Mauer aus 10 Blöcken:
+</span><span class="zeile">Block 1 platziert
+</span><span class="zeile">Block 2 platziert
+</span><span class="zeile">...
+</span><span class="zeile">Block 10 platziert
+</span><span class="zeile">Mauer fertig!
 </span></code></pre></div>
 
-<p>Ein <code>local</code> ist dort sogar <strong>verboten</strong> — es wäre doppelt gemoppelt. Und:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="kr">do</span>
-</span><span class="zeile"><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Runde &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">i</span><span class="p">)</span>
-</span><span class="zeile"><span class="kr">end</span>
-</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nv">i</span><span class="p">)</span><span class="w">   </span><span class="c1">-- nil - der Zähler ist nach der Schleife spurlos weg!</span>
-</span></code></pre></div>
-
-<p><code>nil</code> ("nichts") kennst Du schon vom Schmelzofen: Nach der Schleife existiert der Zähler einfach nicht mehr.</p>
-<h3>💡 Profi-Regel: Der Zähler heißt <code>i</code></h3>
-<p>Theoretisch darfst Du den Rundenzähler nennen, wie Du willst (<code>runde</code>, <code>block</code>, …). Aber <strong>Profis nehmen für einfache Zählschleifen fast immer <code>i</code></strong> — kurz für "Index". Das ist eine weltweite Absprache unter Programmierern: Wer irgendwo <code>for i = ...</code> liest, weiß sofort "aha, der Rundenzähler", ohne nachzudenken. Deshalb gewöhnen wir uns das gleich an.</p>
-<p>(Und falls mal zwei Schleifen ineinanderstecken: Die zweite heißt dann <code>j</code>, die dritte <code>k</code> — auch das ist Absprache.)</p>
+<p>Achte darauf: Die erste und die letzte Zeile stehen <strong>außerhalb</strong> der Schleife — sie sollen ja nur einmal erscheinen. Danach: Mach die Mauer 25 Blöcke lang. Wie viele Zeichen musstest Du dafür ändern?</p>
+<h3>🏆 Bonus-Quest: Bis 100</h3>
+<p>Lass eine Schleife von 1 bis 100 zählen und alle Zahlen ausgeben. Eine Sekunde Tipparbeit — und stell Dir vor, Du hättest 100 <code>print</code>-Zeilen geschrieben!</p>
+</section>
+<section id="phase1-unit06b-rechnen-im-takt">
+<h1>🧮 Unit 6½: Rechnen im Takt — mehr aus <code>for</code> herausholen</h1>
+<h3>Was lernen wir?</h3>
+<p>Der Rundenzähler <code>i</code> kann mehr als nur zählen: Du kannst in jeder Runde <strong>mit ihm rechnen</strong>. Das macht die Schleife erst richtig mächtig.</p>
 <h3>Mit dem Rundenzähler rechnen</h3>
-<p>Der eigentliche Trick: Du kannst <code>i</code> in jeder Runde <strong>zum Rechnen benutzen</strong>.</p>
 <div class="codehilite"><pre><code><span class="zeile"><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="kr">do</span>
 </span><span class="zeile"><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="nv">i</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; Zombies droppen &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; Fleisch&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="kr">end</span>
@@ -1081,17 +1156,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span></code></pre></div>
 
 <p>Das ist das Zählen in 5er-Schritten: Die dritte Zahl sagt, <strong>wie groß der Sprung</strong> von Runde zu Runde ist. Lässt Du sie weg, springt die Schleife ganz normal in 1er-Schritten.</p>
-<h3>Beispiel</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Baue eine Mauer aus 10 Blöcken:&quot;</span><span class="p">)</span>
-</span><span class="zeile"><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="kr">do</span>
-</span><span class="zeile"><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Block &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; platziert&quot;</span><span class="p">)</span>
-</span><span class="zeile"><span class="kr">end</span>
-</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mauer fertig!&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-
-<h3>🎯 Quest 6.1: Die Einmaleins-Maschine</h3>
+<h3>🎯 Quest 6½.1: Die Einmaleins-Maschine</h3>
 <p>Baue ein Programm, das Dir beim Einmaleins-Üben hilft:
-1. Es fragt: "Welche Reihe willst Du üben?" (Schmelzofen aus Unit 4 nicht vergessen!)
+1. Es fragt: "Welche Reihe willst Du üben?" (Schmelzofen aus Unit 4½ nicht vergessen!)
 2. Dann druckt es die komplette Reihe von 1 bis 10:</p>
 <div class="codehilite"><pre><code><span class="zeile">Welche Reihe willst Du üben? 7
 </span><span class="zeile">1 x 7 = 7
@@ -1187,14 +1254,24 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span></code></pre></div>
 
 <p>Das Programm schreit endlos "Aua!", denn <code>herzen</code> bleibt immer 10 — die Frage <code>herzen &gt; 0</code> ist für alle Ewigkeit wahr. <strong>Jetzt drück Strg+C</strong> — den Not-Aus-Knopf aus dem Setup. Geschafft? Glückwunsch, Du hast Deinen ersten Endlos-Bug überlebt. 😄</p>
-<p>Die Reparatur: In der Schleife muss <code>herzen = herzen - 1</code> stehen, damit die Frage irgendwann falsch wird. Bau es ein und schau, wie das Programm jetzt von selbst aufhört.</p>
-<h3>🎯 Quest 7.1: Diamanten sammeln</h3>
+<h3>🎯 Quest 7.1: Repariere die Endlos-Schleife</h3>
+<p>In der Schleife muss <code>herzen = herzen - 1</code> stehen, damit die Frage irgendwann falsch wird. Bau es ein und lass zusätzlich in jeder Runde die übrigen Herzen ausgeben. Nach der Schleife: "Umgefallen!" — und diesmal hört das Programm von selbst auf.</p>
+<p>Damit hast Du heute beides erlebt: den gefürchtetsten Schleifen-Fehler überhaupt — und seine Reparatur. Mehr braucht es für heute nicht.</p>
+<h3>🏆 Bonus-Quest: Der Zeitraffer</h3>
+<p>Lass einen Slot <code>tag</code> von 1 hochzählen, solange <code>tag &lt;= 7</code>, und gib jede Runde "Tag X bricht an" aus. Danach: "Eine ganze Minecraft-Woche geschafft!"</p>
+</section>
+<section id="phase1-unit07b-trainingslager">
+<h1>⛏️ Unit 7½: Trainingslager — sammeln mit <code>while</code></h1>
+<h3>Was lernen wir?</h3>
+<p>Heute: <strong>nichts Neues!</strong> Du hast alles schon im Gürtel — <code>while</code> (Unit 7), <code>if</code> (Unit 5), <code>io.read</code> (Unit 4) und die Sammler-Zeile <code>x = x + 1</code>. Heute wird nur gebaut. Solche Trainings-Runden machen Profis übrigens ständig: Ein Werkzeug sitzt erst, wenn man es benutzt hat.</p>
+<h3>🎯 Quest 7½.1: Diamanten sammeln</h3>
 <p>Schreibe ein Programm:
 - Start mit 0 Diamanten
 - So lange weniger als 5 Diamanten, fragt es: "Diamant gefunden? (j/n)"
-- Bei <code>j</code> wird ein Diamant dazugezählt und ausgegeben
+- Bei <code>j</code> wird ein Diamant dazugezählt und ausgegeben, wie viele Du hast
 - Bei <code>n</code> sagt es "Weitersuchen!"
 - Wenn 5 erreicht: "Genug für eine Diamant-Spitzhacke!"</p>
+<p>Tipp: In der <code>while</code>-Schleife steckt ein <code>if</code> — zähl am Ende Deine <code>end</code>s: Schleife und <code>if</code> brauchen je eins.</p>
 <h3>🏆 Bonus-Quest: Das Weizen-Wunder</h3>
 <p>Du startest mit <strong>1 Weizen</strong>. Jede Ernte <strong>verdoppelt</strong> Deinen Vorrat. Wie oft musst Du ernten, bis Du <strong>über 100</strong> Weizen hast?</p>
 <p>Schreibe ein Programm, das so lange verdoppelt (<code>weizen = weizen * 2</code>), wie <code>weizen &lt; 100</code> ist — und dabei die Ernten mitzählt. Gib am Ende aus, wie viele Ernten es waren.</p>
@@ -1226,6 +1303,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li><code>function gruss(name) ... end</code> = Rezept <strong>aufschreiben</strong> (passiert still)</li>
 <li><code>gruss("Steve")</code> = Rezept <strong>benutzen</strong> (jetzt läuft der Code darin!)</li>
 </ul>
+<blockquote>
+<p>💡 <strong>Reihenfolge zählt:</strong> Das Rezept muss <strong>über</strong> dem ersten Aufruf stehen. Lua liest Deine Datei von oben nach unten und kennt nur Rezepte, die es schon gelesen hat.</p>
+</blockquote>
 <h3>Die Lücke im Rezept: Parameter</h3>
 <p>Was ist dieses <code>name</code> in den Klammern? Das ist eine <strong>Lücke im Rezept</strong>. Beim Aufschreiben lässt Du sie offen — beim Benutzen wird sie gefüllt. In Zeitlupe, was bei <code>gruss("Steve")</code> passiert:</p>
 <ol>
@@ -1245,6 +1325,20 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span></code></pre></div>
 
 <p>Die Reihenfolge zählt: Das Erste landet in der ersten Lücke, das Zweite in der zweiten.</p>
+<h3>🎯 Quest 8.1: Mob-Begrüßer</h3>
+<p>Schreibe eine Funktion <code>mob_sagt(mob, text)</code> mit zwei Lücken, die ausgibt:</p>
+<div class="codehilite"><pre><code><span class="zeile">[Creeper] sagt: Sssss...
+</span><span class="zeile">[Zombie] sagt: Uaaaargh!
+</span></code></pre></div>
+
+<p>Ruf sie für mindestens drei verschiedene Mobs auf.</p>
+<h3>🏆 Bonus-Quest: Der Zeilen-Zähler</h3>
+<p>Ruf Deine Funktion für <strong>fünf</strong> Mobs auf — das ist pro Mob nur eine Zeile. Und jetzt zähl nach: Wie viele Zeilen hättest Du <strong>ohne</strong> das Rezept getippt? Genau dafür gibt es Funktionen.</p>
+</section>
+<section id="phase1-unit08b-ausgabe-slot">
+<h1>📤 Unit 8½: Der Ausgabe-Slot — <code>return</code></h1>
+<h3>Was lernen wir?</h3>
+<p>Deine Rezepte aus Unit 8 haben bisher nur Schilder hochgehalten (<code>print</code>). Heute lernen sie, ein <strong>Ergebnis zurückzugeben</strong>, mit dem das Programm weiterrechnen kann.</p>
 <h3>Der Ausgabe-Slot: <code>return</code></h3>
 <p>Denk an die Werkbank: Zutaten rein → Rezept läuft → <strong>das fertige Item liegt im Ausgabe-Slot</strong>. Genau das macht <code>return</code>:</p>
 <div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">herzen_in_leben</span><span class="p">(</span><span class="vi">herzen</span><span class="p">)</span>
@@ -1263,23 +1357,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li><strong><code>return</code></strong> legt das Ergebnis in den <strong>Ausgabe-Slot</strong> der Werkbank: Der Spieler sieht erstmal nichts — aber das Programm kann das Item abholen und weiterverwenden.</li>
 </ul>
 <p>Und: Sobald <code>return</code> ausgeführt wird, ist das Rezept <strong>sofort fertig</strong>. Zeilen, die in der Funktion danach kommen, laufen nicht mehr.</p>
-<blockquote>
-<p>💡 <strong>Reihenfolge zählt:</strong> Das Rezept muss <strong>über</strong> dem ersten Aufruf stehen. Lua liest Deine Datei von oben nach unten und kennt nur Rezepte, die es schon gelesen hat.</p>
-</blockquote>
-<h3>🎯 Quest 8.1: Schaden-Rechner</h3>
+<h3>🧪 Experiment: Das unsichtbare Ergebnis</h3>
+<p>Tippe nur das ab:</p>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">herzen_in_leben</span><span class="p">(</span><span class="vi">herzen</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">  </span><span class="kr">return</span><span class="w"> </span><span class="nv">herzen</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span>
+</span><span class="zeile"><span class="kr">end</span>
+</span><span class="zeile">
+</span><span class="zeile"><span class="fm">herzen_in_leben</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></code></pre></div>
+
+<p>Es erscheint … nichts! Das Rezept ist gelaufen, die 20 lag im Ausgabe-Slot — aber niemand hat sie abgeholt. <code>return</code> zeigt eben nichts an. Erst <code>print(herzen_in_leben(10))</code> holt das Item ab und hält es hoch.</p>
+<h3>🎯 Quest 8½.1: Schaden-Rechner</h3>
 <p>Schreibe eine Funktion <code>schaden(waffe, treffer)</code> — zwei Lücken:
 - Holzschwert → 4 Schaden pro Treffer
 - Eisenschwert → 6 Schaden pro Treffer
 - Diamantschwert → 7 Schaden pro Treffer
 - In den Ausgabe-Slot (<code>return</code>) kommt: Schaden × Anzahl Treffer</p>
-<p>Teste sie mit verschiedenen Werten — z.B. <code>print(schaden("Eisenschwert", 3))</code>. Tipp: In der Funktion brauchst Du <code>if</code>/<code>elseif</code> aus Unit 5.</p>
-<h3>🏆 Bonus-Quest: Mob-Begrüßer</h3>
-<p>Schreibe eine Funktion <code>mob_sagt(mob, text)</code>, die ausgibt:</p>
-<div class="codehilite"><pre><code><span class="zeile">[Creeper] sagt: Sssss...
-</span><span class="zeile">[Zombie] sagt: Uaaaargh!
-</span></code></pre></div>
-
-<p>(Hier reicht <code>print</code> — es soll ja nur etwas angezeigt werden. Überleg kurz: Warum braucht diese Funktion kein <code>return</code>?)</p>
+<p>Teste sie mit verschiedenen Werten — z.B. <code>print(schaden("Eisenschwert", 3))</code>. Tipp: In der Funktion brauchst Du <code>if</code>/<code>elseif</code> aus Unit 5½.</p>
+<h3>🏆 Bonus-Quest: XP-Rechner als Rezept</h3>
+<p>Erinnerst Du Dich an den XP-Rechner aus Unit 4½? Bau ihn als Funktion: <code>fehlende_level(aktuell, ziel)</code> legt die Differenz in den Ausgabe-Slot. Überleg vorher: Braucht diese Funktion <code>print</code> oder <code>return</code> — und warum?</p>
 </section>
 <section id="phase1-unit09-tables">
 <h1>🧰 Unit 9: Truhen mit vielen Slots — Tables (Listen)</h1>
@@ -1321,14 +1417,33 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nv">inventar</span><span class="p">[</span><span class="mi">99</span><span class="p">])</span>
 </span></code></pre></div>
 
-<p><strong><code>nil</code></strong> — der alte Bekannte! Du kennst ihn vom Schmelzofen (Unit 4) und vom verschwundenen Rundenzähler (Unit 6): Wo nichts liegt, bekommst Du "nichts". Greifst Du in einen leeren Slot, meckert Lua nicht — es gibt Dir einfach <code>nil</code>. (Merk Dir das gut: In Phase 3 ist "aus Versehen in einen leeren Slot gegriffen" der häufigste Bug überhaupt.)</p>
+<p><strong><code>nil</code></strong> — der alte Bekannte! Du kennst ihn vom Schmelzofen (Unit 4½) und vom verschwundenen Rundenzähler (Unit 6): Wo nichts liegt, bekommst Du "nichts". Greifst Du in einen leeren Slot, meckert Lua nicht — es gibt Dir einfach <code>nil</code>. (Merk Dir das gut: In Phase 3 ist "aus Versehen in einen leeren Slot gegriffen" der häufigste Bug überhaupt.)</p>
 <h3>Das Zähl-Zeichen <code>#</code></h3>
 <p><code>#inventar</code> fragt die Truhe: <strong>"Wie viele Slots sind belegt?"</strong></p>
 <div class="codehilite"><pre><code><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du hast &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="o">#</span><span class="nv">inventar</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; Items.&quot;</span><span class="p">)</span><span class="w">   </span><span class="c1">-- 4</span>
 </span></code></pre></div>
 
-<h3>🌟 Der große Moment: <code>for</code> trifft Truhe</h3>
-<p>Jetzt verbinden sich zwei Dinge, die Du schon kennst — <strong>der Rundenzähler aus Unit 6 wird zur Slot-Nummer</strong>:</p>
+<h3>Slots ändern</h3>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">inventar</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Diamant-Spitzhacke&quot;</span><span class="w">  </span><span class="c1">-- Item in Slot 2 austauschen</span>
+</span></code></pre></div>
+
+<p>Slot überschreiben = altes Item raus, neues rein — genau wie bei normalen Variablen, nur eben in Slot Nummer 2 der Truhe.</p>
+<h3>🎯 Quest 9.1: Deine erste Truhe</h3>
+<ol>
+<li>Baue eine Truhe mit 5 Items, die Dein Spieler dabei hat</li>
+<li>Gib Slot 1, Slot 3 und Slot 5 einzeln aus</li>
+<li>Tausche das Item in Slot 2 gegen ein besseres aus und gib Slot 2 davor und danach aus</li>
+<li>Zum Schluss: "Die Truhe hat X Items" — mit dem Zähl-Zeichen</li>
+</ol>
+<h3>🏆 Bonus-Quest: Der letzte Slot</h3>
+<p>Was gibt wohl <code>print(inventar[#inventar])</code> aus? Überleg erst, dann probier es. Warum funktioniert dieser Trick bei <strong>jeder</strong> Truhe, egal wie voll sie ist?</p>
+</section>
+<section id="phase1-unit09b-for-trifft-truhe">
+<h1>🌟 Unit 9½: <code>for</code> trifft Truhe</h1>
+<h3>Was lernen wir?</h3>
+<p>Heute verbinden sich zwei Dinge, die Du schon gut kennst — der Rundenzähler aus Unit 6 und die Truhe aus Unit 9. Diese Kombination wirst Du ab jetzt <strong>ständig</strong> benutzen, bis in die Luanti-Mods von Phase 3.</p>
+<h3>Der große Moment: <code>for</code> trifft Truhe</h3>
+<p><strong>Der Rundenzähler wird zur Slot-Nummer:</strong></p>
 <div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">inventar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;Schwert&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Spitzhacke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Brot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Fackel&quot;</span><span class="p">}</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="nv">inventar</span><span class="w"> </span><span class="kr">do</span>
@@ -1344,21 +1459,20 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li><strong>Runde 4:</strong> <code>i</code> ist 4 → <code>inventar[4]</code> → "Fackel" — und <code>#inventar</code> ist 4, also Schluss.</li>
 </ul>
 <p><code>i</code> hat eine Doppelrolle: Es zählt die Runden <strong>und</strong> zeigt auf den passenden Slot. Und weil als Zielwert <code>#inventar</code> dasteht, passt sich die Schleife automatisch an — egal, wie voll die Truhe ist.</p>
-<h3>Slots ändern und anhängen</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">inventar</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Diamant-Spitzhacke&quot;</span><span class="w">  </span><span class="c1">-- Item in Slot 2 austauschen</span>
-</span><span class="zeile"><span class="nb">table.insert</span><span class="p">(</span><span class="nv">inventar</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Apfel&quot;</span><span class="p">)</span><span class="w">     </span><span class="c1">-- ins nächste freie Fach hinten legen</span>
+<h3>Anhängen mit <code>table.insert</code></h3>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nb">table.insert</span><span class="p">(</span><span class="nv">inventar</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Apfel&quot;</span><span class="p">)</span><span class="w">     </span><span class="c1">-- ins nächste freie Fach hinten legen</span>
 </span></code></pre></div>
 
-<p>Slot überschreiben = altes Item raus, neues rein. <code>table.insert</code> = Item ans Ende anhängen, die Truhe wird um einen Slot voller (und <code>#inventar</code> zählt automatisch mit).</p>
-<h3>🎯 Quest 9.1: Dein Inventar</h3>
-<p>Baue eine Truhe mit 5 Items, die Dein Spieler dabei hat. Gib sie als nummerierte Liste aus:</p>
+<p><code>table.insert</code> legt das Item ans Ende — die Truhe wird um einen Slot voller, und <code>#inventar</code> zählt automatisch mit. Häng mal etwas an und lass die Schleife danach nochmal laufen: Sie druckt den neuen Slot einfach mit, ohne dass Du sie ändern musst!</p>
+<h3>🎯 Quest 9½.1: Dein Inventar</h3>
+<p>Nimm Deine 5-Item-Truhe aus Quest 9.1 und gib sie als nummerierte Liste aus:</p>
 <div class="codehilite"><pre><code><span class="zeile">=== INVENTAR ===
 </span><span class="zeile">1. Diamantschwert
 </span><span class="zeile">2. Eisenspitzhacke
 </span><span class="zeile">...
 </span></code></pre></div>
 
-<p>Tipp: Genau dafür ist die "for trifft Truhe"-Zeile da.</p>
+<p>Tipp: Genau dafür ist die "for trifft Truhe"-Zeile da. Danach: Häng mit <code>table.insert</code> ein sechstes Item an und starte neu — die Liste wächst von selbst mit.</p>
 <h3>🏆 Bonus-Quest: Mob-Zoo</h3>
 <p>Eine Truhe mit 6 Mobs. Lass eine Schleife jeden Mob "Hallo!" sagen:</p>
 <div class="codehilite"><pre><code><span class="zeile">Zombie sagt: Hallo!
@@ -1367,9 +1481,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span></code></pre></div>
 </section>
 <section id="phase1-unit10-erz-rate-spiel">
-<h1>🎮 Unit 10: Mega-Projekt — Das Erz-Rate-Spiel</h1>
+<h1>🎮 Unit 10: Mega-Projekt Teil 1 — Das Erz-Rate-Spiel</h1>
 <p>Jetzt kommt alles zusammen: Dein erstes richtiges Spiel! Der Computer denkt sich ein Erz aus, und der Spieler muss raten, auf welcher Y-Höhe man es findet.</p>
 <p>Wir bauen es so, wie echte Spieleentwickler arbeiten: <strong>in Ausbaustufen</strong>. Jede Version ist ein fertiges, spielbares Spiel — erst wenn sie läuft, bauen wir die nächste. So siehst Du alle paar Minuten einen Erfolg statt am Ende einen Berg Tippfehler.</p>
+<p>Heute bauen wir Version 1 und 2 — in <a href="#phase1-unit10b-erz-rate-spiel-2">Unit 10½</a> lernt das Spiel dann würfeln.</p>
 <hr />
 <h2>🕹️ Version 1 — Es funktioniert!</h2>
 <p>Wir fangen klein an: <strong>ein</strong> festes Erz, <strong>eine</strong> Frage, richtig oder falsch. Alles darin kennst Du schon aus Unit 4 und 5:</p>
@@ -1386,7 +1501,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="kr">end</span>
 </span></code></pre></div>
 
-<p>Schau Dir die <strong>erste Tür</strong> an: Was passiert, wenn der Spieler "Diamant" statt einer Zahl eintippt? Der Schmelzofen liefert <code>nil</code> ("nichts") — und die erste Tür fängt genau das ab. Wir nennen so eine Prüfung den <strong>Türsteher</strong>: Er steht ganz vorne und lässt nur echte Zahlen zu den anderen Türen durch. (Türen-Reihenfolge aus Unit 5!)</p>
+<p>Schau Dir die <strong>erste Tür</strong> an: Was passiert, wenn der Spieler "Diamant" statt einer Zahl eintippt? Der Schmelzofen liefert <code>nil</code> ("nichts") — und die erste Tür fängt genau das ab. Wir nennen so eine Prüfung den <strong>Türsteher</strong>: Er steht ganz vorne und lässt nur echte Zahlen zu den anderen Türen durch. (Türen-Reihenfolge aus Unit 5½!)</p>
 <p><strong>▶️ Speichern, starten, spielen!</strong> Dreimal: einmal richtig raten, einmal falsch — und einmal absichtlich Buchstaben eingeben.</p>
 <hr />
 <h2>🕹️ Version 2 — Fairness: "nah dran" zählt</h2>
@@ -1417,12 +1532,20 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span></code></pre></div>
 
 <p>Zwei Dinge stecken hier drin:
-- Die <code>elseif</code>-Kaskade kennst Du aus Unit 5 — und die <strong>Türen-Reihenfolge</strong> zahlt sich aus: Wer die 0-Tür schafft, kommt gar nicht erst zur ≤10-Tür.
+- Die <code>elseif</code>-Kaskade kennst Du aus Unit 5½ — und die <strong>Türen-Reihenfolge</strong> zahlt sich aus: Wer die 0-Tür schafft, kommt gar nicht erst zur ≤10-Tür.
 - Der <strong>Türsteher steht jetzt außen herum</strong>: Erst wenn er eine echte Zahl durchgelassen hat, wird im <code>else</code>-Teil der Abstand berechnet und bewertet. Ein <code>if</code> im <code>if</code> — zähl die <code>end</code>s: Jedes braucht seins!</p>
 <p><strong>▶️ Speichern, starten, spielen!</strong> Teste alle vier Türen: genau richtig, knapp daneben, weiter weg, völlig daneben — und den Türsteher mit Buchstaben.</p>
 <h3>🔍 Detektiv-Aufgabe</h3>
 <p>Warum steht der Türsteher <strong>vor</strong> der Abstand-Rechnung und ist nicht einfach eine weitere Tür in der Kaskade? Finde es heraus: Lösche ihn testweise (nur das äußere <code>if versuch == nil ... else</code> und ein <code>end</code>) und tippe Buchstaben ein. <strong>Absturz!</strong> Lies die Fehlermeldung: <em>"attempt to perform arithmetic on a nil value"</em> — die Zeile <code>math.abs(versuch - tiefe)</code> kann mit "nichts" nicht rechnen. Deshalb muss der Türsteher zuschlagen, <strong>bevor</strong> gerechnet wird. Bau ihn wieder ein!</p>
 <hr />
+<hr />
+<h3>🎯 Quest 10.1: Spiele Version 1 und 2</h3>
+<p>Wichtigste Regel dieses Projekts: <strong>Bau erst weiter, wenn die aktuelle Version läuft.</strong> Spiele beide Versionen mehrmals durch und teste dabei alles: genau richtig, knapp daneben, weit daneben — und den Türsteher mit Buchstaben.</p>
+<p>💾 <strong>Speicherpunkt!</strong> Du hast ein komplettes, faires Quiz gebaut — mit Türsteher, Bewertung und allem. Perfekter Moment für Feierabend. Das Würfeln kommt in <a href="#phase1-unit10b-erz-rate-spiel-2">Unit 10½</a>.</p>
+</section>
+<section id="phase1-unit10b-erz-rate-spiel-2">
+<h1>🎲 Unit 10½: Mega-Projekt Teil 2 — Würfel, Runden, Punkte</h1>
+<p>Dein Spiel aus Unit 10 läuft — aber es fragt immer nur nach Diamant. Heute bekommt es die zwei Zutaten, die aus einem Quiz ein richtiges Spiel machen: <strong>Zufall</strong> und <strong>Punkte</strong>.</p>
 <h2>🕹️ Version 3 — Der Computer würfelt</h2>
 <p>Immer nur Diamant ist langweilig. Jetzt soll der Computer <strong>selbst ein Erz auswählen</strong>.</p>
 <h3>Neu: Der Würfel <code>math.random</code></h3>
@@ -1485,7 +1608,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <p>Ein richtiges Quiz hat mehrere Runden und einen Punktestand. Zwei Dinge kommen dazu:</p>
 <ol>
 <li><strong>Alles in eine Schleife packen:</strong> <code>for runde = 1, 3 do ... end</code> — drei Runden (Unit 6 lässt grüßen).</li>
-<li><strong>Punkte sammeln:</strong> <code>local punkte = 0</code> vor der Schleife, und in der Schleife z.B. <code>punkte = punkte + 2</code> — die Sammler-Zeile aus Unit 7! (Stapel raus, was drauf, Stapel zurück — genau wie beim Weizen-Wunder.)</li>
+<li><strong>Punkte sammeln:</strong> <code>local punkte = 0</code> vor der Schleife, und in der Schleife z.B. <code>punkte = punkte + 2</code> — die Sammler-Zeile aus Unit 7! (Stapel raus, was drauf, Stapel zurück — genau wie beim Weizen-Wunder aus Unit 7½.)</li>
 </ol>
 <p>Hier das komplette Spiel — <strong>nicht abtippen, sondern Dein Spiel umbauen</strong> und dann hiermit vergleichen:</p>
 <div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">erze</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;Kohle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Eisen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Gold&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Diamant&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Smaragd&quot;</span><span class="p">}</span>
@@ -1545,7 +1668,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 - Zähl die <code>end</code>s! Türsteher-<code>if</code>, Bewertungs-<code>if</code> und die <code>for</code>-Schleife brauchen je eins. Fehlt eins, meckert Lua mit <em>"'end' expected"</em> — dann von oben nach unten prüfen: Ist jede Truhe wieder zu?</p>
 <p><strong>▶️ Speichern, starten, durchspielen!</strong></p>
 <hr />
-<h3>🎯 Quest 10.1: Spiele jede Version</h3>
+<h3>🎯 Quest 10½.1: Spiele jede Version</h3>
 <p>Wichtigste Regel dieser Unit: <strong>Bau erst weiter, wenn die aktuelle Version läuft.</strong> Spiele jede Version mindestens einmal durch — und die fertige Version 4 ein paar Mal. Schaffst Du die 9 Punkte?</p>
 <h3>🏆 Version 5 — Deine Ideen</h3>
 <p>Das Spiel gehört jetzt Dir! Bau es weiter aus:
@@ -1555,7 +1678,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 - <strong>Spezial-Glückwunsch</strong>: Wer perfekt rät, bekommt eine Extra-Nachricht</p>
 <hr />
 <h2>🏅 Geschafft!</h2>
-<p>Damit ist Phase 1 abgeschlossen — Zeit für einen Blick auf die <a href="#README">Checkliste</a>. Du hast ein komplettes Spiel gebaut: Eingaben, Entscheidungen, Schleifen, Truhen und Zufall — alles aus zehn Units, in einem Programm. In <a href="#phase2-README">Phase 2</a> kommen Tables mit Namen, String-Tricks und ein großes Text-Adventure.</p>
+<p>Damit ist Phase 1 abgeschlossen — Zeit für einen Blick auf die <a href="#README">Checkliste</a>. Du hast ein komplettes Spiel gebaut: Eingaben, Entscheidungen, Schleifen, Truhen und Zufall — alles selbst gebaut, in einem Programm. In <a href="#phase2-README">Phase 2</a> kommen Tables mit Namen, String-Tricks und ein großes Text-Adventure.</p>
 </section>
 <section id="phase2-README">
 <h1>🗺️ Phase 2 — Vom Lehrling zum Abenteurer</h1>
@@ -1816,7 +1939,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <section id="phase2-unit14-zufall">
 <h1>🎲 Unit 14: Würfel und Zufall — <code>math.random</code> richtig nutzen</h1>
 <h3>Was lernen wir?</h3>
-<p>In Phase 1 (Unit 10) hatten wir <code>math.random(1, 5)</code> für das Erz-Quiz. Hier ein paar Profi-Tricks.</p>
+<p>In Phase 1 (Unit 10½) hatten wir <code>math.random(1, 5)</code> für das Erz-Quiz. Hier ein paar Profi-Tricks.</p>
 <h3>Würfel mit verschiedenen Seiten</h3>
 <div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">w6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">math.random</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span>
 </span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">w20</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">math.random</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span>
@@ -3492,7 +3615,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <script>
 // Checkliste: Haken im Browser speichern (localStorage)
 document.querySelectorAll('li.task input').forEach(function (box) {
-  const key = 'lernlua-task-' + box.dataset.task;
+  // Schlüssel ist der Text der Zeile - so verrutschen gespeicherte Haken
+  // nicht, wenn später Zeilen in die Liste eingefügt werden
+  const key = 'lernlua-task-' + box.parentElement.textContent.trim();
   box.checked = localStorage.getItem(key) === '1';
   box.addEventListener('change', function () {
     localStorage.setItem(key, box.checked ? '1' : '0');

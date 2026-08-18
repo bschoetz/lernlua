@@ -69,22 +69,13 @@ end
 
 Das Programm schreit endlos "Aua!", denn `herzen` bleibt immer 10 — die Frage `herzen > 0` ist für alle Ewigkeit wahr. **Jetzt drück Strg+C** — den Not-Aus-Knopf aus dem Setup. Geschafft? Glückwunsch, Du hast Deinen ersten Endlos-Bug überlebt. 😄
 
-Die Reparatur: In der Schleife muss `herzen = herzen - 1` stehen, damit die Frage irgendwann falsch wird. Bau es ein und schau, wie das Programm jetzt von selbst aufhört.
+### 🎯 Quest 7.1: Repariere die Endlos-Schleife
+In der Schleife muss `herzen = herzen - 1` stehen, damit die Frage irgendwann falsch wird. Bau es ein und lass zusätzlich in jeder Runde die übrigen Herzen ausgeben. Nach der Schleife: "Umgefallen!" — und diesmal hört das Programm von selbst auf.
 
-### 🎯 Quest 7.1: Diamanten sammeln
-Schreibe ein Programm:
-- Start mit 0 Diamanten
-- So lange weniger als 5 Diamanten, fragt es: "Diamant gefunden? (j/n)"
-- Bei `j` wird ein Diamant dazugezählt und ausgegeben
-- Bei `n` sagt es "Weitersuchen!"
-- Wenn 5 erreicht: "Genug für eine Diamant-Spitzhacke!"
+Damit hast Du heute beides erlebt: den gefürchtetsten Schleifen-Fehler überhaupt — und seine Reparatur. Mehr braucht es für heute nicht.
 
-### 🏆 Bonus-Quest: Das Weizen-Wunder
-Du startest mit **1 Weizen**. Jede Ernte **verdoppelt** Deinen Vorrat. Wie oft musst Du ernten, bis Du **über 100** Weizen hast?
-
-Schreibe ein Programm, das so lange verdoppelt (`weizen = weizen * 2`), wie `weizen < 100` ist — und dabei die Ernten mitzählt. Gib am Ende aus, wie viele Ernten es waren.
-
-Schätze **vorher**: Wie oft wird es wohl dauern? Die Antwort überrascht fast jeden — genau deshalb ist das ein Fall für `while`: Man weiß die Rundenzahl eben nicht im Voraus!
+### 🏆 Bonus-Quest: Der Zeitraffer
+Lass einen Slot `tag` von 1 hochzählen, solange `tag <= 7`, und gib jede Runde "Tag X bricht an" aus. Danach: "Eine ganze Minecraft-Woche geschafft!"
 
 ---
-⬅️ [Unit 6](unit06-for-schleifen.md) · [Übersicht](README.md) · ➡️ [Unit 8: Funktionen](unit08-funktionen.md)
+⬅️ [Unit 6½: Rechnen im Takt](unit06b-rechnen-im-takt.md) · [Übersicht](README.md) · ➡️ [Unit 7½: Trainingslager](unit07b-trainingslager.md)

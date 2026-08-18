@@ -29,6 +29,8 @@ Es passiert… **nichts!** 🤨 Warum? Du hast das Rezept nur ins Rezeptbuch ges
 - `function gruss(name) ... end` = Rezept **aufschreiben** (passiert still)
 - `gruss("Steve")` = Rezept **benutzen** (jetzt läuft der Code darin!)
 
+> 💡 **Reihenfolge zählt:** Das Rezept muss **über** dem ersten Aufruf stehen. Lua liest Deine Datei von oben nach unten und kennt nur Rezepte, die es schon gelesen hat.
+
 ### Die Lücke im Rezept: Parameter
 Was ist dieses `name` in den Klammern? Das ist eine **Lücke im Rezept**. Beim Aufschreiben lässt Du sie offen — beim Benutzen wird sie gefüllt. In Zeitlupe, was bei `gruss("Steve")` passiert:
 
@@ -52,47 +54,17 @@ craft_block("Gold", 1)
 
 Die Reihenfolge zählt: Das Erste landet in der ersten Lücke, das Zweite in der zweiten.
 
-### Der Ausgabe-Slot: `return`
-Denk an die Werkbank: Zutaten rein → Rezept läuft → **das fertige Item liegt im Ausgabe-Slot**. Genau das macht `return`:
-
-```lua
-local function herzen_in_leben(herzen)
-  return herzen * 2
-end
-
-local leben = herzen_in_leben(10)
-print("Du hast " .. leben .. " Lebenspunkte.")
-```
-
-`herzen_in_leben(10)` läuft ab, und im Ausgabe-Slot liegt `20`. Das Ergebnis kannst Du herausnehmen und in einen Variablen-Slot legen (`local leben = ...`) — oder direkt weiterbenutzen: `print(herzen_in_leben(10))`.
-
-### ⚠️ Merkkasten: `print` oder `return`?
-Die werden **ständig** verwechselt — hier der Unterschied:
-
-- **`print`** hält ein Schild hoch: Der Text erscheint auf dem Bildschirm — aber danach ist er weg. Das Programm kann damit **nicht** weiterrechnen.
-- **`return`** legt das Ergebnis in den **Ausgabe-Slot** der Werkbank: Der Spieler sieht erstmal nichts — aber das Programm kann das Item abholen und weiterverwenden.
-
-Und: Sobald `return` ausgeführt wird, ist das Rezept **sofort fertig**. Zeilen, die in der Funktion danach kommen, laufen nicht mehr.
-
-> 💡 **Reihenfolge zählt:** Das Rezept muss **über** dem ersten Aufruf stehen. Lua liest Deine Datei von oben nach unten und kennt nur Rezepte, die es schon gelesen hat.
-
-### 🎯 Quest 8.1: Schaden-Rechner
-Schreibe eine Funktion `schaden(waffe, treffer)` — zwei Lücken:
-- Holzschwert → 4 Schaden pro Treffer
-- Eisenschwert → 6 Schaden pro Treffer
-- Diamantschwert → 7 Schaden pro Treffer
-- In den Ausgabe-Slot (`return`) kommt: Schaden × Anzahl Treffer
-
-Teste sie mit verschiedenen Werten — z.B. `print(schaden("Eisenschwert", 3))`. Tipp: In der Funktion brauchst Du `if`/`elseif` aus Unit 5.
-
-### 🏆 Bonus-Quest: Mob-Begrüßer
-Schreibe eine Funktion `mob_sagt(mob, text)`, die ausgibt:
+### 🎯 Quest 8.1: Mob-Begrüßer
+Schreibe eine Funktion `mob_sagt(mob, text)` mit zwei Lücken, die ausgibt:
 ```
 [Creeper] sagt: Sssss...
 [Zombie] sagt: Uaaaargh!
 ```
 
-(Hier reicht `print` — es soll ja nur etwas angezeigt werden. Überleg kurz: Warum braucht diese Funktion kein `return`?)
+Ruf sie für mindestens drei verschiedene Mobs auf.
+
+### 🏆 Bonus-Quest: Der Zeilen-Zähler
+Ruf Deine Funktion für **fünf** Mobs auf — das ist pro Mob nur eine Zeile. Und jetzt zähl nach: Wie viele Zeilen hättest Du **ohne** das Rezept getippt? Genau dafür gibt es Funktionen.
 
 ---
-⬅️ [Unit 7](unit07-while-schleifen.md) · [Übersicht](README.md) · ➡️ [Unit 9: Tables](unit09-tables.md)
+⬅️ [Unit 7½: Trainingslager](unit07b-trainingslager.md) · [Übersicht](README.md) · ➡️ [Unit 8½: Der Ausgabe-Slot](unit08b-ausgabe-slot.md)

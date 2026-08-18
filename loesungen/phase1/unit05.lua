@@ -1,30 +1,18 @@
--- Quest 5.1: Der Mob-Bestimmer
--- (Schild-Vergleich: Text mit Text - kein tonumber nötig)
-print("Welcher Mob? (zombie/creeper/cow)")
-local mob = io.read()
+-- Quest 5.1: Der Hunger-Warner
+-- Wert im Code ändern und neu starten, um beide Türen zu testen!
+local hunger = 2
 
-if mob == "zombie" then
-  print("Untot, fürchtet Sonne")
-elseif mob == "creeper" then
-  print("VORSICHT, GEHT WEG!")
-elseif mob == "cow" then
-  print("Friedlich, gibt Milch")
+if hunger <= 3 then
+  print("Schnell, iss ein Steak!")
 else
-  print("Unbekannter Mob")
+  print("Alles gut, weiter geht's!")
 end
 
--- Bonus-Quest: Schwierigkeits-Bewertung
--- (Zahlen-Vergleich: erst schmelzen, sonst ist "5" == 5 niemals wahr!)
-print("Wie viele Herzen hast Du? (0-10)")
-local herzen = tonumber(io.read())
+-- Bonus-Quest: Creeper-Alarm
+local abstand = 4
 
--- Lua prüft von oben nach unten und nimmt die erste Tür, die aufgeht:
-if herzen == 0 then
-  print("Game Over")
-elseif herzen <= 3 then      -- die 0 wurde oben schon abgefangen
-  print("Kritisch!")
-elseif herzen <= 7 then
-  print("Mittel")
+if abstand < 5 then
+  print("RENN WEG!")
 else
-  print("Voll gesund")
+  print("Noch sicher.")
 end

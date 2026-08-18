@@ -1,28 +1,19 @@
--- Quest 7.1: Diamanten sammeln
-local diamanten = 0
+-- Quest 7.1: Repariere die Endlos-Schleife
+local herzen = 10
 
-while diamanten < 5 do
-  print("Diamant gefunden? (j/n)")
-  local antwort = io.read()
-  if antwort == "j" then
-    diamanten = diamanten + 1   -- Stapel raus, eins drauf, Stapel zurück
-    print("Du hast jetzt " .. diamanten .. " Diamanten.")
-  else
-    print("Weitersuchen!")
-  end
+while herzen > 0 do
+  print("Aua!")
+  herzen = herzen - 1          -- die Reparatur: irgendwann wird die Frage falsch
+  print("Noch " .. herzen .. " Herzen")
 end
 
-print("Genug für eine Diamant-Spitzhacke!")
+print("Umgefallen!")
 
--- Bonus-Quest: Das Weizen-Wunder
+-- Bonus-Quest: Der Zeitraffer
 print("")
-local weizen = 1
-local ernten = 0
-
-while weizen < 100 do
-  weizen = weizen * 2
-  ernten = ernten + 1
-  print("Ernte " .. ernten .. ": Du hast jetzt " .. weizen .. " Weizen.")
+local tag = 1
+while tag <= 7 do
+  print("Tag " .. tag .. " bricht an")
+  tag = tag + 1
 end
-
-print("Nach nur " .. ernten .. " Ernten hast Du über 100 Weizen!")
+print("Eine ganze Minecraft-Woche geschafft!")

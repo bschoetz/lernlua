@@ -113,7 +113,7 @@ def titel_aus(text: str, pfad: Path) -> str:
     titel = re.sub(r"^[^\w\"„]+", "", titel)
     # "Unit 3: Rechnen wie ein ... — for-Schleifen" -> vor dem Gedankenstrich abschneiden
     titel = titel.split(" — ")[0].strip()
-    return titel
+    return titel.replace("`", "")
 
 
 class VSCodiumMonokai(Style):
@@ -364,7 +364,9 @@ __INHALT__
 <script>
 // Checkliste: Haken im Browser speichern (localStorage)
 document.querySelectorAll('li.task input').forEach(function (box) {
-  const key = 'lernlua-task-' + box.dataset.task;
+  // Schlüssel ist der Text der Zeile - so verrutschen gespeicherte Haken
+  // nicht, wenn später Zeilen in die Liste eingefügt werden
+  const key = 'lernlua-task-' + box.parentElement.textContent.trim();
   box.checked = localStorage.getItem(key) === '1';
   box.addEventListener('change', function () {
     localStorage.setItem(key, box.checked ? '1' : '0');

@@ -1,7 +1,7 @@
 # 🎲 Unit 14: Würfel und Zufall — `math.random` richtig nutzen
 
 ### Was lernen wir?
-In Phase 1 (Unit 10) hatten wir `math.random(1, 5)` für das Erz-Quiz. Hier ein paar Profi-Tricks.
+In Phase 1 (Unit 10½) hatten wir `math.random(1, 5)` für das Erz-Quiz. Hier ein paar Profi-Tricks.
 
 ### Würfel mit verschiedenen Seiten
 ```lua

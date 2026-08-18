@@ -45,13 +45,21 @@ lernlua/
 - [ ] Unit 1: Hallo Overworld! (`print`)
 - [ ] Unit 2: Inventar-Slots (Variablen)
 - [ ] Unit 3: Rechnen wie ein Redstone-Ingenieur (Operatoren, `local`)
+- [ ] Unit 3½: Exkurs — Variablen-Namen
 - [ ] Unit 4: Chat mit dem Spieler (`io.read`)
+- [ ] Unit 4½: Der Schmelzofen (`tonumber`)
 - [ ] Unit 5: Türen mit Redstone (`if` / `else`)
+- [ ] Unit 5½: Der Türen-Gang (`elseif`)
 - [ ] Unit 6: Eine Mauer bauen (`for`)
+- [ ] Unit 6½: Rechnen im Takt (Schrittweite)
 - [ ] Unit 7: Warten auf den Tag (`while`)
+- [ ] Unit 7½: Trainingslager (Übung)
 - [ ] Unit 8: Eigene Crafting-Rezepte (Funktionen)
+- [ ] Unit 8½: Der Ausgabe-Slot (`return`)
 - [ ] Unit 9: Truhen mit vielen Slots (Tables)
-- [ ] Unit 10: 🎮 Mega-Projekt — Das Erz-Rate-Spiel
+- [ ] Unit 9½: `for` trifft Truhe
+- [ ] Unit 10: 🎮 Mega-Projekt, Teil 1 — Das Erz-Rate-Spiel
+- [ ] Unit 10½: 🎮 Mega-Projekt, Teil 2 — Würfel, Runden, Punkte
 
 ### Phase 2 — Vom Lehrling zum Abenteurer
 - [ ] Unit 11: Beschriftete Truhen (Tables mit Schlüsseln)

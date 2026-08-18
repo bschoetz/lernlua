@@ -18,6 +18,11 @@ Minecraft/Luanti.
 - `phase1/` bis `phase3/` — eine Markdown-Datei pro Unit, **durchgehend
   nummeriert 1–40** (Phase 1: 1–10, Phase 2: 11–20, Phase 3: 21–40).
   Quest-Nummern folgen der Unit-Nummer (Unit 17 → Quest 17.1).
+  Dazwischen gibt es **½-Units** (Datei `unitNNb-*.md`, Titel "Unit N½",
+  Quest N½.1): kleinere Sitzungen, damit eine Unit ohne Erschöpfung in
+  einem Rutsch schaffbar ist — eine Unit = ein Konzept + ein Experiment +
+  eine Quest. Der Build sortiert `unit*.md` alphabetisch, `NNb` landet
+  also automatisch hinter `NN`.
 - `loesungen/` — Musterlösungen: `.lua`-Dateien je Unit (Phase 1+2),
   lauffähige Mod-Ordner `hallowelt`/`meinemod`/`magie` (Phase 3).
   Texturen (PNGs) fehlen absichtlich — Pixel-Art malen ist Teil des Kurses.

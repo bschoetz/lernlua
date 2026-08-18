@@ -28,7 +28,7 @@ local inventar = {"Schwert", "Spitzhacke", "Brot", "Fackel"}
 print(inventar[99])
 ```
 
-**`nil`** — der alte Bekannte! Du kennst ihn vom Schmelzofen (Unit 4) und vom verschwundenen Rundenzähler (Unit 6): Wo nichts liegt, bekommst Du "nichts". Greifst Du in einen leeren Slot, meckert Lua nicht — es gibt Dir einfach `nil`. (Merk Dir das gut: In Phase 3 ist "aus Versehen in einen leeren Slot gegriffen" der häufigste Bug überhaupt.)
+**`nil`** — der alte Bekannte! Du kennst ihn vom Schmelzofen (Unit 4½) und vom verschwundenen Rundenzähler (Unit 6): Wo nichts liegt, bekommst Du "nichts". Greifst Du in einen leeren Slot, meckert Lua nicht — es gibt Dir einfach `nil`. (Merk Dir das gut: In Phase 3 ist "aus Versehen in einen leeren Slot gegriffen" der häufigste Bug überhaupt.)
 
 ### Das Zähl-Zeichen `#`
 `#inventar` fragt die Truhe: **"Wie viele Slots sind belegt?"**
@@ -37,52 +37,21 @@ print(inventar[99])
 print("Du hast " .. #inventar .. " Items.")   -- 4
 ```
 
-### 🌟 Der große Moment: `for` trifft Truhe
-Jetzt verbinden sich zwei Dinge, die Du schon kennst — **der Rundenzähler aus Unit 6 wird zur Slot-Nummer**:
-
-```lua
-local inventar = {"Schwert", "Spitzhacke", "Brot", "Fackel"}
-
-for i = 1, #inventar do
-  print("Slot " .. i .. ": " .. inventar[i])
-end
-```
-
-In Zeitlupe:
-
-- **Runde 1:** `i` ist 1 → `inventar[1]` → "Schwert"
-- **Runde 2:** `i` ist 2 → `inventar[2]` → "Spitzhacke"
-- **Runde 3:** `i` ist 3 → `inventar[3]` → "Brot"
-- **Runde 4:** `i` ist 4 → `inventar[4]` → "Fackel" — und `#inventar` ist 4, also Schluss.
-
-`i` hat eine Doppelrolle: Es zählt die Runden **und** zeigt auf den passenden Slot. Und weil als Zielwert `#inventar` dasteht, passt sich die Schleife automatisch an — egal, wie voll die Truhe ist.
-
-### Slots ändern und anhängen
+### Slots ändern
 ```lua
 inventar[2] = "Diamant-Spitzhacke"  -- Item in Slot 2 austauschen
-table.insert(inventar, "Apfel")     -- ins nächste freie Fach hinten legen
 ```
 
-Slot überschreiben = altes Item raus, neues rein. `table.insert` = Item ans Ende anhängen, die Truhe wird um einen Slot voller (und `#inventar` zählt automatisch mit).
+Slot überschreiben = altes Item raus, neues rein — genau wie bei normalen Variablen, nur eben in Slot Nummer 2 der Truhe.
 
-### 🎯 Quest 9.1: Dein Inventar
-Baue eine Truhe mit 5 Items, die Dein Spieler dabei hat. Gib sie als nummerierte Liste aus:
-```
-=== INVENTAR ===
-1. Diamantschwert
-2. Eisenspitzhacke
-...
-```
+### 🎯 Quest 9.1: Deine erste Truhe
+1. Baue eine Truhe mit 5 Items, die Dein Spieler dabei hat
+2. Gib Slot 1, Slot 3 und Slot 5 einzeln aus
+3. Tausche das Item in Slot 2 gegen ein besseres aus und gib Slot 2 davor und danach aus
+4. Zum Schluss: "Die Truhe hat X Items" — mit dem Zähl-Zeichen
 
-Tipp: Genau dafür ist die "for trifft Truhe"-Zeile da.
-
-### 🏆 Bonus-Quest: Mob-Zoo
-Eine Truhe mit 6 Mobs. Lass eine Schleife jeden Mob "Hallo!" sagen:
-```
-Zombie sagt: Hallo!
-Skelett sagt: Hallo!
-...
-```
+### 🏆 Bonus-Quest: Der letzte Slot
+Was gibt wohl `print(inventar[#inventar])` aus? Überleg erst, dann probier es. Warum funktioniert dieser Trick bei **jeder** Truhe, egal wie voll sie ist?
 
 ---
-⬅️ [Unit 8](unit08-funktionen.md) · [Übersicht](README.md) · ➡️ [Unit 10: Mega-Projekt](unit10-erz-rate-spiel.md)
+⬅️ [Unit 8½: Der Ausgabe-Slot](unit08b-ausgabe-slot.md) · [Übersicht](README.md) · ➡️ [Unit 9½: for trifft Truhe](unit09b-for-trifft-truhe.md)

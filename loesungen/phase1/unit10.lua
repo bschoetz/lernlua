@@ -1,58 +1,26 @@
--- Unit 10: Erz-Rate-Spiel - "Version 5" mit allen Ideen:
--- 5 Runden, mehr Erze, Spielername, Spezial-Glückwunsch bei perfektem Treffer
-
-local erze = {"Kohle", "Eisen", "Gold", "Diamant", "Smaragd", "Lapislazuli", "Redstone", "Kupfer"}
-local tiefen = {50, 30, 10, -50, -16, 0, -32, 45}
+-- Unit 10: Erz-Rate-Spiel - Stand nach Version 2
+-- (Türsteher + Nah-dran-Bewertung; das Würfeln kommt in Unit 10½)
 
 print("=== ERZ-TIEFEN-QUIZ ===")
-print("Wie heißt Du, Bergmann?")
-local name = io.read()
-print("Hallo " .. name .. "! Auf welcher Y-Koordinate findet man welches Erz?")
-print("")
+local tiefe = -50
 
-local punkte = 0
-local runden = 5
+print("Auf welcher Y-Höhe findet man Diamant?")
+local versuch = tonumber(io.read())
 
-for runde = 1, runden do
-  print("--- Runde " .. runde .. " von " .. runden .. " ---")
-  local nummer = math.random(1, #erze)
-  local erz = erze[nummer]
-  local tiefe = tiefen[nummer]
-
-  print("Auf welcher Y-Koordinate findet man " .. erz .. "?")
-  local versuch = tonumber(io.read())
-
-  -- Türsteher: erst prüfen, ob überhaupt eine Zahl kam (sonst wäre versuch nil,
-  -- und math.abs würde beim Rechnen mit "nichts" abstürzen)
-  if versuch == nil then
-    print("ACHTUNG: Keine Zahl - die Runde ist leider futsch! (Richtig: Y=" .. tiefe .. ")")
-  else
-    local differenz = math.abs(versuch - tiefe)
-
-    if differenz == 0 then
-      print("*** PERFEKT, " .. name .. "! Volltreffer bei Y=" .. tiefe .. "! +3 Punkte")
-      punkte = punkte + 3
-    elseif differenz <= 10 then
-      print("** Sehr nah! +2 Punkte (Richtig: Y=" .. tiefe .. ")")
-      punkte = punkte + 2
-    elseif differenz <= 30 then
-      print("* Okay. +1 Punkt (Richtig: Y=" .. tiefe .. ")")
-      punkte = punkte + 1
-    else
-      print("Daneben. (Richtig: Y=" .. tiefe .. ")")
-    end
-  end
-  print("")
-end
-
-local maximum = runden * 3
-print("=== ERGEBNIS ===")
-print(name .. ", Du hast " .. punkte .. " von " .. maximum .. " möglichen Punkten erreicht.")
-
-if punkte >= maximum - 2 then
-  print("Erz-Meister!")
-elseif punkte >= maximum // 2 then
-  print("Solider Bergmann.")
+-- Türsteher: erst prüfen, ob überhaupt eine Zahl kam (sonst wäre versuch nil,
+-- und math.abs würde beim Rechnen mit "nichts" abstürzen)
+if versuch == nil then
+  print("ACHTUNG: Das war keine Zahl! Probier's nochmal mit Ziffern.")
 else
-  print("Übung macht den Meister!")
+  local differenz = math.abs(versuch - tiefe)
+
+  if differenz == 0 then
+    print("*** PERFEKT! Genau bei Y=" .. tiefe)
+  elseif differenz <= 10 then
+    print("** Sehr nah! Richtig wäre Y=" .. tiefe)
+  elseif differenz <= 30 then
+    print("* Nicht schlecht. Richtig wäre Y=" .. tiefe)
+  else
+    print("Daneben. Richtig wäre Y=" .. tiefe)
+  end
 end
