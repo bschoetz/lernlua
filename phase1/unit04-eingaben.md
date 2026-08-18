@@ -14,6 +14,11 @@ Wenn Du das mit `lua datei.lua` startest, bleibt das Programm stehen und wartet 
 
 Was da passiert, kennst Du fast alles schon: `io.read()` holt Deine Antwort ab, und `local name = ...` legt sie in einen Slot (Unit 2). Ab da ist es eine ganz normale Variable — zusammenkleben mit `..`, ausgeben mit `print`.
 
+### Warum heißt das Ding `io.read`?
+Das sind zwei englische Abkürzungen: `io` steht für **In und Out** — alles, was ins Programm **rein**geht und **raus**kommt. Und `read` heißt **lesen**. `io.read()` sagt also wörtlich: "Lies ein, was da getippt wird."
+
+Und der Punkt dazwischen? `io` ist eine **Werkzeugkiste**, und der Punkt greift hinein: `io.read` liest Du als "aus der Kiste `io` das Werkzeug `read`". Lua sortiert seine Werkzeuge in solche Kisten, damit man sie wiederfindet — nur die allerwichtigsten wie `print` liegen ohne Kiste direkt griffbereit. Das Punkt-Muster wirst Du noch oft sehen, zum Beispiel bei der Mathe-Kiste: `math.random` würfelt Zufallszahlen (kommt in Unit 10½).
+
 ### 🧪 Experiment: Das Programm wartet wirklich
 Starte das Beispiel und tippe erstmal … nichts. Das Programm läuft nicht weiter — es wartet geduldig auf Dich, bis Du Enter drückst. Und was passiert wohl, wenn Du als Namen etwas völlig Verrücktes eingibst, mit Leerzeichen und allem? Probier's aus — `io.read()` nimmt alles, was Du ihm gibst.
 
