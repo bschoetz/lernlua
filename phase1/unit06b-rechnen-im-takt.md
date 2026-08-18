@@ -1,9 +1,9 @@
 # 🧮 Unit 6½: Rechnen im Takt — mehr aus `for` herausholen
 
-### Was lernen wir?
+## Was lernen wir?
 Der Rundenzähler `i` kann mehr als nur zählen: Du kannst in jeder Runde **mit ihm rechnen**. Das macht die Schleife erst richtig mächtig.
 
-### Mit dem Rundenzähler rechnen
+## Mit dem Rundenzähler rechnen
 ```lua
 for i = 1, 5 do
   print(i .. " Zombies droppen " .. i * 2 .. " Fleisch")
@@ -19,7 +19,7 @@ end
 
 In jeder Runde wird `i * 2` frisch ausgerechnet — mit dem aktuellen Wert des Zählers.
 
-### Schrittweite: Zählen in Sprüngen
+## Schrittweite: Zählen in Sprüngen
 Aus der Schule kennst Du das Zählen in 2er-, 5er- und 10er-Schritten. Genau das kann die Schleife auch — mit einer **dritten Zahl**:
 
 ```lua
@@ -30,6 +30,8 @@ end
 ```
 
 Das ist das Zählen in 5er-Schritten: Die dritte Zahl sagt, **wie groß der Sprung** von Runde zu Runde ist. Lässt Du sie weg, springt die Schleife ganz normal in 1er-Schritten.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 6½.1: Die Einmaleins-Maschine
 Baue ein Programm, das Dir beim Einmaleins-Üben hilft:

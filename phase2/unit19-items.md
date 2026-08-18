@@ -1,6 +1,6 @@
 # 🎒 Unit 19: Items aufheben und benutzen
 
-### Was lernen wir?
+## Was lernen wir?
 Ein Adventure ohne Items ist langweilig. Wir geben dem Spieler ein **eigenes Inventar** und lassen ihn Sachen aus Räumen aufheben.
 
 ### Spieler mit Inventar
@@ -71,6 +71,8 @@ end
 ```
 
 Mit `string.sub(eingabe, 1, 5) == "nimm "` prüfen wir, ob die Eingabe mit "nimm " anfängt. Der Rest (`string.sub(eingabe, 6)`) ist der Item-Name.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 19.1: Schatzsuche
 Lege in **mindestens 2 Räume** jeweils 2 Items. Spiele die Welt und sammle alles ein. Prüfe mit `inventar`, ob es funktioniert.

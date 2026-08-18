@@ -1,6 +1,6 @@
 # 🔧 Unit 15: Mehr-Werkzeug-Funktionen — Funktionen, die zusammenarbeiten
 
-### Was lernen wir?
+## Was lernen wir?
 Funktionen können andere Funktionen aufrufen. So baust Du **komplexe Werkzeuge aus einfachen Teilen** — wie ein Crafting Tree.
 
 ### Beispiel
@@ -53,6 +53,8 @@ local steve = neuer_spieler("Steve")
 nimm_schaden(steve, 3)
 nimm_schaden(steve, 2)
 ```
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 15.1: Heilung und Schaden
 Schreibe zwei Funktionen:

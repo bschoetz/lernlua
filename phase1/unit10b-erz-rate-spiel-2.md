@@ -116,6 +116,8 @@ Drei kleine Handwerks-Dinge darin:
 
 ---
 
+## ⚔️ Übungsquests
+
 ### 🎯 Quest 10½.1: Spiele jede Version
 Wichtigste Regel dieser Unit: **Bau erst weiter, wenn die aktuelle Version läuft.** Spiele jede Version mindestens einmal durch — und die fertige Version 4 ein paar Mal. Schaffst Du die 9 Punkte?
 

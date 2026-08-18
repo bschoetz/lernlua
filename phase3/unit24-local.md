@@ -1,6 +1,6 @@
 # 🔧 Unit 24: `local` in Mods — jetzt wird's ernst
 
-### Was lernen wir?
+## Was lernen wir?
 Die Regel kennst Du seit Phase 1: **Variablen immer mit `local` deklarieren.** Bis jetzt war das eine gute Angewohnheit. In Mods ist es **überlebenswichtig** — und hier siehst Du endlich, warum.
 
 ### Warum ist es jetzt so wichtig?
@@ -23,6 +23,8 @@ end)
 ```
 
 Beachte: `begruessungen` wird **oben in der Datei** mit `local` angelegt. Die Funktion darin darf sie trotzdem benutzen und verändern — sie "sieht" alles, was über ihr deklariert wurde.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Erweitere Deine `hallowelt`-Mod um einen Zähler, der jeden Beitritt mitzählt und in der Begrüßung anzeigt.

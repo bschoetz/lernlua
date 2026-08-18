@@ -1,6 +1,6 @@
 # 🔀 Unit 34: Crafting-Rezepte — Ungeformt
 
-### Was lernen wir?
+## Was lernen wir?
 Manchmal soll's egal sein, wo die Zutaten liegen — Hauptsache sie sind drin. Das heißt "shapeless".
 
 ```lua
@@ -19,6 +19,8 @@ Vier Stück Zauberstaub aus drei Zutaten — Reihenfolge oder Anordnung im Craft
 ### Wann shaped, wann shapeless?
 - **Shaped** für Sachen, die eine bestimmte "Form" haben (Schwert hat Griff unten, Klinge oben → Position zählt)
 - **Shapeless** für Mischungen (Trank, Farbe, Teig — Reihenfolge egal)
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Mach ein Shapeless-Rezept für Deinen Zauberstaub. Probier verschiedene Anordnungen in der Werkbank — sollte immer klappen.

@@ -1,6 +1,6 @@
 # 👋 Unit 22: Hello, Luanti! — Die allererste Mod
 
-### Was lernen wir?
+## Was lernen wir?
 Wie sieht die kleinstmögliche Mod aus? Genau zwei Dateien — und sie tut ausnahmsweise gar nichts Sichtbares, schreibt nur eine Nachricht ins Log.
 
 ### Schritt für Schritt
@@ -24,6 +24,8 @@ core.log("action", "[hallowelt] Hallo aus meiner ersten Mod!")
 Im User-Data-Verzeichnis liegt eine Datei `debug.txt` — da hinein schreibt Luanti alle Log-Meldungen. Öffne sie in VSCodium und suche (Strg+F) nach `[hallowelt]`.
 
 > 💡 `core.log("action", "...")` ist wie das `print` aus Phase 1 — aber für Mods. Der Spieler sieht das nicht im Spiel; es ist nur für Entwickler.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Bring die `hallowelt`-Mod zum Laufen und finde die Meldung in `debug.txt`.

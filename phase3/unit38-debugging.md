@@ -1,6 +1,6 @@
 # 🐛 Unit 38: Bugs finden — Logs lesen und debuggen
 
-### Was lernen wir?
+## Was lernen wir?
 Sobald Code länger wird, gehen Sachen schief. **Profis suchen Bugs systematisch**, nicht durch Raten.
 
 ### Die Logdatei
@@ -34,6 +34,8 @@ Dann in der Logdatei nachschauen, ob die Meldungen kommen. Wenn nicht, weißt Du
 | Block ist pink-schwarz | Textur fehlt oder Dateiname falsch |
 | Mod erscheint nicht | Ordnername ≠ `name` in `mod.conf`, oder Mod in der Welt nicht aktiviert |
 | Crafting funktioniert nicht | Item-Namen tippfehlerhaft (Groß-/Kleinschreibung!) |
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Bug-Jagd: Mache absichtlich Tippfehler (z.B. `core.register_nooode`), starte die Welt, finde den Fehler in `debug.txt`, reparier ihn.

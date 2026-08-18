@@ -1,6 +1,6 @@
 # 🌟 Unit 29: Blöcke mit Charakter — Licht, Sounds, Transparenz
 
-### Was lernen wir?
+## Was lernen wir?
 Blöcke können mehr als nur dasitzen. Sie können leuchten, durchsichtig sein, andere Geräusche machen.
 
 ### Licht abstrahlen
@@ -37,6 +37,8 @@ mcl_sounds.node_sound_leaves_defaults()   -- Blätter
 | `drawtype` | Form: `"normal"`, `"glasslike"`, `"airlike"` etc. |
 | `use_texture_alpha` | `"blend"` für transparente PNGs |
 | `sunlight_propagates` | Sonnenlicht geht durch |
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Erweitere Deine Mod um einen leuchtenden Block. Bau eine kleine Höhle und beleuchte sie damit.

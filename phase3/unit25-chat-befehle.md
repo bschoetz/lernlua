@@ -1,6 +1,6 @@
 # 💬 Unit 25: Chat-Befehle — Eigene Slash-Commands
 
-### Was lernen wir?
+## Was lernen wir?
 Ein **Chat-Befehl** ist etwas, das der Spieler im Chat tippt, mit `/` davor — z.B. `/hallo`. Wir können eigene Befehle registrieren.
 
 ```lua
@@ -28,6 +28,8 @@ core.register_chatcommand("echo", {
   end,
 })
 ```
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Schreibe einen Befehl `/gruss`, der zurückgibt: "Hallo NAME, schön, dass Du da bist!"

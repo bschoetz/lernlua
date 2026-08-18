@@ -1,6 +1,6 @@
 # 🎲 Unit 14: Würfel und Zufall — `math.random` richtig nutzen
 
-### Was lernen wir?
+## Was lernen wir?
 In Phase 1 (Unit 10½) hatten wir `math.random(1, 5)` für das Erz-Quiz. Hier ein paar Profi-Tricks.
 
 ### Würfel mit verschiedenen Seiten
@@ -37,6 +37,8 @@ else
   print("Stein")
 end
 ```
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 14.1: Mob-Generator
 Schreibe ein Programm, das **5 zufällige Mobs** aus einer Liste von mindestens 8 Mobs ausgibt.

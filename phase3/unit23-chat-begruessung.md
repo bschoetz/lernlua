@@ -1,6 +1,6 @@
 # 💬 Unit 23: Etwas Sichtbares — Begrüßung im Chat
 
-### Was lernen wir?
+## Was lernen wir?
 Log-Meldungen sind unsichtbar — langweilig. Jetzt machen wir was, das der Spieler im Spiel sieht: Eine Begrüßung im Chat, wenn er der Welt beitritt.
 
 ```lua
@@ -15,6 +15,8 @@ Was passiert hier:
 - Die Funktion bekommt einen `player` (das ist eine Art Objekt, das den Spieler repräsentiert).
 - `player:get_player_name()` holt den Namen aus dem Spieler-Objekt. Der **Doppelpunkt** ist neu — den lernen wir noch genauer kennen.
 - `core.chat_send_all(...)` schickt eine Nachricht an **alle** Spieler im Chat.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Erweitere `hallowelt`: Lass beim Beitreten "Willkommen, NAME!" erscheinen. Welt verlassen, neu beitreten — die Nachricht muss kommen.

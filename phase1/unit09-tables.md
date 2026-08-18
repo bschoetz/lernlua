@@ -1,6 +1,6 @@
 # 🧰 Unit 9: Truhen mit vielen Slots — Tables (Listen)
 
-### Was lernen wir?
+## Was lernen wir?
 Bisher konnte jeder Variablen-Slot genau **ein** Ding aufnehmen. Eine **Table** ist eine ganze **Truhe mit nummerierten Slots**:
 
 | Slot 1 | Slot 2 | Slot 3 | Slot 4 |
@@ -30,19 +30,21 @@ print(inventar[99])
 
 **`nil`** — der alte Bekannte! Du kennst ihn vom Schmelzofen (Unit 4½) und vom verschwundenen Rundenzähler (Unit 6): Wo nichts liegt, bekommst Du "nichts". Greifst Du in einen leeren Slot, meckert Lua nicht — es gibt Dir einfach `nil`. (Merk Dir das gut: In Phase 3 ist "aus Versehen in einen leeren Slot gegriffen" der häufigste Bug überhaupt.)
 
-### Das Zähl-Zeichen `#`
+## Das Zähl-Zeichen `#`
 `#inventar` fragt die Truhe: **"Wie viele Slots sind belegt?"**
 
 ```lua
 print("Du hast " .. #inventar .. " Items.")   -- 4
 ```
 
-### Slots ändern
+## Slots ändern
 ```lua
 inventar[2] = "Diamant-Spitzhacke"  -- Item in Slot 2 austauschen
 ```
 
 Slot überschreiben = altes Item raus, neues rein — genau wie bei normalen Variablen, nur eben in Slot Nummer 2 der Truhe.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 9.1: Deine erste Truhe
 1. Baue eine Truhe mit 5 Items, die Dein Spieler dabei hat

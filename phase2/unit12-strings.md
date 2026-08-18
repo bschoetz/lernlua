@@ -1,6 +1,6 @@
 # 🪧 Unit 12: Schilder lesen — Strings unter der Lupe
 
-### Was lernen wir?
+## Was lernen wir?
 Ein **String** ist Text. Wir hatten ihn schon — aber Strings können viel mehr, als nur ausgegeben werden.
 
 ### Länge messen
@@ -42,6 +42,8 @@ print(neu)   -- "Ich liebe Katzen"
 ```
 
 > ⚠️ Achtung bei Umlauten: `#`, `sub` und Co. zählen **Bytes**, nicht Buchstaben. Bei "ä", "ö", "ü" kann die Länge größer sein als erwartet. Für unsere Spiele reicht's — merk Dir nur: Bei Umlauten kann's komisch werden.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 12.1: Schrei-Maschine
 Schreibe ein Programm, das den Spieler nach einem Satz fragt und ihn dann in **GROSSBUCHSTABEN mit drei Ausrufezeichen** ausgibt:

@@ -1,6 +1,6 @@
 # ⏰ Unit 37: Zeit und Wiederholung — `globalstep` und ABMs
 
-### Was lernen wir?
+## Was lernen wir?
 Wie macht man Sachen, die **regelmäßig** passieren? Zwei Wege.
 
 ### globalstep — läuft die ganze Zeit
@@ -46,6 +46,8 @@ core.register_abm({
 ```
 
 Luanti geht alle Wunderblöcke in der Welt durch und entscheidet pro Block per Zufall, ob die Funktion läuft.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Mach Deinen Wunderblock funkelnd: Alle paar Sekunden spuckt er Partikel aus.

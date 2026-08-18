@@ -1,6 +1,6 @@
 # 📦 Unit 2: Inventar-Slots — Variablen
 
-### Was lernen wir?
+## Was lernen wir?
 Eine **Variable** ist wie ein Slot im Inventar. Du gibst ihm einen Namen und legst etwas hinein — eine Zahl, einen Text. Später kannst Du den Inhalt benutzen.
 
 ### Beispiel
@@ -14,7 +14,7 @@ print(spieler .. " hat " .. herzen .. " Herzen.")
 print("Sein Lieblingsblock: " .. lieblingsblock)
 ```
 
-### Wann brauche ich Anführungszeichen — und wann nicht?
+## Wann brauche ich Anführungszeichen — und wann nicht?
 Das verwirrt am Anfang **jeden**, deshalb ganz genau:
 
 **Alles in Anführungszeichen nimmt Lua wortwörtlich.** Wie beim wörtlichen Zitieren: `"Steve"` heißt "genau die Buchstaben S-t-e-v-e, nicht mehr und nicht weniger".
@@ -39,7 +39,7 @@ Gleiches Wort, riesiger Unterschied! Ohne Anführungszeichen bekommst Du den **I
 
 Und noch ein Versuch: Was gibt wohl `print(Steve)` aus — ohne Anführungszeichen? Lua sucht einen Slot namens `Steve` … und findet keinen. Es erscheint `nil` — das ist Luas Wort für "nichts". Wenn Du also irgendwo unerwartet `nil` siehst: Oft fehlen einfach Anführungszeichen, oder ein Slot-Name ist falsch geschrieben.
 
-### Texte zusammenkleben mit `..`
+## Texte zusammenkleben mit `..`
 Jetzt verstehst Du auch, warum diese Zeile so gemischt aussieht:
 
 ```lua
@@ -53,7 +53,7 @@ Der **feste Text** (`"Spieler: "`) steht in Anführungszeichen, der **Slot-Name*
 - Ist es der **Name eines Slots** (oder ein Befehl)? → keine Anführungszeichen ❌
 - Ist es eine **Zahl zum Rechnen**? → keine Anführungszeichen ❌
 
-### Regeln für Variablen-Namen
+## Regeln für Variablen-Namen
 - Buchstaben, Zahlen und `_` erlaubt
 - Dürfen nicht mit einer Zahl anfangen (`2spieler` ❌, `spieler2` ✅)
 - Keine Leerzeichen oder Umlaute
@@ -61,6 +61,8 @@ Der **feste Text** (`"Spieler: "`) steht in Anführungszeichen, der **Slot-Name*
 - Und: Slot-Namen stehen **nie** in Anführungszeichen
 
 Warum diese Regeln so sind und wie man richtig **gute** Namen findet, klären wir im [Exkurs nach Unit 3](unit03b-variablennamen.md).
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 2.1: Charakter-Steckbrief
 Erstelle Variablen für `name`, `level`, `welt` und `werkzeug`. Gib damit einen Steckbrief aus:

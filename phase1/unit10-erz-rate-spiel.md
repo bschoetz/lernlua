@@ -76,6 +76,8 @@ Warum steht der Türsteher **vor** der Abstand-Rechnung und ist nicht einfach ei
 
 ---
 
+## ⚔️ Übungsquests
+
 ### 🎯 Quest 10.1: Spiele Version 1 und 2
 Wichtigste Regel dieses Projekts: **Bau erst weiter, wenn die aktuelle Version läuft.** Spiele beide Versionen mehrmals durch und teste dabei alles: genau richtig, knapp daneben, weit daneben — und den Türsteher mit Buchstaben.
 

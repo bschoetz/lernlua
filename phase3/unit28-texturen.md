@@ -1,6 +1,6 @@
 # 🎨 Unit 28: Pixel-Art — Eigene Texturen malen
 
-### Was lernen wir?
+## Was lernen wir?
 Damit der Block nicht pink-schwarz ist, brauchen wir eine **Textur**. Das ist ein PNG-Bild, normalerweise **16×16 Pixel** klein.
 
 ### Werkzeug: Piskel
@@ -27,6 +27,8 @@ meinemod/
 └── textures/
     └── meinemod_wunderblock.png
 ```
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Mal ein 16×16-Pixel-Bild für Deinen Wunderblock. Leg's in `textures/`. Welt neu starten und Block platzieren — die Textur sollte sichtbar sein.

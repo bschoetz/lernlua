@@ -1,6 +1,6 @@
 # 👂 Unit 35: Callbacks — Auf Spieler-Aktionen reagieren
 
-### Was lernen wir?
+## Was lernen wir?
 Eine Mod kann sich für **Ereignisse** anmelden. Wenn das Ereignis passiert, ruft Luanti unsere Funktion auf. Das nennt man **Callback** (Rückruf).
 
 Wir haben schon `register_on_joinplayer` benutzt. Es gibt viel mehr:
@@ -31,6 +31,8 @@ end)
 | `register_on_respawnplayer` | Respawn |
 | `register_on_chat_message` | Chat-Nachricht |
 | `register_on_punchplayer` | Spieler wird geschlagen |
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 **Tod-Zähler**: Bei jedem Tod erscheint im Chat "NAME ist zum X. Mal gestorben!". Tipp: Eine `local tode = {}` Table und `tode[name] = (tode[name] or 0) + 1`.

@@ -1,6 +1,6 @@
 # 🎲 Unit 26: Befehle mit Zufall — `/wuerfel`
 
-### Was lernen wir?
+## Was lernen wir?
 Wir kombinieren Chat-Befehle mit `math.random` aus Phase 2.
 
 ```lua
@@ -15,6 +15,8 @@ core.register_chatcommand("wuerfel", {
 ```
 
 Profi-Trick: `tonumber(param) or 6` — wenn `param` keine Zahl ist (oder leer), nimm 6. Das `or` macht das hier elegant: Es nimmt den ersten Wert, der nicht `nil`/`false` ist.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Bring den Würfel-Befehl zum Laufen. Teste: `/wuerfel`, `/wuerfel 20`, `/wuerfel 100`.

@@ -1,6 +1,6 @@
 # ✨ Unit 40: Mega-Projekt Teil 2 — Zauberstab, Funken, Chat
 
-### Was lernen wir?
+## Was lernen wir?
 Wir bringen den Zauberstab zum Leben: Beim Klicken schießt er Funken in Blickrichtung. Außerdem zählen wir Statistik und bauen einen Info-Befehl.
 
 ### Den Zauberstab erweitern
@@ -74,6 +74,8 @@ core.register_chatcommand("magie", {
   end,
 })
 ```
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Alles einbauen, Welt neu starten, dann:

@@ -1,6 +1,6 @@
 # 🔁 Unit 6: Eine Mauer bauen — `for`-Schleifen
 
-### Was lernen wir?
+## Was lernen wir?
 Wenn Du eine Mauer aus 50 Blöcken bauen willst, willst Du nicht 50 Mal denselben Befehl schreiben. Eine **Schleife** wiederholt Code automatisch.
 
 ```lua
@@ -18,7 +18,7 @@ Block Nummer 4
 Block Nummer 5
 ```
 
-### Die Zeile auseinandergenommen
+## Die Zeile auseinandergenommen
 `for i = 1, 5 do` besteht aus vier Teilen:
 
 | Teil | Bedeutung |
@@ -33,6 +33,8 @@ Und das `end` am Schluss kennst Du schon: Truhe zu, Schleife fertig.
 Stell Dir `i` wie einen Freund vor, der beim Spielen die **Runden mitzählt** und in jeder Runde die aktuelle Zahl ruft: In Runde 1 ist `i` gleich 1, in Runde 2 gleich 2 … und nach Runde 5 hört er auf.
 
 > 💡 **Zwei Dinge zum Rundenzähler:** Erstens braucht er **kein `local`** — die Schleife bringt ihren eigenen Zähler mit und nimmt ihn am Ende wieder mit (probier nach der Schleife mal `print(i)` — es kommt `nil`, der Zähler ist spurlos weg!). Zweitens heißt er bei **Profis auf der ganzen Welt einfach `i`** — eine Absprache, wie beim Kleinschreiben der Namen: Wer `for i = ...` liest, weiß sofort "aha, der Rundenzähler".
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 6.1: Die Mauer
 Baue eine Mauer aus 10 Blöcken:

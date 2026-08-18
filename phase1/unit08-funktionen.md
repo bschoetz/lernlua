@@ -1,6 +1,6 @@
 # 🔨 Unit 8: Eigene Crafting-Rezepte — Funktionen
 
-### Was lernen wir?
+## Was lernen wir?
 Eine **Funktion** ist ein eigenes Crafting-Rezept: Du schreibst es **einmal** in Dein Rezeptbuch — und kannst es danach so oft benutzen, wie Du willst.
 
 ```lua
@@ -31,7 +31,7 @@ Es passiert… **nichts!** 🤨 Warum? Du hast das Rezept nur ins Rezeptbuch ges
 
 > 💡 **Reihenfolge zählt:** Das Rezept muss **über** dem ersten Aufruf stehen. Lua liest Deine Datei von oben nach unten und kennt nur Rezepte, die es schon gelesen hat.
 
-### Die Lücke im Rezept: Parameter
+## Die Lücke im Rezept: Parameter
 Was ist dieses `name` in den Klammern? Das ist eine **Lücke im Rezept**. Beim Aufschreiben lässt Du sie offen — beim Benutzen wird sie gefüllt. In Zeitlupe, was bei `gruss("Steve")` passiert:
 
 1. Lua schlägt das Rezept `gruss` im Buch nach
@@ -53,6 +53,8 @@ craft_block("Gold", 1)
 ```
 
 Die Reihenfolge zählt: Das Erste landet in der ersten Lücke, das Zweite in der zweiten.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 8.1: Mob-Begrüßer
 Schreibe eine Funktion `mob_sagt(mob, text)` mit zwei Lücken, die ausgibt:

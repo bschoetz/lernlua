@@ -1,6 +1,6 @@
 # 🍎 Unit 31: Eigene Items — Craftitems
 
-### Was lernen wir?
+## Was lernen wir?
 Ein **Craftitem** ist ein Item, das man **nicht** in der Welt platzieren kann — wie ein Stock, ein Apfel, ein Diamant. Es liegt nur im Inventar herum.
 
 ```lua
@@ -25,6 +25,8 @@ core.register_craftitem("meinemod:wunderapfel", {
 
 ### Wichtig: `inventory_image` statt `tiles`
 Bei Craftitems heißt es `inventory_image` (Einzahl, ein Bild). Bei Blöcken `tiles` (Mehrzahl, mehrere Bilder).
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Erstelle einen "Magischen Trank" als Craftitem. Mal die Textur (Piskel, 16×16). Beim Benutzen heilt er 10 HP. Texturdatei: `meinemod_trank.png`.

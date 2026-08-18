@@ -1,6 +1,6 @@
 # ⏳ Unit 7: Warten auf den Tag — `while`-Schleifen
 
-### Was lernen wir?
+## Was lernen wir?
 In Unit 6 hast Du Schleifen kennengelernt, bei denen Du **vorher weißt**, wie viele Runden laufen: eine Mauer aus 10 Blöcken → 10 Runden. Aber oft weißt Du das eben **nicht**:
 
 | Situation | Wie viele Runden? | Schleife |
@@ -18,7 +18,7 @@ while BEDINGUNG do
 end
 ```
 
-### Die Bedingung kennst Du schon!
+## Die Bedingung kennst Du schon!
 Nach `while` steht **genau dieselbe Sorte Frage wie beim `if`** aus Unit 5 — eine Frage, die Lua mit wahr oder falsch beantwortet (`hunger < 10`, `herzen > 0`, …).
 
 Der Unterschied: `if` stellt die Frage **einmal**. `while` stellt sie **vor jeder Runde neu**:
@@ -47,7 +47,7 @@ So läuft das ab:
 - … so geht es weiter …
 - **Nach Runde 10:** Ist `10 < 10`? **Falsch!** → Schleife fertig, es geht bei "Bin satt!" weiter.
 
-### 🤔 Moment — `hunger = hunger + 1`?!
+## 🤔 Moment — `hunger = hunger + 1`?!
 Als Mathe-Aufgabe wäre das Unsinn: Eine Zahl kann nicht gleich sich selbst plus 1 sein. Aber Du weißt es ja aus Unit 5: **Ein `=` ist keine Gleichung, sondern ein Befehl!**
 
 Lua liest die Zeile von **rechts nach links**:
@@ -68,6 +68,8 @@ end
 ```
 
 Das Programm schreit endlos "Aua!", denn `herzen` bleibt immer 10 — die Frage `herzen > 0` ist für alle Ewigkeit wahr. **Jetzt drück Strg+C** — den Not-Aus-Knopf aus dem Setup. Geschafft? Glückwunsch, Du hast Deinen ersten Endlos-Bug überlebt. 😄
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 7.1: Repariere die Endlos-Schleife
 In der Schleife muss `herzen = herzen - 1` stehen, damit die Frage irgendwann falsch wird. Bau es ein und lass zusätzlich in jeder Runde die übrigen Herzen ausgeben. Nach der Schleife: "Umgefallen!" — und diesmal hört das Programm von selbst auf.

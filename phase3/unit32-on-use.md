@@ -1,6 +1,6 @@
 # 🪄 Unit 32: Items mit eigener Aktion — `on_use`
 
-### Was lernen wir?
+## Was lernen wir?
 Bisher haben Items beim Klicken nur Essens-Heilung gemacht. Jetzt schreiben wir eigene Aktionen.
 
 ```lua
@@ -49,6 +49,8 @@ core.register_craftitem("meinemod:feuerwerk", {
 ```
 
 Klingt kompliziert, ist aber nur eine Table: Wo sollen die Partikel starten, wie schnell, wie groß, welche Textur?
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Bring den Teleport-Stab zum Laufen. Probier verschiedene Höhen aus (5, 20, 100).

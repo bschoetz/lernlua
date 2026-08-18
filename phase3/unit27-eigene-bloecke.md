@@ -1,6 +1,6 @@
 # 🧱 Unit 27: Eigene Blöcke — `register_node` Grundlagen
 
-### Was lernen wir?
+## Was lernen wir?
 Jetzt wird's richtig spannend: Wir registrieren einen **eigenen Block**. In Luanti heißen Blöcke "Nodes".
 
 ```lua
@@ -33,6 +33,8 @@ Was passiert hier:
 
 ### Aber: Wir haben noch keine Textur!
 Ohne PNG-Bild ist der Block "pink-schwarz" (das Luanti-"Fehlt"-Muster). Die Textur kommt in der nächsten Unit dran — erstmal mit Platzhalter starten.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Lege die neue Mod an, schreib den Code, starte die Welt (Mod ankreuzen!). Im Creative-Inventar nach "Wunderblock" suchen — auch wenn er noch pink ist. Mit `/giveme meinemod:wunderblock` kannst Du ihn auch direkt holen.

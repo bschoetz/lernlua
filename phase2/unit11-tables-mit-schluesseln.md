@@ -1,6 +1,6 @@
 # 📜 Unit 11: Beschriftete Truhen — Tables mit Schlüsseln
 
-### Was lernen wir?
+## Was lernen wir?
 In Phase 1 waren Tables wie Truhen mit nummerierten Slots: `inventar[1]`, `inventar[2]`. Jetzt lernen wir **beschriftete Slots** — wie eine Shulker-Box mit Etiketten.
 
 ```lua
@@ -40,6 +40,8 @@ local spieler = {
 
 print(spieler.ausruestung.waffe)   -- "Diamantschwert"
 ```
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 11.1: Charakter-Karte
 Erstelle einen Spieler mit `name`, `herzen`, `hunger`, `xp` und `position` (selbst wieder eine Table mit `x`, `y`, `z`). Gib alles schön formatiert aus:

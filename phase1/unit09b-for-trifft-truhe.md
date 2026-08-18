@@ -1,9 +1,9 @@
 # 🌟 Unit 9½: `for` trifft Truhe
 
-### Was lernen wir?
+## Was lernen wir?
 Heute verbinden sich zwei Dinge, die Du schon gut kennst — der Rundenzähler aus Unit 6 und die Truhe aus Unit 9. Diese Kombination wirst Du ab jetzt **ständig** benutzen, bis in die Luanti-Mods von Phase 3.
 
-### Der große Moment: `for` trifft Truhe
+## Der große Moment: `for` trifft Truhe
 **Der Rundenzähler wird zur Slot-Nummer:**
 
 ```lua
@@ -23,12 +23,14 @@ In Zeitlupe:
 
 `i` hat eine Doppelrolle: Es zählt die Runden **und** zeigt auf den passenden Slot. Und weil als Zielwert `#inventar` dasteht, passt sich die Schleife automatisch an — egal, wie voll die Truhe ist.
 
-### Anhängen mit `table.insert`
+## Anhängen mit `table.insert`
 ```lua
 table.insert(inventar, "Apfel")     -- ins nächste freie Fach hinten legen
 ```
 
 `table.insert` legt das Item ans Ende — die Truhe wird um einen Slot voller, und `#inventar` zählt automatisch mit. Häng mal etwas an und lass die Schleife danach nochmal laufen: Sie druckt den neuen Slot einfach mit, ohne dass Du sie ändern musst!
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 9½.1: Dein Inventar
 Nimm Deine 5-Item-Truhe aus Quest 9.1 und gib sie als nummerierte Liste aus:

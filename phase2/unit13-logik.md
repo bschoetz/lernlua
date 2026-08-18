@@ -1,6 +1,6 @@
 # 🔀 Unit 13: Logik-Gates aus Redstone — `and`, `or`, `not`
 
-### Was lernen wir?
+## Was lernen wir?
 Bisher haben wir mit `if` immer **eine** Bedingung geprüft. Jetzt kombinieren wir sie — wie Redstone-Schaltungen.
 
 | Operator | Bedeutung | Wann wahr? |
@@ -47,6 +47,8 @@ if level >= 20 and hat_diamantschwert and hat_ruestung then
   print("Bereit für den Enderdrachen!")
 end
 ```
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 13.1: Spawn-Bedingungen
 Schreibe ein Programm, das prüft, ob Mobs spawnen können. Bedingungen:

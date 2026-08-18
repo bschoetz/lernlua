@@ -1,7 +1,9 @@
 # ⛏️ Unit 7½: Trainingslager — sammeln mit `while`
 
-### Was lernen wir?
+## Was lernen wir?
 Heute: **nichts Neues!** Du hast alles schon im Gürtel — `while` (Unit 7), `if` (Unit 5), `io.read` (Unit 4) und die Sammler-Zeile `x = x + 1`. Heute wird nur gebaut. Solche Trainings-Runden machen Profis übrigens ständig: Ein Werkzeug sitzt erst, wenn man es benutzt hat.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 7½.1: Diamanten sammeln
 Schreibe ein Programm:

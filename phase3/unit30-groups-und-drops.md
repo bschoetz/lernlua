@@ -1,6 +1,6 @@
 # ⛏️ Unit 30: Groups und Drops — Was kommt beim Abbau raus?
 
-### Was lernen wir?
+## Was lernen wir?
 **Groups** bestimmen, womit ein Block abgebaut werden kann. **Drop** bestimmt, was beim Abbau ins Inventar fällt.
 
 ### Die wichtigsten Groups in Mineclonia
@@ -37,6 +37,8 @@ drop = {
   },
 },
 ```
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Mach einen Block "Magisches Erz", der etwas droppen soll, das noch gar nicht existiert. Errate im Voraus: Was passiert beim Abbau? Probier's aus.

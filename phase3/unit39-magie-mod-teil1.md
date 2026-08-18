@@ -118,6 +118,8 @@ core.register_craft({
 core.log("action", "[magie] Magie-Mod (Teil 1) geladen!")
 ```
 
+## ⚔️ Übungsquests
+
 ### 🎯 Aufgabe
 Bring Teil 1 zum Laufen. Im Spiel testen:
 - `/giveme magie:erz` → platzieren, abbauen → Staub kommt

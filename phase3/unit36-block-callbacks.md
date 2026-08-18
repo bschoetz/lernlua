@@ -1,6 +1,6 @@
 # 🧱 Unit 36: Callbacks für Blöcke
 
-### Was lernen wir?
+## Was lernen wir?
 Es gibt auch Callbacks, die feuern, wenn **Blöcke** platziert oder abgebaut werden.
 
 ### Block wird platziert
@@ -29,6 +29,8 @@ end)
 
 ### Achtung: Diese Callbacks feuern für **alle** Blöcke
 Deshalb immer mit `if newnode.name == "..."` filtern. Sonst spamt Dein Code bei jedem einzelnen Block-Klick.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Wenn ein Spieler einen Diamant-Erzblock abbaut (`mcl_core:diamond_ore`), bekommt er eine private Gratulation im Chat.

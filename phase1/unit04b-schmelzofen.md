@@ -26,7 +26,7 @@ print(type("5"))       -- na, was wohl?
 
 Die ersten beiden sind keine Überraschung: `string` heißt Schild, `number` heißt echte Zahl. Und die dritte Zeile? **`string`** — die Anführungszeichen machen den Unterschied, genau wie oben behauptet.
 
-![Comic: Lua und Sati prüfen Datentypen](unit04a_string-number.jpg)
+![Comic: Lua und Sati prüfen Datentypen](unit04b_string-number.jpg)
 
 
 
@@ -52,7 +52,7 @@ print(type(zahl))    -- number - der Detektiv bestätigt es
 
 
 
-![Comic: Lua und Sati schmelzen Strings zu Zahlen](unit04a_tonumber.jpg)
+![Comic: Lua und Sati schmelzen Strings zu Zahlen](unit04b_tonumber.jpg)
 
 > ⚠️ **Was passiert mit Unschmelzbarem?** Wenn Du etwas in den Ofen legst, das keine Zahl ist — `tonumber("Hallo")` — kommt **nichts** raus (Lua nennt das `nil`). Damit kann man dann natürlich auch nicht rechnen.
 >

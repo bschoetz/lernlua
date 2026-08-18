@@ -186,6 +186,8 @@ end
 
 > ⚠️ Beachte auch die **Reihenfolge der Funktionen**: `gehe` ruft `boss_kampf` auf — deshalb muss `boss_kampf` weiter oben in der Datei stehen. Bei `local`-Funktionen kennt Lua nur, was schon definiert wurde.
 
+## ⚔️ Übungsquests
+
 ### 🎯 Quest 20.1: Durchspielen
 Tippe das Programm ab (ruhig in mehreren Sitzungen) und spiele es durch — einmal **mit** und einmal absichtlich **ohne** Schwert. Verstehe jeden Teil — frag ruhig nach!
 

@@ -1,6 +1,6 @@
 # 🚶 Unit 18: Bewegung in der Welt — Eingaben verarbeiten
 
-### Was lernen wir?
+## Was lernen wir?
 Wir nehmen die Welt aus Unit 17 und machen daraus ein **interaktives Spiel**, wo der Spieler Richtungen eintippt.
 
 ### Der Bewegungs-Befehl
@@ -37,6 +37,8 @@ end
 ```
 
 > 💡 **Neu: `break`** — bricht eine Schleife sofort ab. `while true do` läuft eigentlich für immer — `break` ist der Notausgang. (Und falls Du Dich mal einschließt: Strg+C im Terminal.)
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 18.1: Die Welt erforschen
 Nimm Deine Welt aus Quest 17.1 und mache sie spielbar mit dem Code oben. Spiele und gehe durch alle Räume.

@@ -1,6 +1,6 @@
 # 📦 Unit 21: Was ist eine Mod? — Die Anatomie
 
-### Was lernen wir?
+## Was lernen wir?
 Jede Luanti-Mod ist nichts anderes als ein **Ordner** mit ein paar Dateien drin. Es ist kein magisches Programm und keine Spezial-Datei — nur Text, den Luanti liest.
 
 Mindestens diese zwei Dateien braucht jede Mod:
@@ -13,6 +13,8 @@ Optional kommen dazu:
 - **`sounds/`** — Ordner mit Tönen (OGG-Dateien)
 
 Der **Ordnername** ist gleichzeitig der Name der Mod. Wenn der Ordner `meinemod` heißt, ist auch die Mod `meinemod`. Wichtig: nur Kleinbuchstaben, Zahlen und Unterstrich — keine Leerzeichen, keine Umlaute.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Schau Dir die Liste von echten Mineclonia-Mod-Ordnern an (`mcl_core`, `mcl_sounds`, `mcl_doors`...). Du findest sie im User-Data-Verzeichnis unter `games/mineclonia/mods/`. Was fällt am Namensmuster auf? Warum machen Mod-Entwickler das wohl?

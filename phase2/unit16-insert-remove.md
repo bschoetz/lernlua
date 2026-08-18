@@ -1,6 +1,6 @@
 # 🗝️ Unit 16: Items in Truhen — `table.insert` und `table.remove`
 
-### Was lernen wir?
+## Was lernen wir?
 Du kannst eine Table während des Programms **wachsen und schrumpfen** lassen.
 
 ### Hinzufügen
@@ -45,6 +45,8 @@ local inventar = {"Schwert", "Brot"}
 print(enthaelt(inventar, "Brot"))     -- true
 print(enthaelt(inventar, "Diamant"))  -- false
 ```
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 16.1: Inventar-Verwalter
 Schreibe ein Programm:

@@ -1,9 +1,9 @@
 # 🗝️ Unit 5½: Der Türen-Gang — `elseif`
 
-### Was lernen wir?
+## Was lernen wir?
 Mit `if` und `else` hast Du zwei Türen. Aber was, wenn es mehr als zwei Möglichkeiten gibt? Heute bauen wir einen ganzen **Gang voller Türen**.
 
-### Mehrere Türen: `elseif`
+## Mehrere Türen: `elseif`
 ```lua
 print("Welche Welt? (overworld / nether / end)")
 local welt = io.read()
@@ -23,7 +23,7 @@ end
 
 Und noch etwas fällt auf: Der ganze Gang braucht nur **ein** `end` — egal wie viele `elseif`-Türen drinstecken.
 
-### ⚠️ Die Schild-Falle beim Vergleichen
+## ⚠️ Die Schild-Falle beim Vergleichen
 Erinnerst Du Dich an Unit 4½? Jetzt kommt die angekündigte Falle. Probier aus:
 
 ```lua
@@ -35,6 +35,8 @@ print("5" == 5)
 Was heißt das für Deine Programme?
 - Vergleichst Du **Text mit Text** (wie oben `welt == "nether"`) — alles gut, Schild gegen Schild. ✅
 - Willst Du eine **Zahl** aus `io.read()` vergleichen — erst durch den Schmelzofen: `local herzen = tonumber(io.read())`. Sonst ist Deine Bedingung immer falsch, und Du suchst ewig den Fehler. 🔥
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 5½.1: Der Mob-Bestimmer
 Frage nach einem Mob-Namen. Gib aus:

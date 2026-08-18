@@ -1,6 +1,6 @@
 # 🔨 Unit 33: Crafting-Rezepte — Geformt
 
-### Was lernen wir?
+## Was lernen wir?
 Damit der Spieler Items **selbst herstellen** kann, brauchen wir Rezepte. Geformte Rezepte funktionieren wie in der Werkbank: Die Position der Zutaten zählt.
 
 ### Aufbau
@@ -43,6 +43,8 @@ recipe = {
   {"mcl_core:diamond", "",               "mcl_core:diamond"},
 },
 ```
+
+## ⚔️ Übungsquests
 
 ### 🎯 Aufgabe
 Schreibe ein Rezept für Deinen "Magischen Trank": 1 Apfel + 4 Diamanten irgendwie kombiniert. Probier's im Spiel an der Werkbank aus.

@@ -1,6 +1,6 @@
 # 🗺️ Unit 17: Welt aus Räumen — Räume als Tables
 
-### Was lernen wir?
+## Was lernen wir?
 Jetzt wird's spannend. Wir bauen die Grundlage für ein Text-Adventure: eine **Welt aus Räumen**, zwischen denen man wechseln kann.
 
 ### Ein Raum als Table
@@ -62,6 +62,8 @@ zeige_raum()
 ```
 
 > 💡 **Neu: `pairs(...)`** — wenn eine Table beschriftete Slots hat (statt 1, 2, 3), gehst Du sie mit `for ... in pairs(...) do` durch. `richtung` ist der Name, `ziel` der Wert. Die Reihenfolge ist dabei übrigens nicht garantiert — Lua darf die Etiketten in beliebiger Ordnung durchgehen.
+
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 17.1: Deine Mini-Welt
 Baue eine Welt mit **4 Räumen** Deiner Wahl (z.B. Spawn, Dorf, Mine, Nether-Portal). Jeder Raum braucht `name`, `beschreibung` und `ausgaenge`. Achte darauf: Wenn Raum A einen Ausgang nach B hat, sollte B auch einen zurück nach A haben.
