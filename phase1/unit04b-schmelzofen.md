@@ -13,19 +13,29 @@ Die Anführungszeichen kennst Du seit Unit 1 — sie sind sozusagen das Schild d
 
 **Alles, was Du mit `io.read()` eintippst, kommt als Schild an.** Auch wenn Du `12` tippst — das Programm bekommt ein Schild mit "12" drauf, keine echte Zahl.
 
-### 🧪 Experiment: Der Detektiv-Test
+### 🧪 Experiment: Der Detektiv lernt die Sorten kennen
 Glaubst Du nicht? Dann fragen wir Lua einfach selbst! Es gibt ein Detektiv-Werkzeug: `type(...)` verrät Dir von allem die **Sorte**. (Es liegt ohne Kiste direkt griffbereit, wie `print` — Detektivarbeit braucht man eben ständig.)
+
+Erst schauen wir, was der Detektiv zu Dingen sagt, deren Sorte wir schon kennen:
 
 ```lua
 print(type("Hallo"))   -- string  (Schild)
 print(type(5))         -- number  (echte Zahl)
+print(type("5"))       -- na, was wohl?
+```
 
+Die ersten beiden sind keine Überraschung: `string` heißt Schild, `number` heißt echte Zahl. Und die dritte Zeile? **`string`** — die Anführungszeichen machen den Unterschied, genau wie oben behauptet.
+
+### 🧪 Experiment: Der Detektiv untersucht die Eingabe
+Jetzt kommt der spannende Teil. Wir lassen den Detektiv untersuchen, was `io.read()` liefert:
+
+```lua
 print("Tippe eine Zahl!")
 local eingabe = io.read()
 print(type(eingabe))
 ```
 
-Starte das Programm und tippe `12` ein. Lua sagt: **`string`** — ein Schild! Du hast eine Zahl *getippt*, aber angekommen ist ein Schild, auf dem "12" steht. Da hilft kein Leugnen: Der Detektiv hat es schwarz auf weiß.
+Starte das Programm und tippe `12` ein — **ohne** Anführungszeichen, einfach die Ziffern. Lua sagt trotzdem: **`string`** — ein Schild! Du hast eine Zahl *getippt*, aber angekommen ist ein Schild, auf dem "12" steht. Da hilft kein Leugnen: Der Detektiv hat es schwarz auf weiß.
 
 ### Der Schmelzofen: `tonumber`
 Wie kommen wir vom Schild zur echten Zahl? Mit `tonumber(...)` — das ist wie der **Ofen** in Minecraft: Eisenerz rein, Eisenbarren raus. Hier: Schild rein, echte Zahl raus.

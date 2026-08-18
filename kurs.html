@@ -904,17 +904,23 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </ul>
 <p>Die Anführungszeichen kennst Du seit Unit 1 — sie sind sozusagen das Schild drumherum. Und jetzt kommt's: <code>"5"</code> ist <strong>nicht</strong> die Zahl 5. Es ist ein Schild, auf das jemand eine 5 gemalt hat!</p>
 <p><strong>Alles, was Du mit <code>io.read()</code> eintippst, kommt als Schild an.</strong> Auch wenn Du <code>12</code> tippst — das Programm bekommt ein Schild mit "12" drauf, keine echte Zahl.</p>
-<h3>🧪 Experiment: Der Detektiv-Test</h3>
+<h3>🧪 Experiment: Der Detektiv lernt die Sorten kennen</h3>
 <p>Glaubst Du nicht? Dann fragen wir Lua einfach selbst! Es gibt ein Detektiv-Werkzeug: <code>type(...)</code> verrät Dir von allem die <strong>Sorte</strong>. (Es liegt ohne Kiste direkt griffbereit, wie <code>print</code> — Detektivarbeit braucht man eben ständig.)</p>
+<p>Erst schauen wir, was der Detektiv zu Dingen sagt, deren Sorte wir schon kennen:</p>
 <div class="codehilite"><pre><code><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hallo&quot;</span><span class="p">))</span><span class="w">   </span><span class="c1">-- string  (Schild)</span>
 </span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="w">         </span><span class="c1">-- number  (echte Zahl)</span>
-</span><span class="zeile">
-</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tippe eine Zahl!&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="p">))</span><span class="w">       </span><span class="c1">-- na, was wohl?</span>
+</span></code></pre></div>
+
+<p>Die ersten beiden sind keine Überraschung: <code>string</code> heißt Schild, <code>number</code> heißt echte Zahl. Und die dritte Zeile? <strong><code>string</code></strong> — die Anführungszeichen machen den Unterschied, genau wie oben behauptet.</p>
+<h3>🧪 Experiment: Der Detektiv untersucht die Eingabe</h3>
+<p>Jetzt kommt der spannende Teil. Wir lassen den Detektiv untersuchen, was <code>io.read()</code> liefert:</p>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tippe eine Zahl!&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">eingabe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">io.read</span><span class="p">()</span>
 </span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">))</span>
 </span></code></pre></div>
 
-<p>Starte das Programm und tippe <code>12</code> ein. Lua sagt: <strong><code>string</code></strong> — ein Schild! Du hast eine Zahl <em>getippt</em>, aber angekommen ist ein Schild, auf dem "12" steht. Da hilft kein Leugnen: Der Detektiv hat es schwarz auf weiß.</p>
+<p>Starte das Programm und tippe <code>12</code> ein — <strong>ohne</strong> Anführungszeichen, einfach die Ziffern. Lua sagt trotzdem: <strong><code>string</code></strong> — ein Schild! Du hast eine Zahl <em>getippt</em>, aber angekommen ist ein Schild, auf dem "12" steht. Da hilft kein Leugnen: Der Detektiv hat es schwarz auf weiß.</p>
 <h3>Der Schmelzofen: <code>tonumber</code></h3>
 <p>Wie kommen wir vom Schild zur echten Zahl? Mit <code>tonumber(...)</code> — das ist wie der <strong>Ofen</strong> in Minecraft: Eisenerz rein, Eisenbarren raus. Hier: Schild rein, echte Zahl raus.</p>
 <div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">schild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="w">            </span><span class="c1">-- ein Schild mit &quot;12&quot; drauf</span>
