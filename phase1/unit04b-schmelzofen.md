@@ -13,7 +13,7 @@ Die Anführungszeichen kennst Du seit Unit 1 — sie sind sozusagen das Schild d
 
 **Alles, was Du mit `io.read()` eintippst, kommt als Schild an.** Auch wenn Du `12` tippst — das Programm bekommt ein Schild mit "12" drauf, keine echte Zahl.
 
-### 🧪 Experiment: Der Detektiv lernt die Sorten kennen
+### 🧪 Experiment 1: Der Detektiv lernt die Sorten kennen
 Glaubst Du nicht? Dann fragen wir Lua einfach selbst! Es gibt ein Detektiv-Werkzeug: `type(...)` verrät Dir von allem die **Sorte**. (Es liegt ohne Kiste direkt griffbereit, wie `print` — Detektivarbeit braucht man eben ständig.)
 
 Erst schauen wir, was der Detektiv zu Dingen sagt, deren Sorte wir schon kennen:
@@ -26,7 +26,7 @@ print(type("5"))       -- na, was wohl?
 
 Die ersten beiden sind keine Überraschung: `string` heißt Schild, `number` heißt echte Zahl. Und die dritte Zeile? **`string`** — die Anführungszeichen machen den Unterschied, genau wie oben behauptet.
 
-### 🧪 Experiment: Der Detektiv untersucht die Eingabe
+### 🧪 Experiment 2: Der Detektiv untersucht die Eingabe
 Jetzt kommt der spannende Teil. Wir lassen den Detektiv untersuchen, was `io.read()` liefert:
 
 ```lua
@@ -49,11 +49,17 @@ print(type(zahl))    -- number - der Detektiv bestätigt es
 ```
 
 > ⚠️ **Was passiert mit Unschmelzbarem?** Wenn Du etwas in den Ofen legst, das keine Zahl ist — `tonumber("Hallo")` — kommt **nichts** raus (Lua nennt das `nil`). Damit kann man dann natürlich auch nicht rechnen.
-
-> 💡 **Ehrlich gesagt:** Lua ist manchmal schlau und schmilzt heimlich selbst — `"12" + 1` funktioniert tatsächlich! Warum dann überhaupt `tonumber`? Zwei Gründe. Erstens: Das heimliche Schmelzen klappt nur, solange wirklich eine Zahl auf dem Schild steht — tippt jemand `drei`, kracht Dein Programm mitten in der Rechnung zusammen. Zweitens: Beim **Vergleichen** (kommt in Unit 5½) schmilzt Lua **nie** heimlich — da ist das Schild `"12"` niemals gleich der Zahl `12`, und Du suchst ewig den Fehler. Profi-Regel: **Schilder mit Zahlen drauf immer selbst schmelzen.**
+>
+> **Lua ist manchmal schlau und schmilzt heimlich selbst**: `"12" + 1` funktioniert tatsächlich! Warum dann überhaupt `tonumber`? Zwei Gründe: 
+> 
+> 1. Das heimliche Schmelzen klappt nur, solange *wirklich eine Zahl auf dem Schild steht*. Tippt jemand statt `3` das Wort `drei`, kracht Dein Programm mitten in der Rechnung zusammen. 
+> 2. Beim **Vergleichen** (kommt in Unit 5½) schmilzt Lua **nie** heimlich — da ist das Schild `"12"` niemals gleich der Zahl `12`, und Du suchst ewig den Fehler. 
+>
+> Profi-Regel: **Schilder mit Zahlen drauf immer selbst schmelzen.**
 
 ### 🎯 Quest 4½.1: Der Zahlen-Addierer
-Bau ein Programm:
+Bau ein Programm, das folgende 3 Dinge tut:
+
 1. Es fragt nach der ersten Zahl
 2. Es fragt nach der zweiten Zahl
 3. Es schmilzt beide und gibt die **Summe** aus — bei `3` und `4` muss `7` rauskommen
