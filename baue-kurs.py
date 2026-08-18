@@ -14,6 +14,9 @@ from pathlib import Path
 
 import markdown
 from pygments.formatters import HtmlFormatter
+from pygments.style import Style
+from pygments.token import (Comment, Error, Generic, Keyword, Name, Number,
+                            Operator, Punctuation, String, Token)
 
 BASIS = Path(__file__).parent
 AUSGABE = BASIS / "kurs.html"
@@ -113,6 +116,84 @@ def titel_aus(text: str, pfad: Path) -> str:
     return titel
 
 
+class VSCodiumMonokai(Style):
+    """Monokai in genau den Farben, die VSCodium im Editor anzeigt.
+
+    Pygments' eigener `monokai`-Style faerbt *alle* Schluesselwoerter cyan.
+    Das Original-Monokai (und damit VSCodium) unterscheidet: `keyword` ist rot,
+    nur `constant.language` und `storage.type` sind cyan/lila. Ohne diese
+    Angleichung ist z.B. `local` im Kurs blau, im Editor aber rot — und der
+    Sohn sucht den Unterschied.
+
+    Die Werte stammen aus dem eingebauten Theme
+    extensions/theme-monokai/themes/monokai-color-theme.json.
+    """
+
+    name = "vscodium-monokai"
+    background_color = "#272822"     # editor.background
+    highlight_color = "#49483e"
+    line_number_color = "#90908a"    # editorLineNumber.foreground
+
+    styles = {
+        Token:                  "#f8f8f2",   # editor.foreground
+        Comment:                "#88846f",   # comment
+        Keyword:                "#f92672",   # keyword — auch `local`, `if`, `end`
+        Keyword.Constant:       "#ae81ff",   # constant.language — true/false/nil
+        Operator:               "#f92672",   # keyword.operator — auch and/or/not
+        Punctuation:            "#f8f8f2",
+        Name:                   "#f8f8f2",   # variable
+        Name.Builtin:           "#66d9ef",   # support.function — print, math.floor
+        Name.Function:          "#a6e22e",   # entity.name.function — die Definition
+        Name.Function.Magic:    "#66d9ef",   # support.function.any-method — der Aufruf
+        Name.Variable.Instance: "italic #fd971f",  # variable.parameter
+        Name.Variable.Global:   "#fd971f",   # variable.language — self
+        Name.Class:             "#a6e22e",
+        Name.Attribute:         "#a6e22e",
+        Name.Decorator:         "#a6e22e",
+        Name.Tag:               "#f92672",
+        Number:                 "#ae81ff",   # constant.numeric
+        String:                 "#e6db74",   # string
+        String.Escape:          "#ae81ff",   # constant.character
+        Error:                  "#f8f8f0 bg:#f92672",
+        Generic.Deleted:        "#f92672",
+        Generic.Inserted:       "#a6e22e",
+        Generic.Emph:           "italic",
+        Generic.Strong:         "bold",
+        Generic.Subheading:     "#75715e",
+    }
+
+
+def lua_bereiche(tokens):
+    """Zwei Unterscheidungen nachruesten, die Pygments' Lua-Lexer nicht macht.
+
+    VSCodium faerbt den Funktions*aufruf* cyan und nur die *Definition* gruen;
+    Pygments nutzt fuer beides Name.Function. Und Parameter einer Definition
+    (sowie `self`) sind dort orange, bei Pygments gewoehnliche Name.Variable.
+    """
+    nach_function = False   # zwischen dem Wort `function` und der Klammer
+    param_tiefe = 0         # >0: wir stehen in der Parameterliste
+    for ttype, wert in tokens:
+        if ttype in Keyword and wert == "function":
+            nach_function = True
+        elif ttype in Name.Function and not nach_function:
+            ttype = Name.Function.Magic
+        elif ttype in Name.Variable:
+            if param_tiefe:
+                ttype = Name.Variable.Instance
+            elif wert == "self":
+                ttype = Name.Variable.Global
+        elif ttype in Punctuation:
+            for zeichen in wert:
+                if zeichen == "(":
+                    if nach_function:
+                        nach_function, param_tiefe = False, 1
+                    elif param_tiefe:
+                        param_tiefe += 1
+                elif zeichen == ")" and param_tiefe:
+                    param_tiefe -= 1
+        yield ttype, wert
+
+
 class ZeilenFormatter(HtmlFormatter):
     """Pygments-Formatter, der jede Codezeile in ein eigenes <span> packt.
 
@@ -124,7 +205,14 @@ class ZeilenFormatter(HtmlFormatter):
     def __init__(self, lang_str="", **kwargs):
         kwargs["linespans"] = "zeile"
         kwargs["wrapcode"] = True
+        kwargs["style"] = VSCodiumMonokai
+        self.ist_lua = lang_str.endswith("lua")
         super().__init__(**kwargs)
+
+    def format_unencoded(self, tokensource, outfile):
+        if self.ist_lua:
+            tokensource = lua_bereiche(tokensource)
+        super().format_unencoded(tokensource, outfile)
 
 
 def zeilen_aufbereiten(html: str) -> str:
@@ -219,7 +307,7 @@ code {
   font-family: "Hack", ui-monospace, "JetBrains Mono", "Fira Code", monospace;
 }
 .codehilite {
-  background: var(--code-bg); border: 1px solid var(--border);
+  background: #272822; color: #f8f8f2; border: 1px solid #414339;
   border-radius: 8px; padding: 0.75rem 1rem; margin: 1rem 0; max-width: 100%;
 }
 /* Lange Zeilen umbrechen statt seitlich rausragen — sonst muss man scrollen. */
@@ -237,7 +325,7 @@ code {
 .codehilite .zeile::before {
   content: counter(zeile);
   display: inline-block; width: 2.2em; margin-right: 1em;
-  text-align: right; color: var(--muted); opacity: 0.6;
+  text-align: right; color: #90908a;
   -webkit-user-select: none; user-select: none;
 }
 table { border-collapse: collapse; margin: 1rem 0; display: block; overflow-x: auto; max-width: 100%; }
@@ -258,12 +346,9 @@ li.task:has(input:checked) { color: var(--muted); text-decoration: line-through;
   nav { position: static; width: 100%; height: auto; max-height: 45vh; }
   main { padding: 1rem; }
 }
-/* Pygments hell */
-__PYGMENTS_HELL__
-/* Pygments dunkel */
-@media (prefers-color-scheme: dark) {
-__PYGMENTS_DUNKEL__
-}
+/* Syntax-Farben: Monokai in denselben Werten wie VSCodium.
+   Bewusst in beiden Modi gleich — der Editor wechselt ja auch nicht mit. */
+__PYGMENTS__
 </style>
 </head>
 <body>
@@ -351,8 +436,7 @@ def main():
 
     seite = (VORLAGE
              .replace("__FONTS__", font_css())
-             .replace("__PYGMENTS_HELL__", HtmlFormatter(style="default").get_style_defs(".codehilite"))
-             .replace("__PYGMENTS_DUNKEL__", HtmlFormatter(style="monokai").get_style_defs(".codehilite"))
+             .replace("__PYGMENTS__", HtmlFormatter(style=VSCodiumMonokai).get_style_defs(".codehilite"))
              .replace("__NAVIGATION__", "\n".join(nav))
              .replace("__INHALT__", inhalt))
 

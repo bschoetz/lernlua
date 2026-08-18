@@ -63,7 +63,7 @@ code {
   font-family: "Hack", ui-monospace, "JetBrains Mono", "Fira Code", monospace;
 }
 .codehilite {
-  background: var(--code-bg); border: 1px solid var(--border);
+  background: #272822; color: #f8f8f2; border: 1px solid #414339;
   border-radius: 8px; padding: 0.75rem 1rem; margin: 1rem 0; max-width: 100%;
 }
 /* Lange Zeilen umbrechen statt seitlich rausragen — sonst muss man scrollen. */
@@ -81,7 +81,7 @@ code {
 .codehilite .zeile::before {
   content: counter(zeile);
   display: inline-block; width: 2.2em; margin-right: 1em;
-  text-align: right; color: var(--muted); opacity: 0.6;
+  text-align: right; color: #90908a;
   -webkit-user-select: none; user-select: none;
 }
 table { border-collapse: collapse; margin: 1rem 0; display: block; overflow-x: auto; max-width: 100%; }
@@ -102,142 +102,66 @@ li.task:has(input:checked) { color: var(--muted); text-decoration: line-through;
   nav { position: static; width: 100%; height: auto; max-height: 45vh; }
   main { padding: 1rem; }
 }
-/* Pygments hell */
+/* Syntax-Farben: Monokai in denselben Werten wie VSCodium.
+   Bewusst in beiden Modi gleich — der Editor wechselt ja auch nicht mit. */
 pre { line-height: 125%; }
-td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-.codehilite .hll { background-color: #ffffcc }
-.codehilite { background: #f8f8f8; }
-.codehilite .c { color: #3D7B7B; font-style: italic } /* Comment */
-.codehilite .err { border: 1px solid #F00 } /* Error */
-.codehilite .k { color: #008000; font-weight: bold } /* Keyword */
-.codehilite .o { color: #666 } /* Operator */
-.codehilite .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
-.codehilite .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
-.codehilite .cp { color: #9C6500 } /* Comment.Preproc */
-.codehilite .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
-.codehilite .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
-.codehilite .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
-.codehilite .gd { color: #A00000 } /* Generic.Deleted */
-.codehilite .ge { font-style: italic } /* Generic.Emph */
-.codehilite .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
-.codehilite .gr { color: #E40000 } /* Generic.Error */
-.codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.codehilite .gi { color: #008400 } /* Generic.Inserted */
-.codehilite .go { color: #717171 } /* Generic.Output */
-.codehilite .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.codehilite .gs { font-weight: bold } /* Generic.Strong */
-.codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.codehilite .gt { color: #04D } /* Generic.Traceback */
-.codehilite .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.codehilite .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.codehilite .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.codehilite .kp { color: #008000 } /* Keyword.Pseudo */
-.codehilite .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.codehilite .kt { color: #B00040 } /* Keyword.Type */
-.codehilite .m { color: #666 } /* Literal.Number */
-.codehilite .s { color: #BA2121 } /* Literal.String */
-.codehilite .na { color: #687822 } /* Name.Attribute */
-.codehilite .nb { color: #008000 } /* Name.Builtin */
-.codehilite .nc { color: #00F; font-weight: bold } /* Name.Class */
-.codehilite .no { color: #800 } /* Name.Constant */
-.codehilite .nd { color: #A2F } /* Name.Decorator */
-.codehilite .ni { color: #717171; font-weight: bold } /* Name.Entity */
-.codehilite .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
-.codehilite .nf { color: #00F } /* Name.Function */
-.codehilite .nl { color: #767600 } /* Name.Label */
-.codehilite .nn { color: #00F; font-weight: bold } /* Name.Namespace */
-.codehilite .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.codehilite .nv { color: #19177C } /* Name.Variable */
-.codehilite .ow { color: #A2F; font-weight: bold } /* Operator.Word */
-.codehilite .w { color: #BBB } /* Text.Whitespace */
-.codehilite .mb { color: #666 } /* Literal.Number.Bin */
-.codehilite .mf { color: #666 } /* Literal.Number.Float */
-.codehilite .mh { color: #666 } /* Literal.Number.Hex */
-.codehilite .mi { color: #666 } /* Literal.Number.Integer */
-.codehilite .mo { color: #666 } /* Literal.Number.Oct */
-.codehilite .sa { color: #BA2121 } /* Literal.String.Affix */
-.codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
-.codehilite .sc { color: #BA2121 } /* Literal.String.Char */
-.codehilite .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.codehilite .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
-.codehilite .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
-.codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.codehilite .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
-.codehilite .sx { color: #008000 } /* Literal.String.Other */
-.codehilite .sr { color: #A45A77 } /* Literal.String.Regex */
-.codehilite .s1 { color: #BA2121 } /* Literal.String.Single */
-.codehilite .ss { color: #19177C } /* Literal.String.Symbol */
-.codehilite .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.codehilite .fm { color: #00F } /* Name.Function.Magic */
-.codehilite .vc { color: #19177C } /* Name.Variable.Class */
-.codehilite .vg { color: #19177C } /* Name.Variable.Global */
-.codehilite .vi { color: #19177C } /* Name.Variable.Instance */
-.codehilite .vm { color: #19177C } /* Name.Variable.Magic */
-.codehilite .il { color: #666 } /* Literal.Number.Integer.Long */
-/* Pygments dunkel */
-@media (prefers-color-scheme: dark) {
-pre { line-height: 125%; }
-td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .normal { color: #90908a; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #90908a; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .codehilite .hll { background-color: #49483e }
 .codehilite { background: #272822; color: #F8F8F2 }
-.codehilite .c { color: #959077 } /* Comment */
-.codehilite .err { color: #ED007E; background-color: #1E0010 } /* Error */
+.codehilite .c { color: #88846F } /* Comment */
+.codehilite .err { color: #F8F8F0; background-color: #F92672 } /* Error */
 .codehilite .esc { color: #F8F8F2 } /* Escape */
 .codehilite .g { color: #F8F8F2 } /* Generic */
-.codehilite .k { color: #66D9EF } /* Keyword */
-.codehilite .l { color: #AE81FF } /* Literal */
+.codehilite .k { color: #F92672 } /* Keyword */
+.codehilite .l { color: #F8F8F2 } /* Literal */
 .codehilite .n { color: #F8F8F2 } /* Name */
-.codehilite .o { color: #FF4689 } /* Operator */
+.codehilite .o { color: #F92672 } /* Operator */
 .codehilite .x { color: #F8F8F2 } /* Other */
 .codehilite .p { color: #F8F8F2 } /* Punctuation */
-.codehilite .ch { color: #959077 } /* Comment.Hashbang */
-.codehilite .cm { color: #959077 } /* Comment.Multiline */
-.codehilite .cp { color: #959077 } /* Comment.Preproc */
-.codehilite .cpf { color: #959077 } /* Comment.PreprocFile */
-.codehilite .c1 { color: #959077 } /* Comment.Single */
-.codehilite .cs { color: #959077 } /* Comment.Special */
-.codehilite .gd { color: #FF4689 } /* Generic.Deleted */
+.codehilite .ch { color: #88846F } /* Comment.Hashbang */
+.codehilite .cm { color: #88846F } /* Comment.Multiline */
+.codehilite .cp { color: #88846F } /* Comment.Preproc */
+.codehilite .cpf { color: #88846F } /* Comment.PreprocFile */
+.codehilite .c1 { color: #88846F } /* Comment.Single */
+.codehilite .cs { color: #88846F } /* Comment.Special */
+.codehilite .gd { color: #F92672 } /* Generic.Deleted */
 .codehilite .ge { color: #F8F8F2; font-style: italic } /* Generic.Emph */
-.codehilite .ges { color: #F8F8F2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.codehilite .ges { color: #F8F8F2 } /* Generic.EmphStrong */
 .codehilite .gr { color: #F8F8F2 } /* Generic.Error */
 .codehilite .gh { color: #F8F8F2 } /* Generic.Heading */
 .codehilite .gi { color: #A6E22E } /* Generic.Inserted */
-.codehilite .go { color: #66D9EF } /* Generic.Output */
-.codehilite .gp { color: #FF4689; font-weight: bold } /* Generic.Prompt */
+.codehilite .go { color: #F8F8F2 } /* Generic.Output */
+.codehilite .gp { color: #F8F8F2 } /* Generic.Prompt */
 .codehilite .gs { color: #F8F8F2; font-weight: bold } /* Generic.Strong */
-.codehilite .gu { color: #959077 } /* Generic.Subheading */
+.codehilite .gu { color: #75715E } /* Generic.Subheading */
 .codehilite .gt { color: #F8F8F2 } /* Generic.Traceback */
-.codehilite .kc { color: #66D9EF } /* Keyword.Constant */
-.codehilite .kd { color: #66D9EF } /* Keyword.Declaration */
-.codehilite .kn { color: #FF4689 } /* Keyword.Namespace */
-.codehilite .kp { color: #66D9EF } /* Keyword.Pseudo */
-.codehilite .kr { color: #66D9EF } /* Keyword.Reserved */
-.codehilite .kt { color: #66D9EF } /* Keyword.Type */
-.codehilite .ld { color: #E6DB74 } /* Literal.Date */
+.codehilite .kc { color: #AE81FF } /* Keyword.Constant */
+.codehilite .kd { color: #F92672 } /* Keyword.Declaration */
+.codehilite .kn { color: #F92672 } /* Keyword.Namespace */
+.codehilite .kp { color: #F92672 } /* Keyword.Pseudo */
+.codehilite .kr { color: #F92672 } /* Keyword.Reserved */
+.codehilite .kt { color: #F92672 } /* Keyword.Type */
+.codehilite .ld { color: #F8F8F2 } /* Literal.Date */
 .codehilite .m { color: #AE81FF } /* Literal.Number */
 .codehilite .s { color: #E6DB74 } /* Literal.String */
 .codehilite .na { color: #A6E22E } /* Name.Attribute */
-.codehilite .nb { color: #F8F8F2 } /* Name.Builtin */
+.codehilite .nb { color: #66D9EF } /* Name.Builtin */
 .codehilite .nc { color: #A6E22E } /* Name.Class */
-.codehilite .no { color: #66D9EF } /* Name.Constant */
+.codehilite .no { color: #F8F8F2 } /* Name.Constant */
 .codehilite .nd { color: #A6E22E } /* Name.Decorator */
 .codehilite .ni { color: #F8F8F2 } /* Name.Entity */
-.codehilite .ne { color: #A6E22E } /* Name.Exception */
+.codehilite .ne { color: #F8F8F2 } /* Name.Exception */
 .codehilite .nf { color: #A6E22E } /* Name.Function */
 .codehilite .nl { color: #F8F8F2 } /* Name.Label */
 .codehilite .nn { color: #F8F8F2 } /* Name.Namespace */
-.codehilite .nx { color: #A6E22E } /* Name.Other */
+.codehilite .nx { color: #F8F8F2 } /* Name.Other */
 .codehilite .py { color: #F8F8F2 } /* Name.Property */
-.codehilite .nt { color: #FF4689 } /* Name.Tag */
+.codehilite .nt { color: #F92672 } /* Name.Tag */
 .codehilite .nv { color: #F8F8F2 } /* Name.Variable */
-.codehilite .ow { color: #FF4689 } /* Operator.Word */
+.codehilite .ow { color: #F92672 } /* Operator.Word */
 .codehilite .pm { color: #F8F8F2 } /* Punctuation.Marker */
 .codehilite .w { color: #F8F8F2 } /* Text.Whitespace */
 .codehilite .mb { color: #AE81FF } /* Literal.Number.Bin */
@@ -258,14 +182,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .codehilite .sr { color: #E6DB74 } /* Literal.String.Regex */
 .codehilite .s1 { color: #E6DB74 } /* Literal.String.Single */
 .codehilite .ss { color: #E6DB74 } /* Literal.String.Symbol */
-.codehilite .bp { color: #F8F8F2 } /* Name.Builtin.Pseudo */
-.codehilite .fm { color: #A6E22E } /* Name.Function.Magic */
+.codehilite .bp { color: #66D9EF } /* Name.Builtin.Pseudo */
+.codehilite .fm { color: #66D9EF } /* Name.Function.Magic */
 .codehilite .vc { color: #F8F8F2 } /* Name.Variable.Class */
-.codehilite .vg { color: #F8F8F2 } /* Name.Variable.Global */
-.codehilite .vi { color: #F8F8F2 } /* Name.Variable.Instance */
+.codehilite .vg { color: #FD971F } /* Name.Variable.Global */
+.codehilite .vi { color: #FD971F; font-style: italic } /* Name.Variable.Instance */
 .codehilite .vm { color: #F8F8F2 } /* Name.Variable.Magic */
 .codehilite .il { color: #AE81FF } /* Literal.Number.Integer.Long */
-}
 </style>
 </head>
 <body>
@@ -1177,19 +1100,19 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h1>🔨 Unit 8: Eigene Crafting-Rezepte — Funktionen</h1>
 <h3>Was lernen wir?</h3>
 <p>Eine <strong>Funktion</strong> ist ein eigenes Crafting-Rezept: Du schreibst es <strong>einmal</strong> in Dein Rezeptbuch — und kannst es danach so oft benutzen, wie Du willst.</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">gruss</span><span class="p">(</span><span class="nv">name</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">gruss</span><span class="p">(</span><span class="vi">name</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot;, willkommen!&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="nf">gruss</span><span class="p">(</span><span class="s2">&quot;Steve&quot;</span><span class="p">)</span>
-</span><span class="zeile"><span class="nf">gruss</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">)</span>
-</span><span class="zeile"><span class="nf">gruss</span><span class="p">(</span><span class="s2">&quot;Herobrine&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="fm">gruss</span><span class="p">(</span><span class="s2">&quot;Steve&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="fm">gruss</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="fm">gruss</span><span class="p">(</span><span class="s2">&quot;Herobrine&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 
 <p>Das spart Tipparbeit und macht den Code übersichtlicher. (Auch Funktionen bekommen ein <code>local</code> — gleiche Profi-Regel wie bei Variablen.)</p>
 <h3>🧪 Experiment: Das vergessene Craften</h3>
 <p>Ganz wichtig: <strong>Ein Rezept ins Buch schreiben und ein Rezept benutzen sind zwei verschiedene Dinge!</strong> Probier es aus — tippe <em>nur</em> das hier ab und starte es:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">gruss</span><span class="p">(</span><span class="nv">name</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">gruss</span><span class="p">(</span><span class="vi">name</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot;, willkommen!&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span></code></pre></div>
@@ -1208,23 +1131,23 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </ol>
 <p>Bei <code>gruss("Alex")</code> läuft dasselbe Rezept — nur liegt diesmal <code>"Alex"</code> in der Lücke. <strong>Ein Rezept, tausend Möglichkeiten.</strong></p>
 <p>Ein Rezept kann auch mehrere Lücken haben:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">craft_block</span><span class="p">(</span><span class="nv">material</span><span class="p">,</span><span class="w"> </span><span class="nv">anzahl</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">craft_block</span><span class="p">(</span><span class="vi">material</span><span class="p">,</span><span class="w"> </span><span class="vi">anzahl</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du craftest &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">anzahl</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">material</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot;-Block/Blöcke.&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="nf">craft_block</span><span class="p">(</span><span class="s2">&quot;Diamant&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
-</span><span class="zeile"><span class="nf">craft_block</span><span class="p">(</span><span class="s2">&quot;Eisen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
-</span><span class="zeile"><span class="nf">craft_block</span><span class="p">(</span><span class="s2">&quot;Gold&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+</span><span class="zeile"><span class="fm">craft_block</span><span class="p">(</span><span class="s2">&quot;Diamant&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+</span><span class="zeile"><span class="fm">craft_block</span><span class="p">(</span><span class="s2">&quot;Eisen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</span><span class="zeile"><span class="fm">craft_block</span><span class="p">(</span><span class="s2">&quot;Gold&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
 </span></code></pre></div>
 
 <p>Die Reihenfolge zählt: Das Erste landet in der ersten Lücke, das Zweite in der zweiten.</p>
 <h3>Der Ausgabe-Slot: <code>return</code></h3>
 <p>Denk an die Werkbank: Zutaten rein → Rezept läuft → <strong>das fertige Item liegt im Ausgabe-Slot</strong>. Genau das macht <code>return</code>:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">herzen_in_leben</span><span class="p">(</span><span class="nv">herzen</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">herzen_in_leben</span><span class="p">(</span><span class="vi">herzen</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">return</span><span class="w"> </span><span class="nv">herzen</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">leben</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">herzen_in_leben</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">leben</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">herzen_in_leben</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du hast &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">leben</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; Lebenspunkte.&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -1842,10 +1765,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="kr">end</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">zwei_wuerfeln</span><span class="p">()</span>
-</span><span class="zeile"><span class="w">  </span><span class="kr">return</span><span class="w"> </span><span class="nf">wuerfeln</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">wuerfeln</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">  </span><span class="kr">return</span><span class="w"> </span><span class="fm">wuerfeln</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="fm">wuerfeln</span><span class="p">()</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du würfelst: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nf">zwei_wuerfeln</span><span class="p">())</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du würfelst: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="fm">zwei_wuerfeln</span><span class="p">())</span>
 </span></code></pre></div>
 
 <p><code>zwei_wuerfeln</code> ruft zweimal <code>wuerfeln</code> auf. Wenn Du mal den Würfel ändern willst (z.B. auf W20), musst Du das nur an <strong>einer Stelle</strong> tun.</p>
@@ -1854,7 +1777,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </blockquote>
 <h3>Funktionen, die Tables zurückgeben</h3>
 <p>Eine Funktion kann auch eine ganze Truhe zurückgeben:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">neuer_spieler</span><span class="p">(</span><span class="nv">name</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">neuer_spieler</span><span class="p">(</span><span class="vi">name</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">return</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">    </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">name</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">    </span><span class="nv">herzen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
@@ -1863,8 +1786,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="w">  </span><span class="p">}</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">steve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">neuer_spieler</span><span class="p">(</span><span class="s2">&quot;Steve&quot;</span><span class="p">)</span>
-</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">alex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">neuer_spieler</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">steve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">neuer_spieler</span><span class="p">(</span><span class="s2">&quot;Steve&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">alex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">neuer_spieler</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">)</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nv">steve</span><span class="p">.</span><span class="py">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; hat &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">steve</span><span class="p">.</span><span class="py">herzen</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; Herzen.&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nv">alex</span><span class="p">.</span><span class="py">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; hat &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">alex</span><span class="p">.</span><span class="py">herzen</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; Herzen.&quot;</span><span class="p">)</span>
@@ -1872,14 +1795,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <p>Du kannst beliebig viele Spieler erstellen, ohne den Code zu wiederholen.</p>
 <h3>Funktionen, die Tables verändern</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">nimm_schaden</span><span class="p">(</span><span class="nv">spieler</span><span class="p">,</span><span class="w"> </span><span class="nv">schaden</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">nimm_schaden</span><span class="p">(</span><span class="vi">spieler</span><span class="p">,</span><span class="w"> </span><span class="vi">schaden</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">spieler</span><span class="p">.</span><span class="py">herzen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">spieler</span><span class="p">.</span><span class="py">herzen</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">schaden</span>
 </span><span class="zeile"><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="nv">spieler</span><span class="p">.</span><span class="py">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; nimmt &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">schaden</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; Schaden. (&quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">spieler</span><span class="p">.</span><span class="py">herzen</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; Herzen übrig)&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">steve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">neuer_spieler</span><span class="p">(</span><span class="s2">&quot;Steve&quot;</span><span class="p">)</span>
-</span><span class="zeile"><span class="nf">nimm_schaden</span><span class="p">(</span><span class="nv">steve</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
-</span><span class="zeile"><span class="nf">nimm_schaden</span><span class="p">(</span><span class="nv">steve</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">steve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">neuer_spieler</span><span class="p">(</span><span class="s2">&quot;Steve&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="fm">nimm_schaden</span><span class="p">(</span><span class="nv">steve</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+</span><span class="zeile"><span class="fm">nimm_schaden</span><span class="p">(</span><span class="nv">steve</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
 </span></code></pre></div>
 
 <h3>🎯 Quest 15.1: Heilung und Schaden</h3>
@@ -1925,7 +1848,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <p><code>table.remove(t)</code> ohne Position entfernt das <strong>letzte</strong> Element. Und: Nach dem Entfernen rücken alle folgenden Items einen Slot nach vorne — keine Lücken.</p>
 <h3>Prüfen, ob etwas drin ist</h3>
 <p>Es gibt keinen fertigen Befehl dafür — wir bauen ihn selbst:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">enthaelt</span><span class="p">(</span><span class="nv">liste</span><span class="p">,</span><span class="w"> </span><span class="nv">item</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">enthaelt</span><span class="p">(</span><span class="vi">liste</span><span class="p">,</span><span class="w"> </span><span class="vi">item</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="nv">liste</span><span class="w"> </span><span class="kr">do</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">liste</span><span class="p">[</span><span class="nv">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="kr">then</span>
 </span><span class="zeile"><span class="w">      </span><span class="kr">return</span><span class="w"> </span><span class="kc">true</span>
@@ -1935,8 +1858,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="kr">end</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">inventar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;Schwert&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Brot&quot;</span><span class="p">}</span>
-</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nf">enthaelt</span><span class="p">(</span><span class="nv">inventar</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Brot&quot;</span><span class="p">))</span><span class="w">     </span><span class="c1">-- true</span>
-</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="nf">enthaelt</span><span class="p">(</span><span class="nv">inventar</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Diamant&quot;</span><span class="p">))</span><span class="w">  </span><span class="c1">-- false</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="fm">enthaelt</span><span class="p">(</span><span class="nv">inventar</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Brot&quot;</span><span class="p">))</span><span class="w">     </span><span class="c1">-- true</span>
+</span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="fm">enthaelt</span><span class="p">(</span><span class="nv">inventar</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Diamant&quot;</span><span class="p">))</span><span class="w">  </span><span class="c1">-- false</span>
 </span></code></pre></div>
 
 <h3>🎯 Quest 16.1: Inventar-Verwalter</h3>
@@ -2003,7 +1926,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="nf">zeige_raum</span><span class="p">()</span>
+</span><span class="zeile"><span class="fm">zeige_raum</span><span class="p">()</span>
 </span></code></pre></div>
 
 <blockquote>
@@ -2020,11 +1943,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h3>Was lernen wir?</h3>
 <p>Wir nehmen die Welt aus Unit 17 und machen daraus ein <strong>interaktives Spiel</strong>, wo der Spieler Richtungen eintippt.</p>
 <h3>Der Bewegungs-Befehl</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">gehe</span><span class="p">(</span><span class="nv">richtung</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">gehe</span><span class="p">(</span><span class="vi">richtung</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">raum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">welt</span><span class="p">[</span><span class="nv">aktueller_raum</span><span class="p">]</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">raum</span><span class="p">.</span><span class="py">ausgaenge</span><span class="p">[</span><span class="nv">richtung</span><span class="p">]</span><span class="w"> </span><span class="kr">then</span>
 </span><span class="zeile"><span class="w">    </span><span class="nv">aktueller_raum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">raum</span><span class="p">.</span><span class="py">ausgaenge</span><span class="p">[</span><span class="nv">richtung</span><span class="p">]</span>
-</span><span class="zeile"><span class="w">    </span><span class="nf">zeige_raum</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">    </span><span class="fm">zeige_raum</span><span class="p">()</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">else</span>
 </span><span class="zeile"><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Da führt kein Weg hin.&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
@@ -2033,7 +1956,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <p><code>raum.ausgaenge[richtung]</code> — wenn der Spieler <code>nord</code> eingibt, schaut das Programm, ob der aktuelle Raum einen Ausgang <code>nord</code> hat.</p>
 <h3>Die Haupt-Schleife</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nf">zeige_raum</span><span class="p">()</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="fm">zeige_raum</span><span class="p">()</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="kr">while</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="kr">do</span>
 </span><span class="zeile"><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
@@ -2044,7 +1967,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bis bald!&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">break</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">else</span>
-</span><span class="zeile"><span class="w">    </span><span class="nf">gehe</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="fm">gehe</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span></code></pre></div>
@@ -2073,7 +1996,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span></code></pre></div>
 
 <h3>Items aus dem Raum aufheben</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">nimm</span><span class="p">(</span><span class="nv">item_name</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">nimm</span><span class="p">(</span><span class="vi">item_name</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">raum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">welt</span><span class="p">[</span><span class="nv">aktueller_raum</span><span class="p">]</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">raum</span><span class="p">.</span><span class="py">items</span><span class="w"> </span><span class="kr">then</span>
 </span><span class="zeile"><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hier liegt nichts.&quot;</span><span class="p">)</span>
@@ -2117,12 +2040,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">eingabe</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;ende&quot;</span><span class="w"> </span><span class="kr">then</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">break</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">eingabe</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;inventar&quot;</span><span class="w"> </span><span class="kr">then</span>
-</span><span class="zeile"><span class="w">    </span><span class="nf">zeige_inventar</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">    </span><span class="fm">zeige_inventar</span><span class="p">()</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">elseif</span><span class="w"> </span><span class="nb">string.sub</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;nimm &quot;</span><span class="w"> </span><span class="kr">then</span>
 </span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">string.sub</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">    </span><span class="nf">nimm</span><span class="p">(</span><span class="nv">item</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="fm">nimm</span><span class="p">(</span><span class="nv">item</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">else</span>
-</span><span class="zeile"><span class="w">    </span><span class="nf">gehe</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="fm">gehe</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span></code></pre></div>
@@ -2186,7 +2109,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">spiel_vorbei</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="c1">-- Hilfsfunktionen --</span>
-</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">enthaelt</span><span class="p">(</span><span class="nv">liste</span><span class="p">,</span><span class="w"> </span><span class="nv">item</span><span class="p">)</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">enthaelt</span><span class="p">(</span><span class="vi">liste</span><span class="p">,</span><span class="w"> </span><span class="vi">item</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="nv">liste</span><span class="w"> </span><span class="kr">do</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">liste</span><span class="p">[</span><span class="nv">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="kr">end</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
@@ -2213,7 +2136,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">boss_kampf</span><span class="p">()</span>
 </span><span class="zeile"><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Der Enderdrache greift an!&quot;</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nf">enthaelt</span><span class="p">(</span><span class="nv">spieler</span><span class="p">.</span><span class="py">inventar</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Schwert&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="fm">enthaelt</span><span class="p">(</span><span class="nv">spieler</span><span class="p">.</span><span class="py">inventar</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Schwert&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
 </span><span class="zeile"><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ohne Waffe hast Du keine Chance...&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== GAME OVER ===&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">    </span><span class="nv">spiel_vorbei</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
@@ -2232,7 +2155,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="w">  </span><span class="nv">gewonnen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">gehe</span><span class="p">(</span><span class="nv">richtung</span><span class="p">)</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">gehe</span><span class="p">(</span><span class="vi">richtung</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">raum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">welt</span><span class="p">[</span><span class="nv">aktueller_raum</span><span class="p">]</span>
 </span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">ziel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">raum</span><span class="p">.</span><span class="py">ausgaenge</span><span class="p">[</span><span class="nv">richtung</span><span class="p">]</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">ziel</span><span class="w"> </span><span class="kr">then</span>
@@ -2244,13 +2167,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="w">    </span><span class="kr">return</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">aktueller_raum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ziel</span>
-</span><span class="zeile"><span class="w">  </span><span class="nf">zeige_raum</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">  </span><span class="fm">zeige_raum</span><span class="p">()</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">aktueller_raum</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;end_&quot;</span><span class="w"> </span><span class="kr">then</span>
-</span><span class="zeile"><span class="w">    </span><span class="nf">boss_kampf</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">    </span><span class="fm">boss_kampf</span><span class="p">()</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">nimm</span><span class="p">(</span><span class="nv">item</span><span class="p">)</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">nimm</span><span class="p">(</span><span class="vi">item</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">raum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">welt</span><span class="p">[</span><span class="nv">aktueller_raum</span><span class="p">]</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="nv">raum</span><span class="p">.</span><span class="py">items</span><span class="w"> </span><span class="kr">do</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">raum</span><span class="p">.</span><span class="py">items</span><span class="p">[</span><span class="nv">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="kr">then</span>
@@ -2274,8 +2197,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">benutze</span><span class="p">(</span><span class="nv">item</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nf">enthaelt</span><span class="p">(</span><span class="nv">spieler</span><span class="p">.</span><span class="py">inventar</span><span class="p">,</span><span class="w"> </span><span class="nv">item</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">benutze</span><span class="p">(</span><span class="vi">item</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="fm">enthaelt</span><span class="p">(</span><span class="nv">spieler</span><span class="p">.</span><span class="py">inventar</span><span class="p">,</span><span class="w"> </span><span class="nv">item</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
 </span><span class="zeile"><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du hast keinen &#39;&quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot;&#39;.&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">return</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
@@ -2291,7 +2214,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="c1">-- Haupt-Schleife --</span>
 </span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== ADVENTURE: HÖHLE DES ENDERDRACHEN ===&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Befehle: nord/sued/ost/west, nimm X, benutze X, inventar, ende&quot;</span><span class="p">)</span>
-</span><span class="zeile"><span class="nf">zeige_raum</span><span class="p">()</span>
+</span><span class="zeile"><span class="fm">zeige_raum</span><span class="p">()</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="kr">while</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">gewonnen</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">spiel_vorbei</span><span class="w"> </span><span class="kr">do</span>
 </span><span class="zeile"><span class="w">  </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
@@ -2302,13 +2225,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bis bald!&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">break</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">eingabe</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;inventar&quot;</span><span class="w"> </span><span class="kr">then</span>
-</span><span class="zeile"><span class="w">    </span><span class="nf">zeige_inventar</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">    </span><span class="fm">zeige_inventar</span><span class="p">()</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">elseif</span><span class="w"> </span><span class="nb">string.sub</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;nimm &quot;</span><span class="w"> </span><span class="kr">then</span>
-</span><span class="zeile"><span class="w">    </span><span class="nf">nimm</span><span class="p">(</span><span class="nb">string.sub</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">))</span>
+</span><span class="zeile"><span class="w">    </span><span class="fm">nimm</span><span class="p">(</span><span class="nb">string.sub</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">))</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">elseif</span><span class="w"> </span><span class="nb">string.sub</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;benutze &quot;</span><span class="w"> </span><span class="kr">then</span>
-</span><span class="zeile"><span class="w">    </span><span class="nf">benutze</span><span class="p">(</span><span class="nb">string.sub</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">))</span>
+</span><span class="zeile"><span class="w">    </span><span class="fm">benutze</span><span class="p">(</span><span class="nb">string.sub</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">))</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">else</span>
-</span><span class="zeile"><span class="w">    </span><span class="nf">gehe</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="fm">gehe</span><span class="p">(</span><span class="nv">eingabe</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
 </span><span class="zeile"><span class="kr">end</span>
 </span></code></pre></div>
@@ -2496,7 +2419,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span></code></pre></div>
 
 <p><strong>3.</strong> Eine <code>init.lua</code>:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">&quot;action&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;[hallowelt] Hallo aus meiner ersten Mod!&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">log</span><span class="p">(</span><span class="s2">&quot;action&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;[hallowelt] Hallo aus meiner ersten Mod!&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 
 <p><strong>4.</strong> In Luanti die Welt starten. Beim Welt-Auswählen vorher auf <strong>"Select Mods"</strong> klicken und die Mod ankreuzen, sonst wird sie nicht geladen!</p>
@@ -2514,9 +2437,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h1>💬 Unit 23: Etwas Sichtbares — Begrüßung im Chat</h1>
 <h3>Was lernen wir?</h3>
 <p>Log-Meldungen sind unsichtbar — langweilig. Jetzt machen wir was, das der Spieler im Spiel sieht: Eine Begrüßung im Chat, wenn er der Welt beitritt.</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_on_joinplayer</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">player</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">get_player_name</span><span class="p">()</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">core</span><span class="p">.</span><span class="nf">chat_send_all</span><span class="p">(</span><span class="s2">&quot;Willkommen, &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_on_joinplayer</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="vi">player</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="fm">get_player_name</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">core</span><span class="p">.</span><span class="fm">chat_send_all</span><span class="p">(</span><span class="s2">&quot;Willkommen, &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="kr">end</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -2542,10 +2465,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h3>Beispiel</h3>
 <div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">begruessungen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_on_joinplayer</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">player</span><span class="p">)</span>
+</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_on_joinplayer</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="vi">player</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">begruessungen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">begruessungen</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
-</span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">get_player_name</span><span class="p">()</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">core</span><span class="p">.</span><span class="nf">chat_send_all</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; (Beitritt Nr. &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">begruessungen</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot;)&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="fm">get_player_name</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">core</span><span class="p">.</span><span class="fm">chat_send_all</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; (Beitritt Nr. &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">begruessungen</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot;)&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="kr">end</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -2559,9 +2482,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h1>💬 Unit 25: Chat-Befehle — Eigene Slash-Commands</h1>
 <h3>Was lernen wir?</h3>
 <p>Ein <strong>Chat-Befehl</strong> ist etwas, das der Spieler im Chat tippt, mit <code>/</code> davor — z.B. <code>/hallo</code>. Wir können eigene Befehle registrieren.</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_chatcommand</span><span class="p">(</span><span class="s2">&quot;hallo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_chatcommand</span><span class="p">(</span><span class="s2">&quot;hallo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Sagt hallo zurück&quot;</span><span class="p">,</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="nv">param</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="vi">name</span><span class="p">,</span><span class="w"> </span><span class="vi">param</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hallo &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot;!&quot;</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span><span class="p">,</span>
 </span><span class="zeile"><span class="p">})</span>
@@ -2574,9 +2497,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 - Sie gibt zwei Werte zurück: <code>true</code> (= hat funktioniert) und den Text, den der Spieler sieht</p>
 <h3>Parameter aufnehmen</h3>
 <p>Wenn der Spieler <code>/hallo Welt</code> tippt, ist <code>param</code> der Text <code>"Welt"</code>:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_chatcommand</span><span class="p">(</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_chatcommand</span><span class="p">(</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Wiederholt den Text&quot;</span><span class="p">,</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="nv">param</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="vi">name</span><span class="p">,</span><span class="w"> </span><span class="vi">param</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Du hast geschrieben: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">param</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span><span class="p">,</span>
 </span><span class="zeile"><span class="p">})</span>
@@ -2591,9 +2514,9 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h1>🎲 Unit 26: Befehle mit Zufall — <code>/wuerfel</code></h1>
 <h3>Was lernen wir?</h3>
 <p>Wir kombinieren Chat-Befehle mit <code>math.random</code> aus Phase 2.</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_chatcommand</span><span class="p">(</span><span class="s2">&quot;wuerfel&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_chatcommand</span><span class="p">(</span><span class="s2">&quot;wuerfel&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Würfelt eine Zahl (Standard: 1-6)&quot;</span><span class="p">,</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="nv">param</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="vi">name</span><span class="p">,</span><span class="w"> </span><span class="vi">param</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">seiten</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">tonumber</span><span class="p">(</span><span class="nv">param</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mi">6</span>
 </span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">ergebnis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">math.random</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nv">seiten</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; würfelt: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">ergebnis</span>
@@ -2611,11 +2534,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h1>🧱 Unit 27: Eigene Blöcke — <code>register_node</code> Grundlagen</h1>
 <h3>Was lernen wir?</h3>
 <p>Jetzt wird's richtig spannend: Wir registrieren einen <strong>eigenen Block</strong>. In Luanti heißen Blöcke "Nodes".</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_node</span><span class="p">(</span><span class="s2">&quot;meinemod:wunderblock&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_node</span><span class="p">(</span><span class="s2">&quot;meinemod:wunderblock&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Wunderblock&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">tiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;meinemod_wunderblock.png&quot;</span><span class="p">},</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">cracky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_stone_defaults</span><span class="p">(),</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_stone_defaults</span><span class="p">(),</span>
 </span><span class="zeile"><span class="p">})</span>
 </span></code></pre></div>
 
@@ -2692,25 +2615,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h3>Was lernen wir?</h3>
 <p>Blöcke können mehr als nur dasitzen. Sie können leuchten, durchsichtig sein, andere Geräusche machen.</p>
 <h3>Licht abstrahlen</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_node</span><span class="p">(</span><span class="s2">&quot;meinemod:leuchtstein&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_node</span><span class="p">(</span><span class="s2">&quot;meinemod:leuchtstein&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Leuchtstein&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">tiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;meinemod_leuchtstein.png&quot;</span><span class="p">},</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">cracky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">light_source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_glass_defaults</span><span class="p">(),</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_glass_defaults</span><span class="p">(),</span>
 </span><span class="zeile"><span class="p">})</span>
 </span></code></pre></div>
 
 <p><code>light_source = 14</code> ist Maximum (wie Glowstone). Werte 1–14.</p>
 <h3>Sound-Sets in Mineclonia</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_stone_defaults</span><span class="p">()</span><span class="w">    </span><span class="c1">-- Stein</span>
-</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_wood_defaults</span><span class="p">()</span><span class="w">     </span><span class="c1">-- Holz</span>
-</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_dirt_defaults</span><span class="p">()</span><span class="w">     </span><span class="c1">-- Erde</span>
-</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_sand_defaults</span><span class="p">()</span><span class="w">     </span><span class="c1">-- Sand</span>
-</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_gravel_defaults</span><span class="p">()</span><span class="w">   </span><span class="c1">-- Kies</span>
-</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_glass_defaults</span><span class="p">()</span><span class="w">    </span><span class="c1">-- Glas</span>
-</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_metal_defaults</span><span class="p">()</span><span class="w">    </span><span class="c1">-- Metall</span>
-</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_leaves_defaults</span><span class="p">()</span><span class="w">   </span><span class="c1">-- Blätter</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_stone_defaults</span><span class="p">()</span><span class="w">    </span><span class="c1">-- Stein</span>
+</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_wood_defaults</span><span class="p">()</span><span class="w">     </span><span class="c1">-- Holz</span>
+</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_dirt_defaults</span><span class="p">()</span><span class="w">     </span><span class="c1">-- Erde</span>
+</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_sand_defaults</span><span class="p">()</span><span class="w">     </span><span class="c1">-- Sand</span>
+</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_gravel_defaults</span><span class="p">()</span><span class="w">   </span><span class="c1">-- Kies</span>
+</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_glass_defaults</span><span class="p">()</span><span class="w">    </span><span class="c1">-- Glas</span>
+</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_metal_defaults</span><span class="p">()</span><span class="w">    </span><span class="c1">-- Metall</span>
+</span><span class="zeile"><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_leaves_defaults</span><span class="p">()</span><span class="w">   </span><span class="c1">-- Blätter</span>
 </span></code></pre></div>
 
 <h3>Praktische Eigenschaften</h3>
@@ -2790,12 +2713,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </table>
 <h3>Drop steuern</h3>
 <p>Standardmäßig kriegst Du den Block selbst zurück. Aber Du kannst es ändern:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_node</span><span class="p">(</span><span class="s2">&quot;meinemod:erz&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_node</span><span class="p">(</span><span class="s2">&quot;meinemod:erz&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Magisches Erz&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">tiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;meinemod_erz.png&quot;</span><span class="p">},</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">cracky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">drop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meinemod:staub 3&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1">-- 3 Stück &quot;Staub&quot; beim Abbau</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_stone_defaults</span><span class="p">(),</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_stone_defaults</span><span class="p">(),</span>
 </span><span class="zeile"><span class="p">})</span>
 </span></code></pre></div>
 
@@ -2819,7 +2742,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h1>🍎 Unit 31: Eigene Items — Craftitems</h1>
 <h3>Was lernen wir?</h3>
 <p>Ein <strong>Craftitem</strong> ist ein Item, das man <strong>nicht</strong> in der Welt platzieren kann — wie ein Stock, ein Apfel, ein Diamant. Es liegt nur im Inventar herum.</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_craftitem</span><span class="p">(</span><span class="s2">&quot;meinemod:zauberstaub&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_craftitem</span><span class="p">(</span><span class="s2">&quot;meinemod:zauberstaub&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Zauberstaub&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">inventory_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meinemod_zauberstaub.png&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="p">})</span>
@@ -2827,10 +2750,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <p>Das war's. Mehr braucht ein einfaches Craftitem nicht.</p>
 <h3>Item, das man essen kann</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_craftitem</span><span class="p">(</span><span class="s2">&quot;meinemod:wunderapfel&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_craftitem</span><span class="p">(</span><span class="s2">&quot;meinemod:wunderapfel&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Wunderapfel&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">inventory_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meinemod_wunderapfel.png&quot;</span><span class="p">,</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">on_use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">core</span><span class="p">.</span><span class="nf">item_eat</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">on_use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">core</span><span class="p">.</span><span class="fm">item_eat</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
 </span><span class="zeile"><span class="p">})</span>
 </span></code></pre></div>
 
@@ -2846,13 +2769,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h1>🪄 Unit 32: Items mit eigener Aktion — <code>on_use</code></h1>
 <h3>Was lernen wir?</h3>
 <p>Bisher haben Items beim Klicken nur Essens-Heilung gemacht. Jetzt schreiben wir eigene Aktionen.</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_craftitem</span><span class="p">(</span><span class="s2">&quot;meinemod:teleportstab&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_craftitem</span><span class="p">(</span><span class="s2">&quot;meinemod:teleportstab&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Teleportstab&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">inventory_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meinemod_teleportstab.png&quot;</span><span class="p">,</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">on_use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">itemstack</span><span class="p">,</span><span class="w"> </span><span class="nv">user</span><span class="p">,</span><span class="w"> </span><span class="nv">pointed_thing</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">user</span><span class="p">:</span><span class="nf">get_pos</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">on_use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="vi">itemstack</span><span class="p">,</span><span class="w"> </span><span class="vi">user</span><span class="p">,</span><span class="w"> </span><span class="vi">pointed_thing</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">user</span><span class="p">:</span><span class="fm">get_pos</span><span class="p">()</span>
 </span><span class="zeile"><span class="w">    </span><span class="nv">pos</span><span class="p">.</span><span class="py">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">pos</span><span class="p">.</span><span class="py">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span>
-</span><span class="zeile"><span class="w">    </span><span class="nv">user</span><span class="p">:</span><span class="nf">set_pos</span><span class="p">(</span><span class="nv">pos</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="nv">user</span><span class="p">:</span><span class="fm">set_pos</span><span class="p">(</span><span class="nv">pos</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">itemstack</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span><span class="p">,</span>
 </span><span class="zeile"><span class="p">})</span>
@@ -2864,12 +2787,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 - <code>pointed_thing</code> — was der Spieler gerade anschaut (Block, Mob, oder nichts)</p>
 <p><code>user:get_pos()</code> holt die Position als Table <code>{x=..., y=..., z=...}</code>. Wir erhöhen <code>y</code> und setzen die neue Position.</p>
 <h3>Partikel als visueller Effekt</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_craftitem</span><span class="p">(</span><span class="s2">&quot;meinemod:feuerwerk&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_craftitem</span><span class="p">(</span><span class="s2">&quot;meinemod:feuerwerk&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Mini-Feuerwerk&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">inventory_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meinemod_feuerwerk.png&quot;</span><span class="p">,</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">on_use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">itemstack</span><span class="p">,</span><span class="w"> </span><span class="nv">user</span><span class="p">,</span><span class="w"> </span><span class="nv">pointed_thing</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">user</span><span class="p">:</span><span class="nf">get_pos</span><span class="p">()</span>
-</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="nf">add_particlespawner</span><span class="p">({</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">on_use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="vi">itemstack</span><span class="p">,</span><span class="w"> </span><span class="vi">user</span><span class="p">,</span><span class="w"> </span><span class="vi">pointed_thing</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">user</span><span class="p">:</span><span class="fm">get_pos</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="fm">add_particlespawner</span><span class="p">({</span>
 </span><span class="zeile"><span class="w">      </span><span class="nv">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">      </span><span class="nv">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">      </span><span class="nv">minpos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">pos</span><span class="p">.</span><span class="py">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">pos</span><span class="p">.</span><span class="py">y</span><span class="p">,</span><span class="w"> </span><span class="nv">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">pos</span><span class="p">.</span><span class="py">z</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
@@ -2898,7 +2821,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h3>Was lernen wir?</h3>
 <p>Damit der Spieler Items <strong>selbst herstellen</strong> kann, brauchen wir Rezepte. Geformte Rezepte funktionieren wie in der Werkbank: Die Position der Zutaten zählt.</p>
 <h3>Aufbau</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_craft</span><span class="p">({</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_craft</span><span class="p">({</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meinemod:wunderapfel&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">recipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">    </span><span class="p">{</span><span class="s2">&quot;mcl_core:gold_ingot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mcl_core:gold_ingot&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mcl_core:gold_ingot&quot;</span><span class="p">},</span>
@@ -2989,7 +2912,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h1>🔀 Unit 34: Crafting-Rezepte — Ungeformt</h1>
 <h3>Was lernen wir?</h3>
 <p>Manchmal soll's egal sein, wo die Zutaten liegen — Hauptsache sie sind drin. Das heißt "shapeless".</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_craft</span><span class="p">({</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_craft</span><span class="p">({</span>
 </span><span class="zeile"><span class="w">  </span><span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;shapeless&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;meinemod:zauberstaub 4&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">recipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;mcl_dye:purple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mcl_core:sugar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mcl_dye:blue&quot;</span><span class="p">},</span>
@@ -3015,16 +2938,16 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <p>Eine Mod kann sich für <strong>Ereignisse</strong> anmelden. Wenn das Ereignis passiert, ruft Luanti unsere Funktion auf. Das nennt man <strong>Callback</strong> (Rückruf).</p>
 <p>Wir haben schon <code>register_on_joinplayer</code> benutzt. Es gibt viel mehr:</p>
 <h3>Spieler stirbt</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_on_dieplayer</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">player</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">get_player_name</span><span class="p">()</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">core</span><span class="p">.</span><span class="nf">chat_send_all</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; ist gestorben!&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_on_dieplayer</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="vi">player</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="fm">get_player_name</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">core</span><span class="p">.</span><span class="fm">chat_send_all</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; ist gestorben!&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="kr">end</span><span class="p">)</span>
 </span></code></pre></div>
 
 <h3>Spieler respawnt</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_on_respawnplayer</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">player</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">get_player_name</span><span class="p">()</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">core</span><span class="p">.</span><span class="nf">chat_send_player</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Willkommen zurück!&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_on_respawnplayer</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="vi">player</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="fm">get_player_name</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">core</span><span class="p">.</span><span class="fm">chat_send_player</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Willkommen zurück!&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span><span class="w">  </span><span class="c1">-- nicht den Respawn-Vorgang abbrechen</span>
 </span><span class="zeile"><span class="kr">end</span><span class="p">)</span>
 </span></code></pre></div>
@@ -3074,10 +2997,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h3>Was lernen wir?</h3>
 <p>Es gibt auch Callbacks, die feuern, wenn <strong>Blöcke</strong> platziert oder abgebaut werden.</p>
 <h3>Block wird platziert</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_on_placenode</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">pos</span><span class="p">,</span><span class="w"> </span><span class="nv">newnode</span><span class="p">,</span><span class="w"> </span><span class="nv">placer</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_on_placenode</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="vi">pos</span><span class="p">,</span><span class="w"> </span><span class="vi">newnode</span><span class="p">,</span><span class="w"> </span><span class="vi">placer</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">newnode</span><span class="p">.</span><span class="py">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;meinemod:wunderblock&quot;</span><span class="w"> </span><span class="kr">then</span>
-</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">placer</span><span class="p">:</span><span class="nf">get_player_name</span><span class="p">()</span>
-</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="nf">chat_send_player</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Ein Wunderblock! Selten gesehen.&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">placer</span><span class="p">:</span><span class="fm">get_player_name</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="fm">chat_send_player</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Ein Wunderblock! Selten gesehen.&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
 </span><span class="zeile"><span class="kr">end</span><span class="p">)</span>
 </span></code></pre></div>
@@ -3088,10 +3011,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li><code>placer</code> ist der Spieler, der ihn platziert hat</li>
 </ul>
 <h3>Block wird abgebaut</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_on_dignode</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">pos</span><span class="p">,</span><span class="w"> </span><span class="nv">oldnode</span><span class="p">,</span><span class="w"> </span><span class="nv">digger</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_on_dignode</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="vi">pos</span><span class="p">,</span><span class="w"> </span><span class="vi">oldnode</span><span class="p">,</span><span class="w"> </span><span class="vi">digger</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">oldnode</span><span class="p">.</span><span class="py">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;mcl_core:diamond_ore&quot;</span><span class="w"> </span><span class="kr">then</span>
-</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">digger</span><span class="p">:</span><span class="nf">get_player_name</span><span class="p">()</span>
-</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="nf">chat_send_all</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; hat einen Diamanten gefunden!&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">digger</span><span class="p">:</span><span class="fm">get_player_name</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="fm">chat_send_all</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; hat einen Diamanten gefunden!&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
 </span><span class="zeile"><span class="kr">end</span><span class="p">)</span>
 </span></code></pre></div>
@@ -3110,11 +3033,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h3>globalstep — läuft die ganze Zeit</h3>
 <div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_globalstep</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">dtime</span><span class="p">)</span>
+</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_globalstep</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="vi">dtime</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">timer</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">dtime</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">timer</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="kr">then</span>
 </span><span class="zeile"><span class="w">    </span><span class="nv">timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
-</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="nf">chat_send_all</span><span class="p">(</span><span class="s2">&quot;5 Sekunden vergangen!&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="fm">chat_send_all</span><span class="p">(</span><span class="s2">&quot;5 Sekunden vergangen!&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
 </span><span class="zeile"><span class="kr">end</span><span class="p">)</span>
 </span></code></pre></div>
@@ -3125,13 +3048,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </blockquote>
 <h3>ABMs — Block-spezifische Wiederholung</h3>
 <p>ABM = "Active Block Modifier". Macht nur etwas bei bestimmten Block-Typen, viel effizienter.</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_abm</span><span class="p">({</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_abm</span><span class="p">({</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Wunderblock funkelt&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">nodenames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;meinemod:wunderblock&quot;</span><span class="p">},</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">    </span><span class="c1">-- alle 5 Sekunden prüfen</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">chance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">      </span><span class="c1">-- mit 1:2 Wahrscheinlichkeit</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">pos</span><span class="p">,</span><span class="w"> </span><span class="nv">node</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="nf">add_particlespawner</span><span class="p">({</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="vi">pos</span><span class="p">,</span><span class="w"> </span><span class="vi">node</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="fm">add_particlespawner</span><span class="p">({</span>
 </span><span class="zeile"><span class="w">      </span><span class="nv">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">      </span><span class="nv">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">      </span><span class="nv">minpos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">pos</span><span class="p">,</span>
@@ -3165,10 +3088,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <p>Bedeutung: In Zeile 14 wurde <code>mcl_sounds</code> benutzt, aber es existiert nicht. Wahrscheinlich <code>depends = mcl_sounds</code> in <code>mod.conf</code> vergessen.</p>
 <h3>Debug-Ausgaben einbauen</h3>
 <p>Wenn etwas nicht funktioniert, ein paar <code>core.log</code> reinstreuen:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_on_dignode</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">pos</span><span class="p">,</span><span class="w"> </span><span class="nv">oldnode</span><span class="p">,</span><span class="w"> </span><span class="nv">digger</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">core</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">&quot;action&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;[meinemod] Block abgebaut: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">oldnode</span><span class="p">.</span><span class="py">name</span><span class="p">)</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_on_dignode</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="vi">pos</span><span class="p">,</span><span class="w"> </span><span class="vi">oldnode</span><span class="p">,</span><span class="w"> </span><span class="vi">digger</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">core</span><span class="p">.</span><span class="fm">log</span><span class="p">(</span><span class="s2">&quot;action&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;[meinemod] Block abgebaut: &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">oldnode</span><span class="p">.</span><span class="py">name</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="nv">oldnode</span><span class="p">.</span><span class="py">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;meinemod:leuchtstein&quot;</span><span class="w"> </span><span class="kr">then</span>
-</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">&quot;action&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;[meinemod] Es war ein Leuchtstein!&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="fm">log</span><span class="p">(</span><span class="s2">&quot;action&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;[meinemod] Es war ein Leuchtstein!&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span>
 </span><span class="zeile"><span class="kr">end</span><span class="p">)</span>
 </span></code></pre></div>
@@ -3213,11 +3136,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <p>Bug-Jagd: Mache absichtlich Tippfehler (z.B. <code>core.register_nooode</code>), starte die Welt, finde den Fehler in <code>debug.txt</code>, reparier ihn.</p>
 <h3>🏆 Bonus</h3>
 <p>Eigener Debug-Befehl <code>/pos</code>, der die aktuellen Koordinaten zeigt:</p>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_chatcommand</span><span class="p">(</span><span class="s2">&quot;pos&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_chatcommand</span><span class="p">(</span><span class="s2">&quot;pos&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Zeigt Deine Position&quot;</span><span class="p">,</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="nv">param</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">core</span><span class="p">.</span><span class="nf">get_player_by_name</span><span class="p">(</span><span class="nv">name</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">get_pos</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="vi">name</span><span class="p">,</span><span class="w"> </span><span class="vi">param</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">core</span><span class="p">.</span><span class="fm">get_player_by_name</span><span class="p">(</span><span class="nv">name</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="fm">get_pos</span><span class="p">()</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nb">string.format</span><span class="p">(</span><span class="s2">&quot;Position: X=%.1f, Y=%.1f, Z=%.1f&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">pos</span><span class="p">.</span><span class="py">x</span><span class="p">,</span><span class="w"> </span><span class="nv">pos</span><span class="p">.</span><span class="py">y</span><span class="p">,</span><span class="w"> </span><span class="nv">pos</span><span class="p">.</span><span class="py">z</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">  </span><span class="kr">end</span><span class="p">,</span>
 </span><span class="zeile"><span class="p">})</span>
@@ -3265,18 +3188,18 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="c1">-- -----------------------</span>
 </span><span class="zeile"><span class="c1">--  1. MAGISCHES ERZ</span>
 </span><span class="zeile"><span class="c1">-- -----------------------</span>
-</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_node</span><span class="p">(</span><span class="s2">&quot;magie:erz&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_node</span><span class="p">(</span><span class="s2">&quot;magie:erz&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Magisches Erz&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">tiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;magie_erz.png&quot;</span><span class="p">},</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">cracky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">drop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;magie:staub 2&quot;</span><span class="p">,</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_stone_defaults</span><span class="p">(),</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_stone_defaults</span><span class="p">(),</span>
 </span><span class="zeile"><span class="p">})</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="c1">-- -----------------------</span>
 </span><span class="zeile"><span class="c1">--  2. MAGIE-STAUB (Item)</span>
 </span><span class="zeile"><span class="c1">-- -----------------------</span>
-</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_craftitem</span><span class="p">(</span><span class="s2">&quot;magie:staub&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_craftitem</span><span class="p">(</span><span class="s2">&quot;magie:staub&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Magie-Staub&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">inventory_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;magie_staub.png&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="p">})</span>
@@ -3284,7 +3207,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="c1">-- -----------------------</span>
 </span><span class="zeile"><span class="c1">--  3. MAGIE-KRISTALL (leuchtender Block)</span>
 </span><span class="zeile"><span class="c1">-- -----------------------</span>
-</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_node</span><span class="p">(</span><span class="s2">&quot;magie:kristall&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_node</span><span class="p">(</span><span class="s2">&quot;magie:kristall&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Magie-Kristall&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">tiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;magie_kristall.png&quot;</span><span class="p">},</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">cracky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
@@ -3292,13 +3215,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="w">  </span><span class="nv">use_texture_alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;blend&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">drawtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;glasslike&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">sunlight_propagates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mcl_sounds</span><span class="p">.</span><span class="nf">node_sound_glass_defaults</span><span class="p">(),</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mcl_sounds</span><span class="p">.</span><span class="fm">node_sound_glass_defaults</span><span class="p">(),</span>
 </span><span class="zeile"><span class="p">})</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="c1">-- -----------------------</span>
 </span><span class="zeile"><span class="c1">--  4. ZAUBERSTAB (Item, einfache Variante)</span>
 </span><span class="zeile"><span class="c1">-- -----------------------</span>
-</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_craftitem</span><span class="p">(</span><span class="s2">&quot;magie:zauberstab&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_craftitem</span><span class="p">(</span><span class="s2">&quot;magie:zauberstab&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Zauberstab&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">inventory_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;magie_zauberstab.png&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">stack_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -3309,7 +3232,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="c1">-- -----------------------</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="c1">-- Kristall: 4 Staub im Quadrat</span>
-</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_craft</span><span class="p">({</span>
+</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_craft</span><span class="p">({</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;magie:kristall&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">recipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">    </span><span class="p">{</span><span class="s2">&quot;magie:staub&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;magie:staub&quot;</span><span class="p">},</span>
@@ -3318,7 +3241,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="p">})</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="c1">-- Zauberstab: Kristall oben, Stock unten</span>
-</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_craft</span><span class="p">({</span>
+</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_craft</span><span class="p">({</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;magie:zauberstab&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">recipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">    </span><span class="p">{</span><span class="s2">&quot;magie:kristall&quot;</span><span class="p">},</span>
@@ -3327,7 +3250,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="p">})</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="c1">-- Erz künstlich herstellen (Spaß-Rezept)</span>
-</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_craft</span><span class="p">({</span>
+</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_craft</span><span class="p">({</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;magie:erz&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">recipe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">    </span><span class="p">{</span><span class="s2">&quot;magie:staub&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;magie:staub&quot;</span><span class="p">,</span><span class="w">    </span><span class="s2">&quot;magie:staub&quot;</span><span class="p">},</span>
@@ -3336,7 +3259,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="zeile"><span class="w">  </span><span class="p">},</span>
 </span><span class="zeile"><span class="p">})</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">&quot;action&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;[magie] Magie-Mod (Teil 1) geladen!&quot;</span><span class="p">)</span>
+</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">log</span><span class="p">(</span><span class="s2">&quot;action&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;[magie] Magie-Mod (Teil 1) geladen!&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 
 <h3>🎯 Aufgabe</h3>
@@ -3357,21 +3280,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="codehilite"><pre><code><span class="zeile"><span class="c1">-- Statistik: Pro Spieler die Nutzungen zählen</span>
 </span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">zauber_zaehler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_craftitem</span><span class="p">(</span><span class="s2">&quot;magie:zauberstab&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_craftitem</span><span class="p">(</span><span class="s2">&quot;magie:zauberstab&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Zauberstab&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">inventory_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;magie_zauberstab.png&quot;</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">stack_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 </span><span class="zeile">
-</span><span class="zeile"><span class="w">  </span><span class="nv">on_use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">itemstack</span><span class="p">,</span><span class="w"> </span><span class="nv">user</span><span class="p">,</span><span class="w"> </span><span class="nv">pointed_thing</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">user</span><span class="p">:</span><span class="nf">get_pos</span><span class="p">()</span>
-</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">user</span><span class="p">:</span><span class="nf">get_look_dir</span><span class="p">()</span>
-</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">user</span><span class="p">:</span><span class="nf">get_player_name</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">on_use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="vi">itemstack</span><span class="p">,</span><span class="w"> </span><span class="vi">user</span><span class="p">,</span><span class="w"> </span><span class="vi">pointed_thing</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">user</span><span class="p">:</span><span class="fm">get_pos</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">user</span><span class="p">:</span><span class="fm">get_look_dir</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">user</span><span class="p">:</span><span class="fm">get_player_name</span><span class="p">()</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="w">    </span><span class="c1">-- Zähler hochzählen</span>
 </span><span class="zeile"><span class="w">    </span><span class="nv">zauber_zaehler</span><span class="p">[</span><span class="nv">name</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">zauber_zaehler</span><span class="p">[</span><span class="nv">name</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="w">    </span><span class="c1">-- Funken-Partikel in Blickrichtung</span>
-</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="nf">add_particlespawner</span><span class="p">({</span>
+</span><span class="zeile"><span class="w">    </span><span class="nv">core</span><span class="p">.</span><span class="fm">add_particlespawner</span><span class="p">({</span>
 </span><span class="zeile"><span class="w">      </span><span class="nv">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">      </span><span class="nv">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">      </span><span class="nv">minpos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">pos</span><span class="p">.</span><span class="py">x</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">pos</span><span class="p">.</span><span class="py">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="nv">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">pos</span><span class="p">.</span><span class="py">z</span><span class="p">},</span>
@@ -3397,18 +3320,18 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 - Die Geschwindigkeit (<code>minvel</code>/<code>maxvel</code>) ist die Blickrichtung mal 5, plus ein bisschen Streuung
 - <code>glow = 14</code> macht die Partikel selbst leuchtend</p>
 <h3>Begrüßung beim Beitritt</h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_on_joinplayer</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">player</span><span class="p">)</span>
-</span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">get_player_name</span><span class="p">()</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">core</span><span class="p">.</span><span class="nf">chat_send_player</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_on_joinplayer</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="vi">player</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="fm">get_player_name</span><span class="p">()</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">core</span><span class="p">.</span><span class="fm">chat_send_player</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">    </span><span class="s2">&quot;Willkommen, &quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot;! Diese Welt enthält die Magie-Mod. &quot;</span><span class="w"> </span><span class="o">..</span>
 </span><span class="zeile"><span class="w">    </span><span class="s2">&quot;Tippe /magie für Infos.&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="kr">end</span><span class="p">)</span>
 </span></code></pre></div>
 
 <h3>Chat-Befehl <code>/magie</code></h3>
-<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="nf">register_chatcommand</span><span class="p">(</span><span class="s2">&quot;magie&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="codehilite"><pre><code><span class="zeile"><span class="nv">core</span><span class="p">.</span><span class="fm">register_chatcommand</span><span class="p">(</span><span class="s2">&quot;magie&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 </span><span class="zeile"><span class="w">  </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Zeigt Magie-Statistik&quot;</span><span class="p">,</span>
-</span><span class="zeile"><span class="w">  </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">name</span><span class="p">,</span><span class="w"> </span><span class="nv">param</span><span class="p">)</span>
+</span><span class="zeile"><span class="w">  </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="vi">name</span><span class="p">,</span><span class="w"> </span><span class="vi">param</span><span class="p">)</span>
 </span><span class="zeile"><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">zaubert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">zauber_zaehler</span><span class="p">[</span><span class="nv">name</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mi">0</span>
 </span><span class="zeile"><span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </span><span class="zeile"><span class="w">      </span><span class="s2">&quot;=== MAGIE-MOD ===</span><span class="se">\n</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">..</span>
