@@ -67,9 +67,13 @@ Schreibe ein Programm:
 Tipp: `//` gibt die ganzen Blöcke, `%` den Rest. Und denk an `local`!
 
 ### 🏆 Bonus-Quest: Wie lange bis Level 30?
-Ein Spieler bekommt 7 XP pro Mob. Er braucht 825 XP für Level 30. Wie viele Mobs muss er besiegen?
+Ein Spieler bekommt 7 XP pro Mob. Er braucht 825 XP für Level 30.
 
-Tipp: `825 // 7` Mobs reichen noch nicht ganz (prüf den Rest mit `%`!). Es gibt auch `math.ceil(825 / 7)` — das rundet **auf**, also zur nächsten ganzen Zahl nach oben. Probier beides.
+Lass Dein Programm zwei Zeilen ausgeben:
+- wie viele Mobs er schafft, wenn er die 825 XP in **volle Mobs** aufteilt (`//`)
+- wie viele XP dann **noch fehlen** (`%`)
+
+Und jetzt Du: Reichen so viele Mobs schon? Wie viele muss er **wirklich** besiegen? Diese letzte Antwort gibst Du selbst — Dein Programm hat Dir alles verraten, was Du dafür brauchst.
 
 ---
 ⬅️ [Unit 2](unit02-variablen.md) · [Übersicht](README.md) · ➡️ [Unit 3½: Variablen-Namen](unit03b-variablennamen.md)

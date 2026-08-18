@@ -11,6 +11,10 @@ print("Übrig: " .. rest)            -- 1
 local xp_pro_mob = 7
 local xp_noetig = 825
 
-print("Mobs (abgerundet): " .. xp_noetig // xp_pro_mob)        -- 117, reicht noch nicht ganz
-print("Rest-XP: " .. xp_noetig % xp_pro_mob)                   -- 6 XP fehlen noch
-print("Mobs (aufgerundet): " .. math.ceil(xp_noetig / xp_pro_mob))  -- 118 - so viele braucht man wirklich
+print("Volle Mobs: " .. xp_noetig // xp_pro_mob)   -- 117
+print("Fehlende XP: " .. xp_noetig % xp_pro_mob)   -- 6
+
+-- Die letzte Antwort kommt aus dem Kopf: 117 Mobs bringen erst 819 XP,
+-- es fehlen noch 6 - also muss er 118 Mobs besiegen.
+-- (Profi-Trick für später: math.ceil(825 / 7) rundet auf und ergibt
+-- direkt 118 - kommt im Kurs aber erst viel später dran.)
