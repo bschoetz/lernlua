@@ -1,6 +1,6 @@
 # 🔥 Unit 4½: Der Schmelzofen — `tonumber`
 
-### Was lernen wir?
+## Was lernen wir?
 In Unit 4 hat Dein Programm Antworten entgegengenommen. Heute klären wir, **was** da eigentlich ankommt — und warum Profis es erst durch den Ofen schicken, bevor sie damit rechnen.
 
 ### Zwei Sorten von Dingen: Schilder und Zahlen
@@ -26,6 +26,10 @@ print(type("5"))       -- na, was wohl?
 
 Die ersten beiden sind keine Überraschung: `string` heißt Schild, `number` heißt echte Zahl. Und die dritte Zeile? **`string`** — die Anführungszeichen machen den Unterschied, genau wie oben behauptet.
 
+![Comic: Lua und Sati prüfen Datentypen](unit04a_string-number.jpg)
+
+
+
 ### 🧪 Experiment 2: Der Detektiv untersucht die Eingabe
 Jetzt kommt der spannende Teil. Wir lassen den Detektiv untersuchen, was `io.read()` liefert:
 
@@ -37,16 +41,18 @@ print(type(eingabe))
 
 Starte das Programm und tippe `12` ein — **ohne** Anführungszeichen, einfach die Ziffern. Lua sagt trotzdem: **`string`** — ein Schild! Du hast eine Zahl *getippt*, aber angekommen ist ein Schild, auf dem "12" steht. Da hilft kein Leugnen: Der Detektiv hat es schwarz auf weiß.
 
-### Der Schmelzofen: `tonumber`
+## Der Schmelzofen: `tonumber`
 Wie kommen wir vom Schild zur echten Zahl? Mit `tonumber(...)` — das ist wie der **Ofen** in Minecraft: Eisenerz rein, Eisenbarren raus. Hier: Schild rein, echte Zahl raus.
 
 ```lua
 local schild = "12"            -- ein Schild mit "12" drauf
 local zahl = tonumber(schild)  -- geschmolzen: die echte Zahl 12
-
-print(zahl + 1)      -- 13 - jetzt kann man rechnen!
 print(type(zahl))    -- number - der Detektiv bestätigt es
 ```
+
+
+
+![Comic: Lua und Sati schmelzen Strings zu Zahlen](unit04a_tonumber.jpg)
 
 > ⚠️ **Was passiert mit Unschmelzbarem?** Wenn Du etwas in den Ofen legst, das keine Zahl ist — `tonumber("Hallo")` — kommt **nichts** raus (Lua nennt das `nil`). Damit kann man dann natürlich auch nicht rechnen.
 >
@@ -57,14 +63,17 @@ print(type(zahl))    -- number - der Detektiv bestätigt es
 >
 > Profi-Regel: **Schilder mit Zahlen drauf immer selbst schmelzen.**
 
+## ⚔️ Übungsquests
+
 ### 🎯 Quest 4½.1: Der Zahlen-Addierer
-Bau ein Programm, das folgende 3 Dinge tut:
+Bau ein Programm, das folgende Dinge tut:
 
-1. Es fragt nach der ersten Zahl
-2. Es fragt nach der zweiten Zahl
-3. Es schmilzt beide und gibt die **Summe** aus — bei `3` und `4` muss `7` rauskommen
+1. Es fragt Dich nach der ersten Zahl
+2. Es fragt Dich nach der zweiten Zahl
+3. Es verwandelt die beiden Eingaben jeweils zu Zahlen (2x Schmelzofen!).
+4. Dann zählt es sie zusammen und gibt die **Summe** aus — bei den Zahlen `3` und `4` muss also `7` rauskommen
 
-Und wenn es läuft, ein Spaß zum Schluss: Ersetze das `+` mal durch `..` — kleben statt rechnen. Aus 3 und 4 wird **34**! Jetzt weißt Du auch, was schiefgelaufen ist, wenn Dir sowas mal in einem echten Programm passiert.
+Und wenn es läuft, ein Spaß zum Schluss: Ersetze im Programm das `+` mal durch `..` — kleben statt rechnen. Aus 3 und 4 wird **34**! Jetzt weißt Du auch, was schiefgelaufen ist, wenn Dir sowas mal in einem echten Programm passiert.
 
 ### 🏆 Bonus-Quest: XP-Rechner
 Frage nach dem aktuellen Level und dem Ziel-Level des Spielers. Gib aus, wie viele Level noch fehlen. Vergiss den Schmelzofen nicht!

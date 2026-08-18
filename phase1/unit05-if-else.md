@@ -1,6 +1,6 @@
 # 🚪 Unit 5: Türen mit Redstone — `if` und `else`
 
-### Was lernen wir?
+## Was lernen wir?
 Manchmal soll das Programm entscheiden. Wie eine Druckplatte vor einer Tür: *Wenn* ein Spieler draufsteht, *dann* öffnet die Tür. Sonst bleibt sie zu.
 
 ### 🧪 Experiment: Stell Lua eine Frage
@@ -16,7 +16,7 @@ Lua antwortet: `true`, `false`, `true`. Das heißt **wahr**, **falsch**, **wahr*
 
 Eine **Bedingung** ist also nichts Geheimnisvolles — es ist einfach eine **Frage, die Lua mit wahr oder falsch beantwortet**. Und genau solche Fragen stellen wir gleich unseren Druckplatten.
 
-### Die Vergleichszeichen
+### ⚖️ Die Vergleichszeichen
 
 | Zeichen | Die Frage | Beispiel |
 |---------|-----------|----------|
@@ -29,15 +29,16 @@ Eine **Bedingung** ist also nichts Geheimnisvolles — es ist einfach eine **Fra
 
 **Das Krokodil hilft Dir bei `<` und `>`:** Du kennst das aus der Schule — das Krokodilmaul ist gierig und schnappt immer nach der **größeren** Zahl. Bei `3 < 10` zeigt das offene Maul zur 10. So merkst Du Dir die Richtung ganz von selbst.
 
-**⚠️ Ein `=` oder zwei `==`? Riesiger Unterschied!**
-- `herzen = 10` — **ein** Gleichheitszeichen ist ein **Befehl**: "Leg die 10 in den Slot `herzen`!" (kennst Du aus Unit 2)
-- `herzen == 10` — **zwei** Gleichheitszeichen sind eine **Frage**: "Ist in `herzen` eine 10?"
+> **⚠️ Ein `=` oder zwei `==`? Riesiger Unterschied!**
+>
+> - `herzen = 10` — **ein** Gleichheitszeichen ist ein **Befehl**: "Leg die 10 in den Slot `herzen`!" (kennst Du aus Unit 2)
+> - `herzen == 10` — **zwei** Gleichheitszeichen sind eine **Frage**: "Ist in `herzen` eine 10?"
 
 Wenn Du in einer Bedingung aus Versehen nur ein `=` schreibst, meckert Lua. Das passiert **jedem** am Anfang — jetzt weißt Du schon, woran es liegt.
 
 > 💡 **Tastatur-Tipp:** Die Schlange `~` für "ungleich" tippst Du mit **AltGr + `+`** (die Taste rechts neben dem Ü).
 
-### Die Druckplatte: `if` ... `then` ... `else` ... `end`
+## 🏾 Die Druckplatte: `if` ... `then` ... `else` ... `end`
 ```lua
 if BEDINGUNG then
   -- Tür geht auf: mach das hier
@@ -64,15 +65,21 @@ end
 
 Ändere die 3 mal in eine 1 und starte neu — jetzt geht die andere Tür auf. Genau so testet man beide Wege!
 
-### 🎯 Quest 5.1: Der Hunger-Warner
-Schreibe ein Programm mit einem Slot `hunger` (Wert 0 bis 10, fest im Code):
-- Bei 3 oder weniger: "Schnell, iss ein Steak!"
-- Sonst: "Alles gut, weiter geht's!"
+## ⚔️ Übungsquests
 
-Teste **beide** Türen, indem Du den Wert im Code änderst und neu startest.
+### 🎯 Quest 5.1: Der Hunger-Warner
+Schreibe ein Programm mit einer Variable `hunger` (Wert 0 bis 10, der Nutzer muss die Zahl eingeben):
+
+- Bei 3 oder weniger antwortet das Programm: "Schnell, iss ein Steak!"
+- Sonst antwortet es: "Alles gut, weiter geht's!"
+
+Teste **beide** Türen, indem Du es mehrfach startest und verschiedene Werte eingibst.
 
 ### 🏆 Bonus-Quest: Creeper-Alarm
-Ein Slot `abstand` sagt, wie viele Blöcke der Creeper entfernt ist. Unter 5 Blöcken: "RENN WEG!" — sonst: "Noch sicher." Welches Vergleichszeichen brauchst Du hier?
+Ein Creeper-Warn-Programm misst, wie viele Blöcke der Creeper entfernt ist. Du musst hier kein Programm schreiben, nur zwei Fragen beantworten:
+
+- Bei weniger als 5 Blöcken soll das Programm Dich warnen: "RENN WEG!". Welches Vergleichszeichen brauchst Du hier?
+- Bei genau 3 Blöcken Abstand fängt der Creeper zu blinken an und explodiert bald. Mit welchem Vergleichszeichen kann Dein Programm messen, ob der Creeper genau 3 Blöcke entfernt ist?
 
 ---
 ⬅️ [Unit 4½: Der Schmelzofen](unit04b-schmelzofen.md) · [Übersicht](README.md) · ➡️ [Unit 5½: Der Türen-Gang](unit05b-tueren-gang.md)

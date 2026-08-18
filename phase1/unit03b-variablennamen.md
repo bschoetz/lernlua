@@ -1,6 +1,6 @@
 # 🔤 Unit 3½: Wie heißt mein Slot? — Exkurs über Variablen-Namen
 
-### Was lernen wir?
+## Was lernen wir?
 Kein neues Lua — dafür Antworten auf Fragen, die beim Schreiben von Quest 3.1 fast von allein auftauchen: Darf derselbe Name nochmal vorkommen? Groß oder klein? Und woran erkennt man überhaupt einen guten Namen?
 
 ### Darf derselbe Name nochmal vorkommen?
@@ -73,7 +73,7 @@ Zeile 1 geht durch — `print` ist nämlich gar nicht verboten, nur **belegt**! 
 
 Die Reparatur ist einfach: Nenn Deinen Slot anders, dann bleibt der Befehl heil.
 
-### Woran erkennt man einen guten Namen?
+## Woran erkennt man einen guten Namen?
 Alle diese Namen erlaubt Lua — aber sie sind nicht gleich gut:
 
 | Erlaubt, aber rätselhaft | Besser |
@@ -86,13 +86,15 @@ Der Test ist immer derselbe: **Wenn Du das Programm nächste Woche wieder öffne
 
 Eine Ausnahme wirst Du in Unit 6 kennenlernen: Der Runden-Zähler in Schleifen heißt bei allen Profis der Welt einfach nur `i`. Warum das okay ist, siehst Du dann dort.
 
+## ⚔️ Übungsquests
+
 ### 🎯 Quest 3½.1: Der zweite Rohstoff
 Erweitere Deinen Crafting-Rechner aus Quest 3.1:
 - Du hast 73 Eisenbarren **und** 30 Goldbarren
 - Rechne für beide aus: Wie viele Blöcke, wie viel Rest? (je 9 Barren = 1 Block)
 - Gib **am Ende** alle vier Ergebnisse aus — erst dann kommt die Ausgabe!
 
-Tipp: Vier Dinge merken heißt vier Slots mit vier Namen. Wer Eisen und Gold in denselben Slot legt, landet im Experiment von oben.
+Tipp: Vier Dinge merken heißt vier Variablen (Slots) mit vier Namen. Wer Eisen und Gold in dieselbe Variable legt, landet im Experiment von oben.
 
 ### 🏆 Bonus-Quest: Namens-Detektiv
 Dieses Programm funktioniert — aber was tut es? Finde es heraus, indem Du es liest und laufen lässt:
@@ -106,7 +108,7 @@ print(c)
 print(d)
 ```
 
-Tipp: Es geht ums Verteilen. Wenn Du es herausgefunden hast: Benenne alle vier Slots so um, dass man die Antwort **ohne Nachdenken** im Programm lesen kann — und spendiere den zwei `print`-Zeilen noch erklärenden Text dazu.
+Tipp: Es geht ums Verteilen. Wenn Du es herausgefunden hast: Benenne alle vier Variablen so um, dass man die Antwort **ohne Nachdenken** im Programm lesen kann — und spendiere den zwei `print`-Zeilen noch erklärenden Text dazu.
 
 ---
 ⬅️ [Unit 3](unit03-rechnen.md) · [Übersicht](README.md) · ➡️ [Unit 4: Eingaben](unit04-eingaben.md)

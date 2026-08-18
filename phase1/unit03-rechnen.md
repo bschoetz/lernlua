@@ -62,7 +62,7 @@ local gesamt = erz_pro_stunde * stunden
 print("In " .. stunden .. " Stunden: " .. gesamt .. " Erz")
 ```
 
-## Übungsquests
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 3.1: Der Crafting-Rechner
 Schreibe ein Programm:

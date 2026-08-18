@@ -22,7 +22,7 @@ lua hallo.lua
 
 Es erscheinen drei Zeilen untereinander.
 
-## Übungsquests
+## ⚔️ Übungsquests
 
 ### 🎯 Quest 1.1: Stelle Dich vor
 Schreibe ein Programm, das **vier Zeilen** ausgibt:
@@ -43,7 +43,7 @@ print(" > ^ < ")
 
 > 💡 `\\` ist ein Trick: Weil `\` in Strings eine Sonderbedeutung hat, schreibt man `\\`, wenn man wirklich einen Backslash ausgeben will.
 
-![Comic: Das Lua und Sati bauen einen Creeper](unit01_footer.jpg)
+![Comic: Lua und Sati bauen einen Creeper](unit01_footer.jpg)
 
 ---
 ⬅️ [Übersicht](README.md) · ➡️ [Unit 2: Inventar-Slots — Variablen](unit02-variablen.md)
