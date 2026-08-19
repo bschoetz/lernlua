@@ -2,7 +2,7 @@
 -- 5 Runden, mehr Erze, Spielername, Spezial-Glückwunsch bei perfektem Treffer
 
 local erze = {"Kohle", "Eisen", "Gold", "Diamant", "Smaragd", "Lapislazuli", "Redstone", "Kupfer"}
-local tiefen = {50, 30, 10, -50, -16, 0, -32, 45}
+local tiefen = {50, 30, 10, -50, 100, 0, -32, 45}   -- Smaragd: Berg-Erz, je hoeher desto haeufiger
 
 print("=== ERZ-TIEFEN-QUIZ ===")
 print("Wie heißt Du, Bergmann?")

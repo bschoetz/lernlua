@@ -1331,7 +1331,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 - So lange weniger als 5 Diamanten, fragt es: "Diamant gefunden? (j/n)"
 - Bei <code>j</code> wird ein Diamant dazugezählt und ausgegeben, wie viele Du hast
 - Bei <code>n</code> sagt es "Weitersuchen!"
-- Wenn 5 erreicht: "Genug für eine Diamant-Spitzhacke!"</p>
+- Wenn 5 erreicht: "Genug für Spitzhacke und Schwert!" (3 Diamanten für die Spitzhacke, 2 fürs Schwert — Stöcke hast Du ja immer dabei)</p>
 <p>Tipp: In der <code>while</code>-Schleife steckt ein <code>if</code> — zähl am Ende Deine <code>end</code>s: Schleife und <code>if</code> brauchen je eins.</p>
 <h3>🏆 Bonus-Quest: Das Weizen-Wunder</h3>
 <p>Du startest mit <strong>1 Weizen</strong>. Jede Ernte <strong>verdoppelt</strong> Deinen Vorrat. Wie oft musst Du ernten, bis Du <strong>über 100</strong> Weizen hast?</p>
@@ -1650,13 +1650,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <td>30</td>
 <td>10</td>
 <td>−50</td>
-<td>−16</td>
+<td>100</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Die Slot-Nummer ist das Band zwischen den Truhen:</strong> Slot 3 der einen Truhe ist "Gold" — und Slot 3 der anderen ist die 10, also Golds Fundhöhe. Würfeln wir eine Slot-Nummer, lesen wir einfach <strong>beide Truhen am selben Slot</strong> aus:</p>
 <div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">erze</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;Kohle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Eisen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Gold&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Diamant&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Smaragd&quot;</span><span class="p">}</span>
-</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">tiefen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">16</span><span class="p">}</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">tiefen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">}</span><span class="w">   </span><span class="c1">-- Smaragd ist ein Berg-Erz: je hoeher, desto haeufiger!</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">nummer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">math.random</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="nv">erze</span><span class="p">)</span>
 </span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">erz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">erze</span><span class="p">[</span><span class="nv">nummer</span><span class="p">]</span>
@@ -1678,7 +1678,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </ol>
 <p>Hier das komplette Spiel — <strong>nicht abtippen, sondern Dein Spiel umbauen</strong> und dann hiermit vergleichen:</p>
 <div class="codehilite"><pre><code><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">erze</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;Kohle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Eisen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Gold&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Diamant&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Smaragd&quot;</span><span class="p">}</span>
-</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">tiefen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">16</span><span class="p">}</span>
+</span><span class="zeile"><span class="kd">local</span><span class="w"> </span><span class="nv">tiefen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">}</span><span class="w">   </span><span class="c1">-- Smaragd ist ein Berg-Erz: je hoeher, desto haeufiger!</span>
 </span><span class="zeile">
 </span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== ERZ-TIEFEN-QUIZ ===&quot;</span><span class="p">)</span>
 </span><span class="zeile"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Auf welcher Y-Höhe findet man welches Erz?&quot;</span><span class="p">)</span>

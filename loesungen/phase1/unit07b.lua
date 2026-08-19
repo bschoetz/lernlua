@@ -12,7 +12,7 @@ while diamanten < 5 do
   end
 end
 
-print("Genug für eine Diamant-Spitzhacke!")
+print("Genug für Spitzhacke und Schwert!")   -- 3 + 2 Diamanten
 
 -- Bonus-Quest: Das Weizen-Wunder
 print("")

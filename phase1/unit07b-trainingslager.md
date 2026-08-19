@@ -11,7 +11,7 @@ Schreibe ein Programm:
 - So lange weniger als 5 Diamanten, fragt es: "Diamant gefunden? (j/n)"
 - Bei `j` wird ein Diamant dazugezählt und ausgegeben, wie viele Du hast
 - Bei `n` sagt es "Weitersuchen!"
-- Wenn 5 erreicht: "Genug für eine Diamant-Spitzhacke!"
+- Wenn 5 erreicht: "Genug für Spitzhacke und Schwert!" (3 Diamanten für die Spitzhacke, 2 fürs Schwert — Stöcke hast Du ja immer dabei)
 
 Tipp: In der `while`-Schleife steckt ein `if` — zähl am Ende Deine `end`s: Schleife und `if` brauchen je eins.
 

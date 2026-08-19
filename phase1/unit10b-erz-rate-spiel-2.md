@@ -21,13 +21,13 @@ Und jetzt der Clou der ganzen Unit. Wir bauen **zwei Truhen, die zusammengehöre
 | Slot | 1 | 2 | 3 | 4 | 5 |
 |------|---|---|---|---|---|
 | `erze` | Kohle | Eisen | Gold | Diamant | Smaragd |
-| `tiefen` | 50 | 30 | 10 | −50 | −16 |
+| `tiefen` | 50 | 30 | 10 | −50 | 100 |
 
 **Die Slot-Nummer ist das Band zwischen den Truhen:** Slot 3 der einen Truhe ist "Gold" — und Slot 3 der anderen ist die 10, also Golds Fundhöhe. Würfeln wir eine Slot-Nummer, lesen wir einfach **beide Truhen am selben Slot** aus:
 
 ```lua
 local erze = {"Kohle", "Eisen", "Gold", "Diamant", "Smaragd"}
-local tiefen = {50, 30, 10, -50, -16}
+local tiefen = {50, 30, 10, -50, 100}   -- Smaragd ist ein Berg-Erz: je hoeher, desto haeufiger!
 
 local nummer = math.random(1, #erze)
 local erz = erze[nummer]
@@ -57,7 +57,7 @@ Hier das komplette Spiel — **nicht abtippen, sondern Dein Spiel umbauen** und 
 
 ```lua
 local erze = {"Kohle", "Eisen", "Gold", "Diamant", "Smaragd"}
-local tiefen = {50, 30, 10, -50, -16}
+local tiefen = {50, 30, 10, -50, 100}   -- Smaragd ist ein Berg-Erz: je hoeher, desto haeufiger!
 
 print("=== ERZ-TIEFEN-QUIZ ===")
 print("Auf welcher Y-Höhe findet man welches Erz?")
